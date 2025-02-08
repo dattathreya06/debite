@@ -7,14 +7,18 @@ interface EyebrowProps {
   color?: string;
   dashColor?: string;
   animationDuration?: number;
+  bgColor?: string;
+  padOn?: boolean;
 }
 
 const Eyebrow = ({
   text,
   className = "",
   color = "text-accent",
-  dashColor = "text-accent-DEFAULT",
+  dashColor = "text-accent",
   animationDuration = 2,
+  bgColor = "bg-gradient-to-r from-primary to-accent",
+  padOn = false,
 }: EyebrowProps) => {
   const leftDashRef = useRef<HTMLSpanElement>(null);
   const rightDashRef = useRef<HTMLSpanElement>(null);
@@ -27,13 +31,18 @@ const Eyebrow = ({
 
     // Create infinite rotation animations
     const createRotation = (target: HTMLElement) => {
-      return gsap.to(target, {
-        rotation: 360,
-        duration: animationDuration,
-        repeat: -1,
-        ease: "none",
-        transformOrigin: "50% 50%",
-      });
+      const tl = gsap.timeline({ repeat: -1 });
+      for (let i = 0; i < 16; i++) {
+        // 16 steps for 360 degrees
+        tl.to(target, {
+          rotation: i * 45,
+          duration: 0,
+          transformOrigin: "50% 50%",
+        }).to(target, {
+          duration: 0.1, // pause for 0.5 seconds
+        });
+      }
+      return tl;
     };
 
     // Start animations
@@ -51,10 +60,10 @@ const Eyebrow = ({
     <div className={`flex items-center gap-3 ${className}`}>
       <span
         ref={leftDashRef}
-        className={`inline-block font-mono text-lg font-bold ${dashColor}`}
+        className={`font-mono text-lg font-bold ${dashColor}`}
         aria-hidden="true"
       >
-        -
+        |
       </span>
       <span className={`text-sm uppercase tracking-wider font-medium ${color}`}>
         {text}
@@ -64,7 +73,7 @@ const Eyebrow = ({
         className={`inline-block font-mono text-lg font-bold ${dashColor}`}
         aria-hidden="true"
       >
-        -
+        |
       </span>
     </div>
   );

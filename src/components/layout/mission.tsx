@@ -34,8 +34,8 @@ const MissionStatement = () => {
       ease: "power4.out",
       scrollTrigger: {
         trigger: section,
-        start: "top 60%",
-        end: "top 30%",
+        start: "top 50%",
+        end: "bottom 50%",
         scrub: 1,
       },
     });
