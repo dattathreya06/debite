@@ -146,4 +146,4 @@ export interface NavItem {
         ]
       }
     ]
-  } as const
+  } 
