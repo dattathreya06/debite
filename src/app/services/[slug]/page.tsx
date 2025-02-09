@@ -1,13 +1,17 @@
 // src/app/services/[slug]/page.tsx
 import { notFound } from 'next/navigation';
-//import CloudServicePage from '@/components/services/cloud';
+import CloudServicePage from '@/components/services/cloud';
 import DataAIServicePage from '@/components/services/data-ai';
-//import CybersecurityPage from '@/components/services/cybersecurity';
+import CybersecurityPage from '@/components/services/cybersecurity';
 import ConsultingPage from '@/components/services/consulting';
+
 
 const SERVICE_COMPONENTS = {
   'data-ai': DataAIServicePage,
   'consulting': ConsultingPage,
+  'cloud': CloudServicePage,
+  'cybersecurity': CybersecurityPage,
+
 
   // Add other services here as you create them
   // 'digital-workplace': DigitalWorkplacePage,

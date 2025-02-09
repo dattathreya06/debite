@@ -9,7 +9,7 @@ const DataAIServicePage = () => {
   const pageData: ServicePageProps = {
     title: "Data & Artificial Intelligence",
     description: "Transform your business with cutting-edge data analytics and AI solutions that drive innovation and growth.",
-    heroImage: "/images/data-ai-hero.jpg",
+    heroImage: "https://images.pexels.com/photos/9783346/pexels-photo-9783346.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     
     overview: {
       title: "Unlock the power of your data with AI-driven insights",

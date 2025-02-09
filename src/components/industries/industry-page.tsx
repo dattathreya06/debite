@@ -211,7 +211,7 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
       </section>
 
       {/* Page Navigation */}
-      <nav className="sticky top-0 z-50 bg-dark-dark shadow-lg">
+      <nav className="sticky top-16 z-40 bg-dark-dark shadow-lg">
         <div className="container mx-auto px-6">
           <ul className="flex space-x-8 overflow-x-auto">
             {[
@@ -247,7 +247,7 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
                 alt="Overview"
                 width={800}
                 height={600}
-                className="rounded-lg shadow-xl"
+                className=" shadow-xl"
               />
             </div>
             <div className="lg:w-1/2 overview-content">
@@ -269,13 +269,13 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
         ref={caseStudiesRef}
       >
         <div className="container mx-auto px-6">
-          <Eyebrow text="WE MADE THESE"></Eyebrow>
+          <Eyebrow text="SUCCESS STORIES"></Eyebrow>
           <h2 className="text-4xl font-bold mb-12 text-white">Case Studies</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {caseStudies.map((study, index) => (
               <div
                 key={index}
-                className="case-study-card flex flex-col overflow-hidden  bg-royal_blue_traditional-800 shadow-xl border border-royal_blue_traditional-700"
+                className="case-study-card flex flex-col overflow-hidden  bg-dark shadow-xl border border-dark-light"
               >
                 <div className="relative h-48">
                   <Image
@@ -315,7 +315,7 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
             {services.map((service, index) => (
               <div
                 key={index}
-                className="service-card p-8 bg-royal_blue_traditional-900 rounded-lg border border-royal_blue_traditional-700 shadow-xl hover:border-gold-500 transition-colors"
+                className="service-card p-8 bg-dark  border border-dark-light shadow-xl hover:border-gold-500 transition-colors"
               >
                 <h3 className="text-xl font-bold mb-4 text-white">
                   {service.title}
@@ -328,16 +328,16 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
       </section>
 
       {/* Impact Stats */}
-      <section className="py-20 bg-royal_blue_traditional-900" ref={statsRef}>
+      <section className="py-20 bg-dark-dark" ref={statsRef}>
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold mb-12 text-white">Our Impact</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="stat-card bg-royal_blue_traditional-800 p-8 rounded-lg border border-royal_blue_traditional-700 shadow-xl"
+                className="stat-card bg-dark p-8  border border-dark-light shadow-xl"
               >
-                <p className="text-4xl font-bold text-gold-300 mb-4">
+                <p className="text-6xl font-regular text-transparent bg-gradient-to-br from-primary to-accent bg-clip-text mb-4">
                   {stat.value}
                 </p>
                 <p className="text-gray-200 font-semibold">{stat.label}</p>
@@ -350,7 +350,7 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
       {/* Resources Section */}
       <section
         id="resources"
-        className="py-20 bg-royal_blue_traditional-800"
+        className="py-20 bg-dark"
         ref={resourcesRef}
       >
         <div className="container mx-auto px-6">
@@ -361,7 +361,7 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
             {resources.map((resource, index) => (
               <div
                 key={index}
-                className="resource-card flex flex-col overflow-hidden rounded-lg bg-royal_blue_traditional-900 shadow-xl border border-royal_blue_traditional-700"
+                className="resource-card flex flex-col overflow-hidden  bg-royal_blue_traditional-900 shadow-xl border border-royal_blue_traditional-700"
               >
                 <div className="relative h-48">
                   <Image
@@ -371,8 +371,8 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
                     className="object-cover"
                   />
                 </div>
-                <div className="p-6 flex flex-col flex-1">
-                  <p className="text-sm text-gold-300 mb-2">{resource.type}</p>
+                <div className="p-6 flex flex-col inline-flex">
+                  <p className="text-sm px-2 py-1 text-white mb-2 bg-gradient-to-r from-primary to-accent">{resource.type}</p>
                   <h3 className="text-xl font-bold mb-3 text-white">
                     {resource.title}
                   </h3>
@@ -392,44 +392,6 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
         </div>
       </section>
 
-      {/* Global Services Section */}
-      <section
-        id="global-services"
-        className="py-20 bg-royal_blue_traditional-900"
-        ref={globalServicesRef}
-      >
-        <div className="container mx-auto px-6">
-          <h2 className="text-4xl font-bold mb-12 text-gold-300">
-            Services in your country
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {Object.entries(countryServices).map(
-              ([region, countries], index) => (
-                <div key={index} className="region-section">
-                  <h3 className="text-xl font-bold mb-6 text-gold-300">
-                    {region}
-                  </h3>
-                  <ul className="space-y-4">
-                    {countries.map((country, idx) => (
-                      <li key={idx}>
-                        <a
-                          href={country.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-gray-300 hover:text-gold-300 flex items-center transition-colors"
-                        >
-                          {country.name}
-                          <ExternalLink className="ml-2 w-4 h-4" />
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      </section>
       <CTA
         title="Ready to Transform Your Business?"
         description="Join leading enterprises in digital transformation with NTT DATA's innovative solutions."

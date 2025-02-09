@@ -161,10 +161,10 @@ const ServicePage: React.FC<ServicePageProps> = ({
           src={heroImage || "/api/placeholder/1920/600"}
           alt={title}
           fill
-          className="object-cover opacity-40"
+          className="object-cover grayscale"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent">
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary to-transparent">
           <div className="container mx-auto px-6 py-20 h-full flex flex-col justify-end">
             <div className="max-w-2xl">
               <nav className="mb-8">
@@ -219,7 +219,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                 alt="Overview"
                 width={800}
                 height={600}
-                className="rounded-lg shadow-xl"
+                className=" shadow-xl"
               />
             </div>
             <div className="lg:w-1/2 overview-content">
@@ -349,7 +349,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
       </section>
 
       {/* Resources Section */}
-      <section id="resources" className="py-20 bg-royal_blue_traditional-800" ref={resourcesRef}>
+      <section id="resources" className="py-20 bg-dark-dark" ref={resourcesRef}>
         <div className="container mx-auto px-6">
           <Eyebrow text="LEARN MORE" />
           <h2 className="text-4xl font-bold mb-12 text-white">Resources</h2>
@@ -357,7 +357,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
             {resources.map((resource, index) => (
               <div
                 key={index}
-                className="resource-card flex flex-col overflow-hidden rounded-lg bg-royal_blue_traditional-900 shadow-xl border border-royal_blue_traditional-700"
+                className="resource-card flex flex-col overflow-hidden bg-dark shadow-xl border border-dark-light"
               >
                 <div className="relative h-48">
                   <Image
@@ -368,7 +368,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
-                  <p className="text-sm text-gold-300 mb-2">{resource.type}</p>
+                  <p className="inline-block text-sm bg-primary text-gold-300 mb-2">{resource.type}</p>
                   <h3 className="text-xl font-bold mb-3 text-white">
                     {resource.title}
                   </h3>
@@ -388,7 +388,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
       </section>
 
       {/* Related Services Section */}
-      <section className="py-20 bg-royal_blue_traditional-900">
+      <section className="py-20 bg-dark">
         <div className="container mx-auto px-6">
           <Eyebrow text="EXPLORE MORE" />
           <h2 className="text-4xl font-bold mb-12 text-white">Related Services</h2>
@@ -397,7 +397,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
               <Link
                 key={index}
                 href={`/services/${service.toLowerCase().replace(/\s+/g, '-')}`}
-                className="p-6 bg-royal_blue_traditional-800 rounded-lg border border-royal_blue_traditional-700 shadow-xl hover:border-gold-500 transition-colors group"
+                className="p-6 bg-royal_blue_traditional-800 border border-dark shadow-xl hover:border-gold-500 transition-colors group"
               >
                 <h3 className="text-xl font-bold text-white group-hover:text-gold-300 transition-colors">
                   {service}
