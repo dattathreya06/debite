@@ -1,0 +1,409 @@
+import { CaseStudy } from "@/types/case-study";
+
+export const caseStudies: Record<string, CaseStudy> = {
+    "financial-automation-banking": {
+        slug: "financial-automation-banking",
+        client: "A leading multinational bank",
+        industry: "Banking & Financial Services",
+        duration: "8 months",
+        teamSize: "12",
+        title: "AI-Driven Financial Automation for a Multinational Bank",
+        description:
+          "Debite partnered with a global banking institution to revolutionize its financial operations through AI-powered automation. The goal was to reduce manual inefficiencies, enhance fraud detection, and provide real-time financial insights for better decision-making.",
+        heroImage: "/images/case-studies/financial-automation.jpg",
+        challenge:
+          "The bank was struggling with slow and error-prone manual processes, outdated risk assessment models, and rising fraud incidents. Additionally, compliance with international regulations was becoming increasingly complex.",
+        approach:
+          "We leveraged AI and robotic process automation (RPA) to automate routine banking operations, implemented a real-time fraud detection system, and integrated a compliance management framework to ensure regulatory adherence. Our approach prioritized security, efficiency, and customer experience.",
+        metrics: [
+          {
+            label: "Fraud Detection Accuracy",
+            value: "85% improvement",
+            description:
+              "AI-driven analytics significantly reduced false positives in fraud detection.",
+          },
+          {
+            label: "Operational Costs",
+            value: "30% reduction",
+            description:
+              "Automation of manual processes led to significant cost savings.",
+          },
+          {
+            label: "Processing Speed",
+            value: "4x faster",
+            description:
+              "Financial transactions and loan approvals were processed significantly faster.",
+          },
+        ],
+        solutions: [
+          {
+            title: "Robotic Process Automation (RPA)",
+            description:
+              "Automated repetitive banking processes such as loan approvals, KYC verification, and account reconciliation, reducing human errors and improving efficiency.",
+            image: "/images/case-studies/solutions/rpa-banking.jpg",
+          },
+          {
+            title: "AI-Powered Fraud Detection",
+            description:
+              "Developed a real-time fraud detection system using AI and machine learning to analyze transaction patterns and prevent suspicious activities.",
+            image: "/images/case-studies/solutions/fraud-detection.jpg",
+          },
+          {
+            title: "Regulatory Compliance Automation",
+            description:
+              "Integrated an AI-driven compliance monitoring system to ensure adherence to financial regulations such as Basel III and GDPR.",
+            image: "/images/case-studies/solutions/compliance-automation.jpg",
+          },
+        ],
+        technologies: [
+          {
+            name: "Machine Learning & AI",
+            description:
+              "Advanced predictive analytics and fraud detection models for banking security.",
+            logo: "/images/technologies/ai-ml-logo.png",
+          },
+          {
+            name: "Robotic Process Automation (RPA)",
+            description:
+              "Automating banking workflows for efficiency and accuracy.",
+            logo: "/images/technologies/rpa-logo.png",
+          },
+          {
+            name: "Blockchain for Security",
+            description:
+              "Enhancing transaction security and data integrity in banking operations.",
+            logo: "/images/technologies/blockchain-logo.png",
+          },
+        ],
+        testimonial: {
+          quote:
+            "Debite's AI-powered automation completely transformed our banking operations. Fraud detection is now significantly more accurate, and our efficiency has skyrocketed.",
+          author: "Jane Smith",
+          role: "CIO, Leading Multinational Bank",
+          image: "/images/testimonials/jane-smith.jpg",
+        }
+    },
+    "smart-manufacturing-iot": {
+        slug: "smart-manufacturing-iot",
+        client: "A leading automotive parts manufacturer",
+        industry: "Automotive & Manufacturing",
+        duration: "10 months",
+        teamSize: "18",
+        title: "Smart Manufacturing with IoT & AI for an Automotive Parts Manufacturer",
+        description:
+          "Debite helped an automotive parts manufacturer transform its production lines by integrating IoT-enabled sensors, AI-driven analytics, and automated quality control. This resulted in reduced downtime, improved efficiency, and predictive maintenance capabilities.",
+        heroImage: "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg",
+        challenge:
+          "The company faced challenges with unplanned downtime, inefficient production workflows, and high defect rates. The lack of real-time monitoring made it difficult to optimize operations and meet growing industry demands.",
+        approach:
+          "We implemented a smart factory solution powered by IoT and AI, enabling real-time monitoring of equipment, predictive maintenance, and data-driven quality control. Our solution streamlined production workflows, reducing waste and improving productivity.",
+        metrics: [
+          {
+            label: "Production Efficiency",
+            value: "45% increase",
+            description:
+              "Optimized manufacturing workflows and automated quality checks improved efficiency.",
+          },
+          {
+            label: "Downtime Reduction",
+            value: "60% decrease",
+            description:
+              "IoT-based predictive maintenance significantly reduced unplanned downtime.",
+          },
+          {
+            label: "Defect Rate",
+            value: "70% improvement",
+            description:
+              "AI-powered quality control reduced product defects and enhanced reliability.",
+          },
+        ],
+        solutions: [
+          {
+            title: "IoT-Powered Real-Time Monitoring",
+            description:
+              "Installed IoT sensors across production lines to monitor equipment health, detect anomalies, and provide real-time analytics.",
+            image: "https://images.pexels.com/photos/3855617/pexels-photo-3855617.jpeg",
+          },
+          {
+            title: "AI-Driven Predictive Maintenance",
+            description:
+              "Utilized AI algorithms to predict equipment failures before they happened, reducing maintenance costs and improving production uptime.",
+            image: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
+          },
+          {
+            title: "Automated Quality Control with Computer Vision",
+            description:
+              "Implemented an AI-powered vision system to inspect product quality in real-time, reducing defect rates and improving consistency.",
+            image: "https://images.pexels.com/photos/2760241/pexels-photo-2760241.jpeg",
+          },
+        ],
+        technologies: [
+          {
+            name: "Internet of Things (IoT)",
+            description:
+              "Connected devices for real-time monitoring and predictive analytics in manufacturing.",
+            logo: "/images/technologies/iot-logo.png",
+          },
+          {
+            name: "Artificial Intelligence & Computer Vision",
+            description:
+              "AI-driven quality control and predictive maintenance for enhanced manufacturing efficiency.",
+            logo: "/images/technologies/ai-computer-vision-logo.png",
+          },
+          {
+            name: "Cloud Computing",
+            description:
+              "Centralized data processing and analytics for scalable industrial automation.",
+            logo: "/images/technologies/cloud-logo.png",
+          },
+        ],
+        testimonial: {
+          quote:
+            "With Debite’s IoT and AI-driven automation, we’ve drastically reduced downtime and improved product quality. Our manufacturing processes are now smarter and more efficient than ever.",
+          author: "Michael Johnson",
+          role: "Operations Director, Leading Automotive Manufacturer",
+          image: "/images/testimonials/michael-johnson.jpg",
+        }
+    },
+    "digital-transformation-healthcare": {
+        slug: "digital-transformation-healthcare",
+    client: "A leading medical equipment manufacturer",
+    industry: "Healthcare & Medical Devices",
+    duration: "12 months",
+    teamSize: "15",
+    title: "Digital Transformation for a Global Healthcare Manufacturer",
+    description:
+      "We partnered with a global medical equipment manufacturer to modernize their legacy systems, streamline operations, and enhance digital experiences. Our team implemented a cloud-based infrastructure, integrated AI-driven analytics, and improved cybersecurity measures to ensure seamless operations.",
+    heroImage: "/images/case-studies/healthcare-digital-transformation.jpg",
+    challenge:
+      "The client faced challenges with outdated legacy systems, inefficient workflows, and data security risks. Their existing system struggled with interoperability, leading to delays in product development and regulatory compliance.",
+    approach:
+      "Our team conducted a comprehensive audit of the client’s IT infrastructure and proposed a phased approach to migrate their legacy systems to a secure cloud-based solution. We implemented AI-driven predictive maintenance, optimized data workflows, and introduced real-time analytics dashboards.",
+    metrics: [
+      {
+        label: "Operational Efficiency",
+        value: "35% increase",
+        description: "Improved workflow automation and process optimization.",
+      },
+      {
+        label: "Data Security",
+        value: "70% risk reduction",
+        description: "Enhanced cybersecurity protocols and compliance measures.",
+      },
+      {
+        label: "Time to Market",
+        value: "40% faster",
+        description:
+          "Accelerated product development through digital process enhancements.",
+      },
+    ],
+    solutions: [
+      {
+        title: "Cloud Infrastructure Migration",
+        description:
+          "Migrated legacy systems to a secure, scalable cloud platform, ensuring real-time data access and improved operational efficiency.",
+        image: "/images/case-studies/solutions/cloud-migration.jpg",
+      },
+      {
+        title: "AI-Driven Predictive Maintenance",
+        description:
+          "Implemented AI-based predictive analytics to monitor equipment performance and reduce downtime by 45%.",
+        image: "/images/case-studies/solutions/ai-predictive-maintenance.jpg",
+      },
+      {
+        title: "Cybersecurity & Compliance Enhancement",
+        description:
+          "Deployed advanced security protocols to meet HIPAA compliance and protect sensitive medical data.",
+        image: "/images/case-studies/solutions/cybersecurity.jpg",
+      },
+    ],
+    technologies: [
+      {
+        name: "Microsoft Azure",
+        description: "Cloud infrastructure for secure and scalable solutions.",
+        logo: "/images/technologies/azure-logo.png",
+      },
+      {
+        name: "AI & Machine Learning",
+        description: "Predictive analytics and automation to optimize processes.",
+        logo: "/images/technologies/ai-ml-logo.png",
+      },
+      {
+        name: "Cybersecurity Frameworks",
+        description: "Enhanced security protocols for compliance and risk management.",
+        logo: "/images/technologies/security-frameworks-logo.png",
+      },
+    ],
+    testimonial: {
+      quote:
+        "Debite transformed our operations by modernizing our IT infrastructure and implementing AI-driven insights. We've seen a remarkable improvement in efficiency and security.",
+      author: "John Doe",
+      role: "CTO, Leading Medical Equipment Manufacturer",
+      image: "/images/testimonials/john-doe.jpg",
+    },
+    },
+    "ai-ecommerce-optimization": {
+        slug: "ai-ecommerce-optimization",
+  client: "A leading global fashion retailer",
+  industry: "Retail & eCommerce",
+  duration: "9 months",
+  teamSize: "14",
+  title: "AI-Powered eCommerce Optimization for a Global Fashion Retailer",
+  description:
+    "Debite collaborated with a leading fashion retailer to transform their eCommerce operations by implementing AI-driven personalization, automated inventory management, and real-time customer insights. The goal was to enhance customer engagement, optimize logistics, and increase revenue.",
+  heroImage: "https://images.pexels.com/photos/4127648/pexels-photo-4127648.jpeg",
+  challenge:
+    "The client faced challenges with low conversion rates, inefficient inventory management, and an outdated recommendation system that failed to provide personalized shopping experiences. Additionally, order fulfillment delays led to customer dissatisfaction.",
+  approach:
+    "We implemented an AI-powered recommendation engine, predictive demand forecasting, and automated supply chain management. Our approach prioritized real-time insights, customer behavior tracking, and efficient order processing.",
+  metrics: [
+    {
+      label: "Conversion Rate",
+      value: "38% increase",
+      description:
+        "AI-driven personalization and dynamic pricing improved online sales.",
+    },
+    {
+      label: "Inventory Efficiency",
+      value: "50% reduction in stockouts",
+      description:
+        "Predictive demand forecasting minimized overstock and stockouts.",
+    },
+    {
+      label: "Order Fulfillment Speed",
+      value: "3x faster",
+      description:
+        "Automated warehouse operations and logistics optimization improved delivery times.",
+    },
+  ],
+  solutions: [
+    {
+      title: "AI-Driven Product Recommendations",
+      description:
+        "Implemented a machine learning-based recommendation engine that personalized product suggestions based on customer behavior and purchase history.",
+      image: "https://images.pexels.com/photos/3769747/pexels-photo-3769747.jpeg",
+    },
+    {
+      title: "Automated Inventory & Demand Forecasting",
+      description:
+        "Leveraged AI models to predict demand trends and optimize stock levels, reducing waste and improving fulfillment efficiency.",
+      image: "https://images.pexels.com/photos/4481259/pexels-photo-4481259.jpeg",
+    },
+    {
+      title: "Chatbot-Powered Customer Support",
+      description:
+        "Deployed an AI chatbot to handle customer inquiries, assist with orders, and provide real-time tracking updates, improving customer satisfaction.",
+      image: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg",
+    },
+  ],
+  technologies: [
+    {
+      name: "Machine Learning & AI",
+      description:
+        "Advanced AI-driven insights for eCommerce personalization and demand forecasting.",
+      logo: "/images/technologies/ai-ml-logo.png",
+    },
+    {
+      name: "Cloud-Based eCommerce Solutions",
+      description:
+        "Scalable cloud infrastructure for seamless digital retail operations.",
+      logo: "/images/technologies/cloud-logo.png",
+    },
+    {
+      name: "Natural Language Processing (NLP)",
+      description:
+        "AI-powered chatbot and voice assistants for enhanced customer interactions.",
+      logo: "/images/technologies/nlp-logo.png",
+    },
+  ],
+  testimonial: {
+    quote:
+      "Debite’s AI solutions revolutionized our eCommerce operations. Our customers now enjoy a highly personalized shopping experience, and our logistics have never been more efficient.",
+    author: "Sophia Martinez",
+    role: "Head of Digital Transformation, Leading Fashion Retailer",
+    image: "/images/testimonials/sophia-martinez.jpg",
+  },
+    },
+    "digital-banking-revamp":{
+        slug: "digital-banking-revamp",
+  client: "A leading digital-first bank",
+  industry: "Banking & Financial Services",
+  duration: "11 months",
+  teamSize: "16",
+  title: "AI-Powered Digital Banking Transformation for a Leading Fintech Bank",
+  description:
+    "Debite partnered with a leading digital-first bank to overhaul its core banking infrastructure. By implementing AI-driven customer insights, blockchain-based security, and process automation, we improved customer engagement, enhanced fraud detection, and optimized financial operations.",
+  heroImage: "https://images.pexels.com/photos/4968384/pexels-photo-4968384.jpeg",
+  challenge:
+    "The bank struggled with a fragmented digital ecosystem, rising cybersecurity threats, and a lack of AI-driven automation in its customer services. Additionally, traditional KYC verification processes led to onboarding delays.",
+  approach:
+    "We implemented AI-powered fraud detection, automated risk assessments, and blockchain-based identity verification. By integrating a modern cloud banking solution, we streamlined digital transactions and improved customer experience.",
+  metrics: [
+    {
+      label: "Customer Onboarding Time",
+      value: "70% faster",
+      description:
+        "Automated KYC verification reduced manual processes and improved approval times.",
+    },
+    {
+      label: "Fraud Detection Accuracy",
+      value: "90% improvement",
+      description:
+        "Real-time AI analytics significantly reduced fraudulent transactions.",
+    },
+    {
+      label: "Operational Costs",
+      value: "40% reduction",
+      description:
+        "Cloud-native banking infrastructure and automation cut costs and improved scalability.",
+    },
+  ],
+  solutions: [
+    {
+      title: "AI-Powered Customer Insights",
+      description:
+        "Developed an AI engine that analyzed customer behaviors, providing personalized banking recommendations and proactive fraud alerts.",
+      image: "https://images.pexels.com/photos/4386371/pexels-photo-4386371.jpeg",
+    },
+    {
+      title: "Blockchain-Based KYC & Identity Verification",
+      description:
+        "Implemented a secure, blockchain-powered digital identity verification system, reducing fraud risks and streamlining onboarding.",
+      image: "https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg",
+    },
+    {
+      title: "Automated Loan & Risk Assessment",
+      description:
+        "Used AI to automate risk assessments for loan approvals, improving decision-making speed and accuracy.",
+      image: "https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg",
+    },
+  ],
+  technologies: [
+    {
+      name: "AI & Machine Learning",
+      description:
+        "Advanced AI models for fraud detection, customer insights, and automated decision-making.",
+      logo: "/images/technologies/ai-ml-logo.png",
+    },
+    {
+      name: "Blockchain Security",
+      description:
+        "Decentralized security for banking transactions and identity verification.",
+      logo: "/images/technologies/blockchain-logo.png",
+    },
+    {
+      name: "Cloud-Based Banking Infrastructure",
+      description:
+        "Scalable, secure, and high-performance cloud solutions for digital banking.",
+      logo: "/images/technologies/cloud-logo.png",
+    },
+  ],
+  testimonial: {
+    quote:
+      "Debite’s AI and blockchain-driven solutions transformed our banking operations. Our fraud detection accuracy improved dramatically, and our customers now enjoy a seamless digital experience.",
+    author: "David Williams",
+    role: "Chief Technology Officer, Leading Digital Bank",
+    image: "/images/testimonials/david-williams.jpg",
+  },
+    }
+  };

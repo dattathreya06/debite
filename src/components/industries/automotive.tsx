@@ -120,25 +120,6 @@ const AutomotivePage = () => {
         link: "#"
       }
     ],
-
-    countryServices: {
-      "NTT DATA Services": [
-        { name: "US", url: "https://us.nttdata.com/en/industries/automotive" }
-      ],
-      "NTT DATA EMEAL": [
-        { name: "Germany", url: "https://de.nttdata.com/industrien/automotive" }
-      ],
-      "NTT DATA": [
-        { name: "China", url: "https://www.nttdata.com.cn/industries/cars" },
-        { name: "Japan", url: "https://www.nttdata.com/jp/ja/industries/mobility/" }
-      ],
-      "NTT DATA Business Solutions": [
-        { 
-          name: "NTT DATA Business Solutions (German)", 
-          url: "https://nttdata-solutions.com/de/branchen/erp-fuer-automobilzulieferer/" 
-        }
-      ]
-    }
   };
 
   return <IndustryPage {...pageData} />;

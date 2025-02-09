@@ -1,12 +1,16 @@
 // src/app/industries/[slug]/page.tsx
 import { notFound } from 'next/navigation';
 import AutomotivePage from '@/components/industries/automotive';
+import BankingPage from '@/components/industries/banking';
+import InsurancePage from '@/components/industries/insurance';
+import ManufacturingPage from '@/components/industries/manufacturing';
 
 const INDUSTRY_COMPONENTS = {
   'automotive': AutomotivePage,
-  // Add other industries here as you create them
-  // 'healthcare': HealthcarePage,
-  // 'finance': FinancePage,
+  'banking': BankingPage,
+  'manufacturing': ManufacturingPage,
+  'insurance': InsurancePage,
+
 } as const;
 
 type IndustrySlug = keyof typeof INDUSTRY_COMPONENTS;

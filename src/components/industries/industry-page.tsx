@@ -48,12 +48,7 @@ interface Resource {
   link: string;
 }
 
-interface CountryService {
-  name: string;
-  url: string;
-}
 
-type CountryServices = Record<string, CountryService[]>;
 
 export interface IndustryPageProps {
   title: string;
@@ -64,7 +59,6 @@ export interface IndustryPageProps {
   caseStudies: CaseStudy[];
   services: Service[];
   resources: Resource[];
-  countryServices: CountryServices;
 }
 
 const IndustryPage: React.FC<IndustryPageProps> = ({
@@ -76,7 +70,6 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
   caseStudies,
   services,
   resources,
-  countryServices,
 }) => {
   // Refs for animations
   const pageRef = useRef<HTMLDivElement>(null);
