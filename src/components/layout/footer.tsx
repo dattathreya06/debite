@@ -24,7 +24,7 @@ interface Sections {
 }
 
 import Image from 'next/image';
-import logo from '/public/vercel.svg';
+import logo from '/public/debite_logo.svg';
 
 const ContactItem: React.FC<{ icon: React.ReactNode; children: React.ReactNode }> = ({ 
   icon, 
@@ -139,22 +139,24 @@ const Footer: React.FC = () => {
   }, []);
 
   return (
-    <footer className="bg-royal_blue_traditional-900 text-white">
+    <footer className="bg-dark-dark text-white">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 mb-12">
           <div className="lg:col-span-2 space-y-6">
             <Image src={logo} alt="NTT DATA Logo" width={128} height={32} className="text-white" />
             <div className="space-y-4">
               <ContactItem icon={<MapPin size={18} />}>
-                123 Business Avenue, Tech District
+                RAM SVR, Plot No 4/2, Sector 1
                 <br />
-                Tokyo, Japan 100-0004
+                Madhapur, HUDA Techno Enclave
+                <br />
+                HITEC City, Hyderabad, Telangana 500081
               </ContactItem>
               <ContactItem icon={<Phone size={18} />}>
-                +81 3-1234-5678
+                +91 9281144143 | +91 9166616143
               </ContactItem>
               <ContactItem icon={<Mail size={18} />}>
-                contact@nttdata.com
+                Info@debite.in 
               </ContactItem>
             </div>
             <div className="flex gap-4">
@@ -187,7 +189,7 @@ const Footer: React.FC = () => {
         
         <div ref={bottomRef} className="border-t border-gray-700 pt-8">
           <div className="text-sm text-gray-400 text-center">
-            © {new Date().getFullYear()} NTT DATA Corporation. All rights reserved.
+            © {new Date().getFullYear()} Debite technologies Pvt Ltd. All rights reserved.
           </div>
         </div>
       </div>

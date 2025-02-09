@@ -1,25 +1,25 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import Link from "next/link";
-import { useSelectedLayoutSegment } from "next/navigation";
-import { ChevronDown } from "lucide-react";
-import { MainNavItem } from "@/types/navigation";
-import { siteConfig } from "@/types/navigation";
-import { cn } from "@/lib/utils";
-import { MegaMenu } from "@/components/layout/mega-menu";
-import { useHoverWordAnimation } from "@/app/anim/word-anim";
+import * as React from "react"
+import Link from "next/link"
+import { useSelectedLayoutSegment } from "next/navigation"
+import { ChevronDown } from "lucide-react"
+import { MainNavItem } from "@/types/navigation"
+import { siteConfig } from "@/types/navigation"
+import { cn } from "@/lib/utils"
+import { useHoverWordAnimation } from "@/app/anim/word-anim"
+import MegaMenu from "./mega-menu" // Updated import
 
 interface MainNavProps {
-  items?: MainNavItem[];
-  children?: React.ReactNode;
+  items?: MainNavItem[]
+  children?: React.ReactNode
 }
 
 interface NavButtonProps {
-  item: MainNavItem;
-  openMenu: string | null;
-  onButtonClick: (title: string) => void;
-  segment: string | null;
+  item: MainNavItem
+  openMenu: string | null
+  onButtonClick: (title: string) => void
+  segment: string | null
 }
 
 const NavButton = ({
@@ -28,20 +28,22 @@ const NavButton = ({
   onButtonClick,
   segment,
 }: NavButtonProps) => {
-  const buttonRef = React.useRef<HTMLButtonElement>(null);
-  useHoverWordAnimation(buttonRef);
+  const buttonRef = React.useRef<HTMLButtonElement>(null)
+  useHoverWordAnimation(buttonRef)
 
   return (
     <button
       ref={buttonRef}
       onClick={(e) => {
-        e.stopPropagation();
-        onButtonClick(item.title);
+        e.stopPropagation()
+        onButtonClick(item.title)
       }}
       className={cn(
         "flex items-center space-x-1 text-base font-medium transition-colors hover:text-primary",
         item.href.startsWith(`/${segment}`) ? "text-accent" : "text-white"
       )}
+      aria-expanded={openMenu === item.title}
+      aria-controls={`menu-${item.title.toLowerCase()}`}
     >
       <span>{item.title}</span>
       {item.sections && (
@@ -53,25 +55,36 @@ const NavButton = ({
         />
       )}
     </button>
-  );
-};
+  )
+}
 
 export function MainNav({ items, children }: MainNavProps) {
-  const segment = useSelectedLayoutSegment();
-  const [openMenu, setOpenMenu] = React.useState<string | null>(null);
-  const navItems = items || siteConfig.mainNav;
-  const [isMobile, setIsMobile] = React.useState(false);
+  const segment = useSelectedLayoutSegment()
+  const [openMenu, setOpenMenu] = React.useState<string | null>(null)
+  const navItems = items || siteConfig.mainNav
+  const [isMobile, setIsMobile] = React.useState(false)
 
   React.useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    window.addEventListener("resize", checkMobile)
+    return () => window.removeEventListener("resize", checkMobile)
+  }, [])
+
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (openMenu && !event.defaultPrevented) {
+        setOpenMenu(null)
+      }
+    }
+
+    document.addEventListener("click", handleClickOutside)
+    return () => document.removeEventListener("click", handleClickOutside)
+  }, [openMenu])
 
   const handleMenuClick = (title: string) => {
-    setOpenMenu(openMenu === title ? null : title);
-  };
+    setOpenMenu(openMenu === title ? null : title)
+  }
 
   return (
     <div className="flex gap-6 md:gap-10">
@@ -95,5 +108,5 @@ export function MainNav({ items, children }: MainNavProps) {
       </nav>
       {children}
     </div>
-  );
+  )
 }

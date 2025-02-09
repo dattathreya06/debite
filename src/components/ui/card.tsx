@@ -218,7 +218,7 @@ const Card = ({
           <div className="absolute bottom-0 left-0 right-0 z-20 pointer-events-none overflow-hidden">
             <div
               ref={borderRef}
-              className="w-full h-[4px] bg-gold origin-left"
+              className="w-full h-[4px] bg-gadient-to-r from-primary to-accent origin-left"
               style={{ transform: "scaleX(0)" }}
             />
           </div>
@@ -349,7 +349,7 @@ const Card = ({
         <div className="absolute bottom-0 left-0 right-0 overflow-hidden">
           <div
             ref={borderRef}
-            className="w-full h-[2px] bg-primary origin-left"
+            className="w-full h-[4px] bg-primary origin-left"
             style={{ transform: "scaleX(0)" }}
           />
         </div>

@@ -38,7 +38,7 @@ const HeroSlider: React.FC = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
   const titleRefs = useRef<(HTMLHeadingElement | null)[]>([]);
   const subtitleRefs = useRef<(HTMLParagraphElement | null)[]>([]);
-  const intervalRef = useRef<NodeJS.Timeout>();
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const animationCleanupRefs = useRef<(() => void)[]>([]);
 
   // Animation setup and cleanup
@@ -101,7 +101,7 @@ const HeroSlider: React.FC = () => {
     });
 
     masterTimeline
-      .add(titleAnimation?.animation)
+    .add(titleAnimation?.animation || gsap.timeline())
       .add(subtitleAnimation, ">-0.4");
   };
 
@@ -170,13 +170,13 @@ const HeroSlider: React.FC = () => {
               <div className="container mx-auto h-full px-6 flex items-center">
                 <div className="max-w-3xl">
                   <h1 
-                    ref={el => titleRefs.current[index] = el}
+                    ref={(el) => {titleRefs.current[index] = el}}
                     className="text-6xl font-bold text-white mb-6 overflow-hidden"
                   >
                     {slide.title}
                   </h1>
                   <p 
-                    ref={el => subtitleRefs.current[index] = el}
+                    ref={(el) => {subtitleRefs.current[index] = el}}
                     className="text-2xl text-white/90 max-w-xl overflow-hidden"
                   >
                     {slide.subtitle}
@@ -206,7 +206,7 @@ const HeroSlider: React.FC = () => {
               onClick={() => handleSlideClick(index)}
               className={`w-12 h-1 rounded-full transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed ${
                 index === activeSlide 
-                  ? 'bg-mikado_yellow-500 w-24' 
+                  ? 'bg-gradient-to-r from-primary to-accent w-24' 
                   : 'bg-white/30 hover:bg-white/50'
               }`}
               aria-label={`Go to slide ${index + 1}`}

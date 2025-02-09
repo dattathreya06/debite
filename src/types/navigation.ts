@@ -1,149 +1,336 @@
+// types/navigation.ts
+
 export interface NavItem {
-    title: string
-    href: string
-    description?: string
-    icon?: string
-  }
-  
-  export interface NavSection {
-    title: string
-    items: NavItem[]
-  }
-  
-  export interface MainNavItem extends NavItem {
-    sections?: NavSection[]
-  }
-  
-  export const siteConfig = {
-    mainNav: [
-      {
-        title: "Products",
-        href: "/products",
-        sections: [
-          {
-            title: "Financial Solutions",
-            items: [
-              {
-                title: "Business Credit Card",
-                href: "/products/credit-card",
-                description: "Flexible business spending with rewards"
-              },
-              {
-                title: "Revenue Financing",
-                href: "/products/revenue-financing",
-                description: "Growth capital based on your revenue"
-              }
-            ]
-          },
-          {
-            title: "Enterprise Solutions",
-            items: [
-              {
-                title: "Corporate Finance",
-                href: "/products/corporate-finance",
-                description: "Custom financing solutions for large businesses"
-              },
-              {
-                title: "Payment Solutions",
-                href: "/products/payments",
-                description: "Streamlined payment processing"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        title: "Solutions",
-        href: "/solutions",
-        sections: [
-          {
-            title: "By Industry",
-            items: [
-              {
-                title: "E-commerce",
-                href: "/solutions/ecommerce",
-                description: "Financial tools for online retailers"
-              },
-              {
-                title: "SaaS",
-                href: "/solutions/saas",
-                description: "Solutions for software companies"
-              }
-            ]
-          },
-          {
-            title: "By Need",
-            items: [
-              {
-                title: "Working Capital",
-                href: "/solutions/working-capital",
-                description: "Short-term financing solutions"
-              },
-              {
-                title: "Growth Financing",
-                href: "/solutions/growth-financing",
-                description: "Capital for business expansion"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        title: "Resources",
-        href: "/resources",
-        sections: [
-          {
-            title: "Learn",
-            items: [
-              {
-                title: "Blog",
-                href: "/blog",
-                description: "Latest insights and updates"
-              },
-              {
-                title: "Guides",
-                href: "/guides",
-                description: "In-depth financial resources"
-              }
-            ]
-          },
-          {
-            title: "Support",
-            items: [
-              {
-                title: "Help Center",
-                href: "/help",
-                description: "Answers to common questions"
-              },
-              {
-                title: "Contact",
-                href: "/contact",
-                description: "Get in touch with our team"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        title: "About",
-        href: "/about",
-        sections: [
-          {
-            title: "Company",
-            items: [
-              {
-                title: "Our Story",
-                href: "/about/story",
-                description: "Learn about our mission"
-              },
-              {
-                title: "Careers",
-                href: "/careers",
-                description: "Join our team"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  } 
+  title: string;
+  href: string;
+  description?: string;
+}
+
+export interface NavItemWithChildren extends NavItem {
+  items: NavItem[];
+}
+
+export interface NavSection {
+  title: string;
+  items: NavItemWithChildren[];
+}
+
+export interface MainNavItem {
+  title: string;
+  href: string;
+  description?: string;
+  sections?: NavSection[];
+}
+
+export interface SiteConfig {
+  mainNav: MainNavItem[];
+}
+
+export const siteConfig: SiteConfig = {
+  mainNav: [
+    {
+      title: "Industries",
+      href: "/industries",
+      sections: [
+        {
+          title: "Manufacturing & Technology",
+          items: [
+            {
+              title: "Automotive",
+              href: "/industries/automotive",
+              description: "Digital solutions for automotive manufacturers and suppliers",
+              items: [
+                {
+                  title: "Connected Vehicles",
+                  href: "/industries/automotive/connected-vehicles"
+                },
+                {
+                  title: "Manufacturing Excellence",
+                  href: "/industries/automotive/manufacturing"
+                }
+              ]
+            },
+            {
+              title: "Manufacturing",
+              href: "/industries/manufacturing",
+              description: "Smart factory and Industry 4.0 solutions",
+              items: [
+                {
+                  title: "Smart Factory",
+                  href: "/industries/manufacturing/smart-factory"
+                },
+                {
+                  title: "Supply Chain",
+                  href: "/industries/manufacturing/supply-chain"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          title: "Financial Services",
+          items: [
+            {
+              title: "Banking",
+              href: "/industries/financial-services",
+              description: "Digital transformation for banking and capital markets",
+              items: [
+                {
+                  title: "Digital Banking",
+                  href: "/industries/financial-services/digital-banking"
+                },
+                {
+                  title: "Payments",
+                  href: "/industries/financial-services/payments"
+                }
+              ]
+            },
+            {
+              title: "Insurance",
+              href: "/industries/insurance",
+              description: "Innovation in insurance and risk management",
+              items: [
+                {
+                  title: "Digital Insurance",
+                  href: "/industries/insurance/digital"
+                },
+                {
+                  title: "Claims Management",
+                  href: "/industries/insurance/claims"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      title: "Services",
+      href: "/services",
+      sections: [
+        {
+          title: "Digital & Cloud",
+          items: [
+            {
+              title: "Cloud Services",
+              href: "/services/cloud",
+              description: "Cloud transformation and optimization",
+              items: [
+                {
+                  title: "Cloud Migration",
+                  href: "/services/cloud/migration"
+                },
+                {
+                  title: "Cloud Native",
+                  href: "/services/cloud/native"
+                }
+              ]
+            },
+            {
+              title: "Data & AI",
+              href: "/services/data-ai",
+              description: "AI and analytics solutions",
+              items: [
+                {
+                  title: "Advanced Analytics",
+                  href: "/services/data-ai/analytics"
+                },
+                {
+                  title: "Machine Learning",
+                  href: "/services/data-ai/machine-learning"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          title: "Enterprise Solutions",
+          items: [
+            {
+              title: "Consulting",
+              href: "/services/consulting",
+              description: "Strategic business and technology consulting",
+              items: [
+                {
+                  title: "Digital Strategy",
+                  href: "/services/consulting/digital-strategy"
+                },
+                {
+                  title: "Technology Advisory",
+                  href: "/services/consulting/technology"
+                }
+              ]
+            },
+            {
+              title: "Cybersecurity",
+              href: "/services/cybersecurity",
+              description: "Comprehensive security solutions",
+              items: [
+                {
+                  title: "Security Operations",
+                  href: "/services/cybersecurity/operations"
+                },
+                {
+                  title: "Identity & Access",
+                  href: "/services/cybersecurity/identity"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      title: "Insights",
+      href: "/insights",
+      sections: [
+        {
+          title: "Thought Leadership",
+          items: [
+            {
+              title: "Blog",
+              href: "/insights/blog",
+              description: "Latest insights and thought leadership",
+              items: [
+                {
+                  title: "Technology Trends",
+                  href: "/insights/blog/tech-trends"
+                },
+                {
+                  title: "Digital Innovation",
+                  href: "/insights/blog/innovation"
+                }
+              ]
+            },
+            {
+              title: "Case Studies",
+              href: "/insights/cases",
+              description: "Client success stories and implementations",
+              items: [
+                {
+                  title: "Featured Cases",
+                  href: "/insights/cases/featured"
+                },
+                {
+                  title: "Industry Solutions",
+                  href: "/insights/cases/solutions"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          title: "Resources",
+          items: [
+            {
+              title: "Research & Reports",
+              href: "/insights/research",
+              description: "In-depth research and industry reports",
+              items: [
+                {
+                  title: "Market Analysis",
+                  href: "/insights/research/market"
+                },
+                {
+                  title: "Technology Reports",
+                  href: "/insights/research/tech"
+                }
+              ]
+            },
+            {
+              title: "Events",
+              href: "/insights/events",
+              description: "Upcoming events and webinars",
+              items: [
+                {
+                  title: "Conferences",
+                  href: "/insights/events/conferences"
+                },
+                {
+                  title: "Webinars",
+                  href: "/insights/events/webinars"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      title: "About",
+      href: "/about",
+      sections: [
+        {
+          title: "Company",
+          items: [
+            {
+              title: "About Us",
+              href: "/about/corporate-profile",
+              description: "Our mission, values, and leadership",
+              items: [
+                {
+                  title: "Leadership",
+                  href: "/about/leadership"
+                },
+                {
+                  title: "History",
+                  href: "/about/history"
+                }
+              ]
+            },
+            {
+              title: "Sustainability",
+              href: "/about/sustainability",
+              description: "Our commitment to sustainability",
+              items: [
+                {
+                  title: "ESG",
+                  href: "/about/sustainability/esg"
+                },
+                {
+                  title: "Social Impact",
+                  href: "/about/sustainability/social-impact"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          title: "Careers",
+          items: [
+            {
+              title: "Careers",
+              href: "/careers",
+              description: "Join our global team",
+              items: [
+                {
+                  title: "Open Positions",
+                  href: "/careers/search"
+                },
+                {
+                  title: "Life at NTT DATA",
+                  href: "/careers/life"
+                }
+              ]
+            },
+            {
+              title: "Partners",
+              href: "/about/partners",
+              description: "Our strategic partnerships",
+              items: [
+                {
+                  title: "Technology Partners",
+                  href: "/about/partners/technology"
+                },
+                {
+                  title: "Alliance Partners",
+                  href: "/about/partners/alliance"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};

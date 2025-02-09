@@ -50,7 +50,7 @@ const FooterCTA: React.FC<FooterCTAProps> = ({
   return (
     <div 
       ref={containerRef} 
-      className="relative bg-royal_blue_traditional-900 dark:bg-gray-900 pt-16 pb-20"
+      className="relative bg-gradient-to-r from-primary to-accent pt-16 pb-20"
     >
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-12 gap-4">
