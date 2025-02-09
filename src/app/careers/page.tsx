@@ -176,13 +176,13 @@ const CareersPage = () => {
       {/* Hero Section */}
       <section className="relative h-screen max-h-[800px] w-full" ref={heroRef}>
         <Image
-          src="/api/placeholder/1920/1080"
+          src="https://images.pexels.com/photos/2422294/pexels-photo-2422294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="Careers at Debite"
           fill
-          className="object-cover opacity-40"
+          className="object-cover grayscale"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent">
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary to-transparent">
           <div className="container mx-auto px-6 h-full flex items-center">
             <div className="max-w-3xl">
               <h1 className="text-6xl font-bold mb-6">Build Your Future with Us</h1>
