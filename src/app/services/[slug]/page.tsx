@@ -3,10 +3,11 @@ import { notFound } from 'next/navigation';
 //import CloudServicePage from '@/components/services/cloud';
 import DataAIServicePage from '@/components/services/data-ai';
 //import CybersecurityPage from '@/components/services/cybersecurity';
-//import ConsultingPage from '@/components/services/consulting';
+import ConsultingPage from '@/components/services/consulting';
 
 const SERVICE_COMPONENTS = {
   'data-ai': DataAIServicePage,
+  'consulting': ConsultingPage,
 
   // Add other services here as you create them
   // 'digital-workplace': DigitalWorkplacePage,

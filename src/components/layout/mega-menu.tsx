@@ -62,7 +62,7 @@ export default function MegaMenu({ sections, onClose }: MegaMenuProps) {
   return (
     <div 
       ref={menuRef}
-      className="fixed inset-0 top-16 z-50 bg-dark border-t border-gold-700/20"
+      className="fixed inset-0 top-16 z-50 bg-dark border-t border-dark-dark"
       onClick={handleMenuClick}
       role="dialog"
       aria-modal="true"

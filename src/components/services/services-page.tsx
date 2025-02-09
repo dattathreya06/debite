@@ -307,7 +307,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
             {technologies.map((tech, index) => (
               <div
                 key={index}
-                className="technology-card p-6 bg-royal_blue_traditional-900 rounded-lg border border-royal_blue_traditional-700 shadow-xl flex flex-col items-center text-center"
+                className="technology-card p-6 bg-dark border border-dark-light shadow-xl flex flex-col items-center text-center"
               >
                 <Image
                   src={tech.logo || "/api/placeholder/100/100"}
@@ -336,9 +336,9 @@ const ServicePage: React.FC<ServicePageProps> = ({
             {methodology.steps.map((step, index) => (
               <div
                 key={index}
-                className="methodology-step p-6 bg-royal_blue_traditional-800 rounded-lg border border-royal_blue_traditional-700 shadow-xl"
+                className="methodology-step p-6 bg-dark border border-dark-light shadow-xl"
               >
-                <div className="text-4xl font-bold text-gold-300 mb-4">
+                <div className="inline-block text-6xl font-light bg-gradient-to-br from-primary to-accent text-transparent bg-clip-text  mb-4">
                   {(index + 1).toString().padStart(2, '0')}
                 </div>
                 <p className="text-gray-200">{step}</p>
