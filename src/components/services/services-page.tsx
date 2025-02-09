@@ -154,7 +154,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-royal_blue_traditional-900 text-white">
+    <div className="flex flex-col min-h-screen bg-dark text-white">
       {/* Hero Section */}
       <section className="relative h-96 w-full" ref={heroRef}>
         <Image

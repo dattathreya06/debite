@@ -12,6 +12,7 @@ import SplitType from "split-type";
 import { textReveal, fadeIn } from "@/app/anim/text-anim";
 import CTA from "../layout/cta";
 import Eyebrow from "../ui/eyebrow";
+import { useGSAPAnimations } from "@/app/hooks/use-gsap-animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -78,106 +79,205 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
   countryServices,
 }) => {
   // Refs for animations
-  const heroRef = useRef<HTMLDivElement>(null);
-  const overviewRef = useRef<HTMLDivElement>(null);
-  const caseStudiesRef = useRef<HTMLDivElement>(null);
-  const servicesRef = useRef<HTMLDivElement>(null);
-  const statsRef = useRef<HTMLDivElement>(null);
-  const resourcesRef = useRef<HTMLDivElement>(null);
-  const globalServicesRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Hero animation
-    if (heroRef.current) {
-      const heroTitle = heroRef.current.querySelector("h1");
-      const heroDesc = heroRef.current.querySelector("p");
-      const heroNav = heroRef.current.querySelector("nav");
-
-      if (heroTitle && heroDesc && heroNav) {
-        const tl = gsap.timeline();
-
-        tl.from(heroNav, {
-          opacity: 0,
-          y: -20,
-          duration: 0.6,
-          ease: "power3.out",
-        })
-          .add(textReveal(heroTitle), "-=0.3")
-          .from(
-            heroDesc,
-            {
-              opacity: 0,
-              y: 30,
-              duration: 0.8,
-              ease: "power3.out",
-            },
-            "-=0.4"
-          );
+  const pageRef = useRef<HTMLDivElement>(null);
+  
+  useGSAPAnimations({
+    trigger: pageRef,
+    selectors: [
+      // Hero nav animation
+      {
+        target: '.hero nav',
+        animation: {
+          timeline: true,
+          from: { 
+            opacity: 0, 
+            y: -20, 
+            duration: 0.6, 
+            ease: "power3.out" 
+          },
+          to: { 
+            opacity: 1, 
+            y: 0
+          }
+        }
+      },
+      // Hero title animation
+      {
+        target: '.hero h1',
+        animation: {
+          timeline: true,
+          from: {
+            opacity: 0,
+            y: 50,
+            duration: 0.5,
+            stagger: 0.02,
+            ease: "power4.out"
+          },
+          to: {
+            opacity: 1,
+            y: 0
+          }
+        }
+      },
+      // Hero description animation
+      {
+        target: '.hero p',
+        animation: {
+          timeline: true,
+          from: {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            ease: "power3.out"
+          },
+          to: {
+            opacity: 1,
+            y: 0
+          }
+        }
       }
-    }
-
-    // Create reusable animation for cards and grid items
-    const createCardAnimation = (cards: Element[]) => {
-      gsap.from(cards, {
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: cards[0].parentElement,
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        },
-      });
-    };
-
-    // Section animations
-    const sections = [
-      { ref: overviewRef, selector: ".overview-content" },
-      { ref: caseStudiesRef, selector: ".case-study-card" },
-      { ref: servicesRef, selector: ".service-card" },
-      { ref: statsRef, selector: ".stat-card" },
-      { ref: resourcesRef, selector: ".resource-card" },
-      { ref: globalServicesRef, selector: ".region-section" },
-    ];
-
-    sections.forEach(({ ref, selector }) => {
-      if (ref.current) {
-        const elements = ref.current.querySelectorAll(selector);
-        if (elements.length) {
-          createCardAnimation(Array.from(elements));
-        } else {
-          gsap.from(ref.current, {
-            scrollTrigger: {
-              trigger: ref.current,
-              start: "top 80%",
-              end: "bottom 20%",
-              toggleActions: "play none none reverse",
-            },
+    ],
+    scrollAnimations: [
+      // Overview content animation
+      {
+        selector: '.overview-content',
+        trigger: '.overanim',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse',
+        animation: {
+          from: {
             opacity: 0,
             y: 50,
             duration: 0.8,
-            ease: "power3.out",
-          });
+            ease: "power3.out"
+          },
+          to: {
+            opacity: 1,
+            y: 0
+          }
+        }
+      },
+      // Case studies animation
+      {
+        selector: '.case-study-card',
+        trigger: '.caseanim',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse',
+        animation: {
+          from: {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power3.out"
+          },
+          to: {
+            opacity: 1,
+            y: 0
+          }
+        }
+      },
+      // Services animation
+      {
+        selector: '.service-card',
+        trigger: '.servanim',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse',
+        animation: {
+          from: {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power3.out"
+          },
+          to: {
+            opacity: 1,
+            y: 0
+          }
+        }
+      },
+      // Stats animation
+      {
+        selector: '.stat-card',
+        trigger: '.statanim',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse',
+        animation: {
+          from: {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power3.out"
+          },
+          to: {
+            opacity: 1,
+            y: 0
+          }
+        }
+      },
+      // Resources animation
+      {
+        selector: '.resource-card',
+        trigger: '.resoanim',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse',
+        animation: {
+          from: {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power3.out"
+          },
+          to: {
+            opacity: 1,
+            y: 0
+          }
+        }
+      },
+      // Region sections animation
+      {
+        selector: '.region-section',
+        trigger: '.globanim',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse',
+        animation: {
+          from: {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power3.out"
+          },
+          to: {
+            opacity: 1,
+            y: 0
+          }
         }
       }
-    });
-  }, []);
+    ]
+  });
 
   return (
-    <div className="flex flex-col min-h-screen bg-royal_blue_traditional-900 text-white">
+    <div ref={pageRef} className="flex flex-col min-h-screen bg-royal_blue_traditional-900 text-white">
       {/* Hero Section */}
-      <section className="relative h-96 w-full" ref={heroRef}>
+      <section className="relative h-96 w-full">
         <Image
           src={heroImage || "/api/placeholder/1920/600"}
           alt={title}
           fill
-          className="object-cover opacity-40"
+          className="object-cover grayscale "
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent">
+        <div className="absolute inset-0 bg-gradient-to-tr from-primary to-transparent">
           <div className="container mx-auto px-6 py-20 h-full flex flex-col justify-end">
             <div className="max-w-2xl">
               <nav className="mb-8">
@@ -238,8 +338,8 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
       </nav>
 
       {/* Overview Section */}
-      <section id="overview" className="py-20 bg-dark" ref={overviewRef}>
-        <div className="container mx-auto px-6">
+      <section id="overview" className="py-20 bg-dark">
+        <div className="overanim container mx-auto px-6">
           <div className="flex flex-col lg:flex-row-reverse gap-12">
             <div className="lg:w-1/2 overview-content">
               <Image
@@ -266,12 +366,11 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
       <section
         id="case-studies"
         className="py-20 bg-dark-dark"
-        ref={caseStudiesRef}
       >
         <div className="container mx-auto px-6">
           <Eyebrow text="SUCCESS STORIES"></Eyebrow>
           <h2 className="text-4xl font-bold mb-12 text-white">Case Studies</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="caseanim grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {caseStudies.map((study, index) => (
               <div
                 key={index}
@@ -308,10 +407,10 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-dark" ref={servicesRef}>
+      <section id="services" className="py-20 bg-dark">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold mb-12 text-white">Our Services</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="servanim grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
               <div
                 key={index}
@@ -328,16 +427,16 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
       </section>
 
       {/* Impact Stats */}
-      <section className="py-20 bg-dark-dark" ref={statsRef}>
+      <section className="py-20 bg-dark-dark">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold mb-12 text-white">Our Impact</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="statanim grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div
                 key={index}
                 className="stat-card bg-dark p-8  border border-dark-light shadow-xl"
               >
-                <p className="text-6xl font-regular text-transparent bg-gradient-to-br from-primary to-accent bg-clip-text mb-4">
+                <p className="text-6xl font-thin text-transparent bg-gradient-to-br from-primary to-accent bg-clip-text mb-4">
                   {stat.value}
                 </p>
                 <p className="text-gray-200 font-semibold">{stat.label}</p>
@@ -351,13 +450,12 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
       <section
         id="resources"
         className="py-20 bg-dark"
-        ref={resourcesRef}
       >
         <div className="container mx-auto px-6">
           <h2 className="text-4xl font-bold mb-12 text-white">
             Resource Library
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="resoanim grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {resources.map((resource, index) => (
               <div
                 key={index}

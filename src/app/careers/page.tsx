@@ -11,6 +11,7 @@ import Card from '@/components/ui/card';
 import { textReveal, fadeIn } from '@/app/anim/text-anim';
 import FooterCTA from '@/components/layout/cta';
 import Eyebrow from '@/components/ui/eyebrow';
+import { useGSAPAnimations } from '../hooks/use-gsap-animations';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,10 +45,7 @@ const CareersPage = () => {
   const [selectedDepartment, setSelectedDepartment] = useState('all');
 
   // Refs for animations
-  const heroRef = useRef<HTMLDivElement>(null);
-  const benefitsRef = useRef<HTMLDivElement>(null);
-  const jobsRef = useRef<HTMLDivElement>(null);
-  const teamRef = useRef<HTMLDivElement>(null);
+  const pageRef = useRef<HTMLDivElement>(null);
 
   // Sample data
   const benefits: Benefit[] = [
@@ -124,57 +122,94 @@ const CareersPage = () => {
     }
   ];
 
-  useEffect(() => {
-    // Hero animation
-    if (heroRef.current) {
-      const heroTitle = heroRef.current.querySelector('h1');
-      const heroDesc = heroRef.current.querySelector('p');
-      
-      if (heroTitle && heroDesc) {
-        const tl = gsap.timeline();
-        tl.add(textReveal(heroTitle))
-          .from(heroDesc, {
-            opacity: 0,
-            y: 30,
-            duration: 0.8,
-            ease: 'power3.out'
-          }, '-=0.4');
+  useGSAPAnimations({
+    trigger: pageRef,
+    selectors: [
+      {
+        target: '.hero h1',
+        animation: {
+          timeline: true,
+          from: { opacity: 0, y: 100 },
+          to: { opacity: 1, y: 0, duration: 1.5 }
+        }
+      },
+      {
+        target: '.hero p',
+        animation: {
+          timeline: true,
+          from: { opacity: 0, y: 30 },
+          to: { opacity: 1, y: 0, duration: 0.8, delay: 0.3 }
+        }
       }
-    }
-
-    // Scroll animations for sections
-    const sections = [
-      { ref: benefitsRef, selector: '.benefit-card' },
-      { ref: jobsRef, selector: '.job-card' },
-      { ref: teamRef, selector: '.team-card' }
-    ];
-
-    sections.forEach(({ ref, selector }) => {
-      if (ref.current) {
-        const elements = ref.current.querySelectorAll(selector);
-        if (elements.length) {
-          gsap.from(elements, {
-            scrollTrigger: {
-              trigger: ref.current,
-              start: 'top 80%',
-              end: 'bottom 20%',
-              toggleActions: 'play none none reverse'
-            },
+    ],
+    scrollAnimations: [
+      {
+        selector: '.benefit-card',
+        trigger: '.benefits-section', // Add trigger element
+        animation: {
+          from: {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            stagger: 0.15,
+            ease: 'power3.out'
+          },
+          to: {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            stagger: 0.15,
+            ease: 'power3.out'
+          }
+        }
+      },
+      {
+        selector: '.job-card',
+        trigger: '.jobs-section', // Add trigger element
+        animation: {
+          from: {
             opacity: 0,
             y: 30,
             duration: 0.8,
             stagger: 0.15,
             ease: 'power3.out'
-          });
+          },
+          to: {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: 'power3.out'
+          }
+        }
+      },
+      {
+        selector: '.team-card',
+        trigger: '.team-section', // Add trigger element
+        animation: {
+          from: {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: 'power3.out'
+          },
+          to: {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: 'power3.out'
+          }
         }
       }
-    });
-  }, []);
+    ]
+  });
 
   return (
-    <div className="flex flex-col min-h-screen bg-dark text-white">
+    <div ref={pageRef} className="flex flex-col min-h-screen bg-dark text-white">
       {/* Hero Section */}
-      <section className="relative h-screen max-h-[800px] w-full" ref={heroRef}>
+      <section className="hero relative h-screen max-h-[800px] w-full">
         <Image
           src="https://images.pexels.com/photos/2422294/pexels-photo-2422294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="Careers at Debite"
@@ -203,11 +238,11 @@ const CareersPage = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-dark" ref={benefitsRef}>
+      <section className=" py-20 bg-dark">
         <div className="container mx-auto px-6">
           <Eyebrow text="WHY JOIN US" />
           <h2 className="text-4xl font-bold mb-12">Life at Debite</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="benefits-section grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
               <div
                 key={index}
@@ -225,7 +260,7 @@ const CareersPage = () => {
       </section>
 
       {/* Job Search Section */}
-      <section className="py-20 bg-dark-dark" ref={jobsRef}>
+      <section className="py-20 bg-dark-dark">
         <div className="container mx-auto px-6">
           <Eyebrow text="OPPORTUNITIES" />
           <h2 className="text-4xl font-bold mb-12">Open Positions</h2>
@@ -265,7 +300,7 @@ const CareersPage = () => {
           </div>
 
           {/* Job Listings */}
-          <div className="space-y-4">
+          <div className="jobs-section space-y-4">
             {jobListings.map((job) => (
               <div
                 key={job.id}
@@ -297,11 +332,11 @@ const CareersPage = () => {
       </section>
 
       {/* Team Stories Section */}
-      <section className="py-20 bg-dark" ref={teamRef}>
+      <section className="py-20 bg-dark">
         <div className="container mx-auto px-6">
           <Eyebrow text="OUR PEOPLE" />
           <h2 className="text-4xl font-bold mb-12">Meet Our Team</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="team-section grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <div
                 key={index}
