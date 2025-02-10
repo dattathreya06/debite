@@ -11,8 +11,8 @@ interface EqualizerProps {
 
 const AudioEqualizer: React.FC<EqualizerProps> = ({
   strips = 20,
-  gradientStart = '#ffffff',
-  gradientEnd = '#9767f9',
+  gradientStart = '#000000',
+  gradientEnd = '#00000000',
   stripWidth = 60,
   stripGap = 10,
   className = ''
