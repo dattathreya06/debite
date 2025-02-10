@@ -9,7 +9,7 @@ import { Search, MapPin, Building2, Briefcase, GraduationCap, Users, ChevronRigh
 import Button from '@/components/ui/button';
 import Card from '@/components/ui/card';
 import { textReveal, fadeIn } from '@/app/anim/text-anim';
-import FooterCTA from '@/components/layout/cta';
+import CTA from '@/components/layout/cta';
 import Eyebrow from '@/components/ui/eyebrow';
 import { useGSAPAnimations } from '../hooks/use-gsap-animations';
 
@@ -44,7 +44,7 @@ const CareersPage = () => {
   const [selectedLocation, setSelectedLocation] = useState('all');
   const [selectedDepartment, setSelectedDepartment] = useState('all');
 
-  // Refs for animations
+  // Fix: Explicitly type the ref as HTMLDivElement
   const pageRef = useRef<HTMLDivElement>(null);
 
   // Sample data
@@ -76,7 +76,7 @@ const CareersPage = () => {
       name: 'Ramesh Yadav',
       role: 'Senior Fullstack developer',
       quote: 'At Debite, I get to work on projects that truly make a difference. The collaborative culture here is incredible.',
-      image: 'https://images.pexels.com/photos/899357/pexels-photo-899357.jpeg?auto=compress&cs=tinysrgb&w=600/api/placeholder/400/400'
+      image: 'https://images.pexels.com/photos/899357/pexels-photo-899357.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       name: 'Vikram Kumar P',
@@ -122,6 +122,7 @@ const CareersPage = () => {
     }
   ];
 
+  // Fix: Use non-null assertion for trigger ref
   useGSAPAnimations({
     trigger: pageRef,
     selectors: [
@@ -145,7 +146,6 @@ const CareersPage = () => {
     scrollAnimations: [
       {
         selector: '.benefit-card',
-        trigger: '.benefits-section', // Add trigger element
         animation: {
           from: {
             opacity: 0,
@@ -156,16 +156,12 @@ const CareersPage = () => {
           },
           to: {
             opacity: 1,
-            y: 0,
-            duration: 1,
-            stagger: 0.15,
-            ease: 'power3.out'
+            y: 0
           }
         }
       },
       {
         selector: '.job-card',
-        trigger: '.jobs-section', // Add trigger element
         animation: {
           from: {
             opacity: 0,
@@ -176,16 +172,12 @@ const CareersPage = () => {
           },
           to: {
             opacity: 1,
-            y: 0,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: 'power3.out'
+            y: 0
           }
         }
       },
       {
         selector: '.team-card',
-        trigger: '.team-section', // Add trigger element
         animation: {
           from: {
             opacity: 0,
@@ -196,10 +188,7 @@ const CareersPage = () => {
           },
           to: {
             opacity: 1,
-            y: 0,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: 'power3.out'
+            y: 0
           }
         }
       }
@@ -211,10 +200,10 @@ const CareersPage = () => {
       {/* Hero Section */}
       <section className="hero relative h-screen max-h-[800px] w-full">
         <Image
-          src="https://images.pexels.com/photos/2422294/pexels-photo-2422294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          src="/api/placeholder/1920/1080"
           alt="Careers at Debite"
           fill
-          className="object-cover grayscale"
+          className="object-cover"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-tr from-primary to-transparent">
@@ -238,11 +227,11 @@ const CareersPage = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className=" py-20 bg-dark">
+      <section className="py-20 bg-dark">
         <div className="container mx-auto px-6">
           <Eyebrow text="WHY JOIN US" />
           <h2 className="text-4xl font-bold mb-12">Life at Debite</h2>
-          <div className="benefits-section grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
               <div
                 key={index}
@@ -278,7 +267,7 @@ const CareersPage = () => {
               />
             </div>
             <select
-              className="p-2 bg-dark border border-dark  text-primary focus:outline-none focus:border-accent"
+              className="p-2 bg-dark border border-dark text-primary focus:outline-none focus:border-accent"
               value={selectedLocation}
               onChange={(e) => setSelectedLocation(e.target.value)}
             >
@@ -288,7 +277,7 @@ const CareersPage = () => {
               <option value="japan">Japan</option>
             </select>
             <select
-              className="p-2 bg-dark border border-dark  text-primary"
+              className="p-2 bg-dark border border-dark text-primary"
               value={selectedDepartment}
               onChange={(e) => setSelectedDepartment(e.target.value)}
             >
@@ -300,11 +289,11 @@ const CareersPage = () => {
           </div>
 
           {/* Job Listings */}
-          <div className="jobs-section space-y-4">
+          <div className="space-y-4">
             {jobListings.map((job) => (
               <div
                 key={job.id}
-                className="job-card p-6 bg-dark  border border-dark-light hover:border-grey-500 transition-colors"
+                className="job-card p-6 bg-dark border border-dark-light hover:border-grey-500 transition-colors"
               >
                 <div className="flex flex-col md:flex-row md:items-center justify-between">
                   <div>
@@ -336,7 +325,7 @@ const CareersPage = () => {
         <div className="container mx-auto px-6">
           <Eyebrow text="OUR PEOPLE" />
           <h2 className="text-4xl font-bold mb-12">Meet Our Team</h2>
-          <div className="team-section grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member, index) => (
               <div
                 key={index}
@@ -347,7 +336,7 @@ const CareersPage = () => {
                     src={member.image}
                     alt={member.name}
                     fill
-                    className="object-cover object-top"
+                    className="object-cover"
                   />
                 </div>
                 <div className="p-6">
@@ -362,9 +351,8 @@ const CareersPage = () => {
       </section>
 
       {/* CTA Section */}
-      <FooterCTA
+      <CTA
         title="Ready to Make an Impact?"
-        description="Join our team and help shape the future of digital innovation."
         buttonText="View Open Positions"
         buttonHref="/careers/search"
       />

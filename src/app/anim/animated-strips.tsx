@@ -18,12 +18,12 @@ const AudioEqualizer: React.FC<EqualizerProps> = ({
   className = ''
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
-  const stripHeights = useRef<number[]>([]);
-  const targetHeights = useRef<number[]>([]);
-  const scrollVelocity = useRef(0);
-  const lastScrollY = useRef(window.scrollY);
-  const lastTime = useRef(performance.now());
+  const animationRef = useRef<number>(0);
+  const stripHeights = useRef<number[]>(Array(strips).fill(0));
+  const targetHeights = useRef<number[]>(Array(strips).fill(0));
+  const scrollVelocity = useRef<number>(0);
+  const lastScrollY = useRef<number>(typeof window !== 'undefined' ? window.scrollY : 0);
+  const lastTime = useRef<number>(typeof window !== 'undefined' ? performance.now() : 0);
 
   // Get frequency-based max height multiplier
   const getFrequencyMultiplier = (index: number, total: number): number => {
@@ -52,15 +52,13 @@ const AudioEqualizer: React.FC<EqualizerProps> = ({
   };
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
-
-    // Initialize arrays
-    stripHeights.current = Array(strips).fill(0);
-    targetHeights.current = Array(strips).fill(0);
 
     // Set canvas size
     const resize = () => {
@@ -77,7 +75,10 @@ const AudioEqualizer: React.FC<EqualizerProps> = ({
       const deltaTime = currentTime - lastTime.current;
       const currentScrollY = window.scrollY;
       
-      scrollVelocity.current = Math.abs(currentScrollY - lastScrollY.current) / deltaTime;
+      if (deltaTime > 0) {
+        scrollVelocity.current = Math.abs(currentScrollY - lastScrollY.current) / deltaTime;
+      }
+      
       lastScrollY.current = currentScrollY;
       lastTime.current = currentTime;
 
@@ -122,7 +123,7 @@ const AudioEqualizer: React.FC<EqualizerProps> = ({
 
       // Decay velocity and update target heights
       scrollVelocity.current *= 0.95;
-      targetHeights.current = targetHeights.current.map((height, i) => 
+      targetHeights.current = targetHeights.current.map((height) => 
         Math.max(0, height * 0.95)
       );
 

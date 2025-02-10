@@ -6,19 +6,22 @@ type AnimationOptions = {
   delay?: number;
   ease?: string;
   from?: number;
-  to?: number;
   stagger?: number;
-}
+};
 
+/**
+ * Ensures text maintains proper spacing & layout.
+ */
 const preserveWhitespace = (element: HTMLElement) => {
-  // Add whitespace preservation
   element.style.whiteSpace = 'pre-line';
-  // Ensure inline-block display for proper word wrapping
   element.style.display = 'inline-block';
 };
 
+/**
+ * Splits text while preserving word structure.
+ */
 const splitWithWordPreservation = (element: HTMLElement) => {
-  // First, split into words to preserve word boundaries
+  // First, split into words
   const wordSplit = new SplitType(element, { 
     types: 'words',
     tagName: 'span',
@@ -40,10 +43,17 @@ const splitWithWordPreservation = (element: HTMLElement) => {
   };
 };
 
-export const textReveal = (element: HTMLElement, options: AnimationOptions = {}) => {
+/**
+ * Applies a smooth text reveal animation using GSAP.
+ * @param element - The target HTML element.
+ * @param options - Animation customization options.
+ */
+export const textReveal = (element: HTMLElement | null, options: AnimationOptions = {}) => {
+  if (!element) return gsap.timeline(); // Ensure it always returns a valid timeline
+  
   preserveWhitespace(element);
   const split = splitWithWordPreservation(element);
-  
+
   const {
     duration = 0.5,
     stagger = 0.02,
@@ -51,26 +61,22 @@ export const textReveal = (element: HTMLElement, options: AnimationOptions = {})
     from = 40,
     delay = 0
   } = options;
-  
-  if (!split.chars) return;
 
-  // Group characters by words for natural animation flow
-  const wordGroups = split.words?.map(word => {
-    return Array.from(word.querySelectorAll('.char'));
-  }) || [];
-  
+  if (!split.chars || split.chars.length === 0) return gsap.timeline();
+
+  // Group characters by words for more natural animation flow
+  const wordGroups = split.words?.map(word => Array.from(word.querySelectorAll('.char'))) || [];
+
   // Initial state
   gsap.set(split.chars, { 
     y: from, 
     opacity: 0,
-    display: 'inline-block',
-    width: 'auto', // Prevent character width issues
-    height: 'auto'  // Maintain line height
+    display: 'inline-block'
   });
-  
-  // Create word-aware animation
+
+  // Create GSAP timeline
   const tl = gsap.timeline({ delay });
-  
+
   wordGroups.forEach((chars, wordIndex) => {
     tl.to(chars, {
       y: 0,
@@ -81,15 +87,20 @@ export const textReveal = (element: HTMLElement, options: AnimationOptions = {})
         from: "start"
       },
       ease,
-    }, wordIndex * (stagger * 2)); // Add slight delay between words
+    }, wordIndex * (stagger * 2)); // Stagger words slightly for smooth effect
   });
 
-  return {
-    animation: tl,
-    revert: () => split.revert()
-  };
+  // Cleanup split structure when animation completes
+  tl.eventCallback("onComplete", () => split.revert());
+
+  return tl;
 };
 
+/**
+ * Fades in an element smoothly.
+ * @param element - The target HTML element.
+ * @param options - Animation customization options.
+ */
 export const fadeIn = (element: HTMLElement, options: AnimationOptions = {}) => {
   const {
     duration = 0.8,
@@ -97,7 +108,7 @@ export const fadeIn = (element: HTMLElement, options: AnimationOptions = {}) => 
     ease = "power3.out",
     from = 50
   } = options;
-  
+
   preserveWhitespace(element);
   
   gsap.set(element, { 
@@ -106,7 +117,7 @@ export const fadeIn = (element: HTMLElement, options: AnimationOptions = {}) => 
     visibility: 'visible',
     display: 'inline-block'
   });
-  
+
   return gsap.to(element, {
     y: 0,
     opacity: 1,

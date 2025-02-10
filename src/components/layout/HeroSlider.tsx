@@ -228,7 +228,7 @@ const HeroSlider: React.FC = () => {
       <div ref={contentRef} className="relative h-full flex items-center pointer-events-none">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl">
-            <h3 className="slide-subtitle text-gold text-xl mb-4">
+            <h3 className="slide-subtitle text-mono text-dark text-xl mb-4">
               {slides[currentSlide].subtitle}
             </h3>
             <h2 className="slide-title text-6xl font-bold text-white mb-6">
