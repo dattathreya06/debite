@@ -1,10 +1,14 @@
-// src/app/layout.tsx
+// src/app/layout.
+
+import { useState } from 'react'
 import { fontSans, fontMono } from '@/lib/fonts'
 import { cn } from '@/lib/utils'
 import { SiteHeader } from '@/components/layout/site-header'
 import Footer from '@/components/layout/footer'
 import { ThemeProvider } from '@/components/theme-provider'
 import '@/app/styles/globals.css'
+import dynamic from 'next/dynamic'
+import ClientPageLoader from '@/components/layout/page-loader-wrapper'
 
 export const metadata = {
   title: 'Debite',
@@ -26,6 +30,7 @@ export default function RootLayout({
           fontMono.variable
         )}
       >
+        <ClientPageLoader />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

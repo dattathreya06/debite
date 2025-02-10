@@ -68,20 +68,20 @@ export const siteConfig: SiteConfig = {
           ]
         },
         {
-          title: "Financial Services",
+          title: "Banking",
           items: [
             {
               title: "Banking",
-              href: "/industries/financial-services",
+              href: "/industries/banking",
               description: "Digital transformation for banking and capital markets",
               items: [
                 {
                   title: "Digital Banking",
-                  href: "/industries/financial-services/digital-banking"
+                  href: "/banking/financial-services/digital-banking"
                 },
                 {
                   title: "Payments",
-                  href: "/industries/financial-services/payments"
+                  href: "/banking/financial-services/payments"
                 }
               ]
             },
@@ -204,7 +204,7 @@ export const siteConfig: SiteConfig = {
             },
             {
               title: "Case Studies",
-              href: "/insights/cases",
+              href: "/insights/cases-studies",
               description: "Client success stories and implementations",
               items: [
                 {
@@ -308,7 +308,7 @@ export const siteConfig: SiteConfig = {
                   href: "/careers/search"
                 },
                 {
-                  title: "Life at NTT DATA",
+                  title: "Life at Debite",
                   href: "/careers/life"
                 }
               ]
