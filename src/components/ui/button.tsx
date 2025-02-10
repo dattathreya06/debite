@@ -10,7 +10,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: 'bg-dark text-white hover:dark-dark text-royal_blue_traditional-600',
-        outline: 'border border-royal_blue_traditional text-royal_blue_traditional hover:bg-royal_blue_traditional-100',
+        outline: 'border border-dark text-royal_blue_traditional hover:bg-royal_blue_traditional-100',
         ghost: 'hover:bg-royal_blue_traditional-100 hover:text-royal_blue_traditional-900',
         link: 'text-royal_blue_traditional underline-offset-4 hover:underline',
       },
