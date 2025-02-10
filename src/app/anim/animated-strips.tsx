@@ -1,157 +1,124 @@
-import React, { useEffect, useRef } from 'react';
+'use client';
 
-interface EqualizerProps {
-  strips?: number;
-  gradientStart?: string;
-  gradientEnd?: string;
-  stripWidth?: number;
-  stripGap?: number;
+import React, { useEffect, useRef, useState } from 'react';
+import { gsap } from 'gsap';
+
+interface AnimatedStripsProps {
+  count?: number;
+  baseFrequency?: number;
+  frequencyMultiplier?: number;
+  maxHeightMultiplier?: number;
   className?: string;
 }
 
-const AudioEqualizer: React.FC<EqualizerProps> = ({
-  strips = 20,
-  gradientStart = '#ffffff',
-  gradientEnd = '#9767f9',
-  stripWidth = 50,
-  stripGap = 10,
-  className = ''
+export const AnimatedStrips: React.FC<AnimatedStripsProps> = ({
+  count = 10,
+  baseFrequency = 0.002,
+  frequencyMultiplier = 1.5,
+  maxHeightMultiplier = 1.2,
+  className = '',
 }) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const stripsRef = useRef<HTMLDivElement[]>([]);
   const animationRef = useRef<number>();
-  const stripHeights = useRef<number[]>([]);
   const targetHeights = useRef<number[]>([]);
   const scrollVelocity = useRef(0);
-  const lastScrollY = useRef(window.scrollY);
-  const lastTime = useRef(performance.now());
+  const lastScrollY = useRef(0);
+  const lastTime = useRef(0);
 
-  // Get frequency-based max height multiplier
-  const getFrequencyMultiplier = (index: number, total: number): number => {
-    const position = index / total;
-    
-    // Bass frequencies (center)
-    if (position > 0.4 && position < 0.6) {
-      return 1;
-    }
-    // Mid frequencies
-    else if (position > 0.2 && position < 0.8) {
-      return 0.7;
-    }
-    // High frequencies (edges)
-    else {
-      return 0.5;
-    }
-  };
-
-  // Get randomized target height based on frequency range
-  const getTargetHeight = (index: number, total: number, velocity: number): number => {
-    const freqMultiplier = getFrequencyMultiplier(index, total);
-    const baseHeight = velocity * 400 * freqMultiplier;
-    const randomFactor = 0.8 + Math.random() * 0.4; // 80-120% variation
-    return baseHeight * randomFactor;
-  };
+  // Initialize state for window-dependent values
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    setIsClient(true);
+    lastScrollY.current = window.scrollY;
+    lastTime.current = performance.now();
 
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    // Initialize arrays
-    stripHeights.current = Array(strips).fill(0);
-    targetHeights.current = Array(strips).fill(0);
-
-    // Set canvas size
-    const resize = () => {
-      const rect = canvas.parentElement?.getBoundingClientRect();
-      if (rect) {
-        canvas.width = rect.width;
-        canvas.height = rect.height;
-      }
-    };
-
-    // Calculate scroll velocity
     const handleScroll = () => {
       const currentTime = performance.now();
-      const deltaTime = currentTime - lastTime.current;
       const currentScrollY = window.scrollY;
+      const timeDelta = currentTime - lastTime.current;
       
-      scrollVelocity.current = Math.abs(currentScrollY - lastScrollY.current) / deltaTime;
+      if (timeDelta > 0) {
+        const scrollDelta = currentScrollY - lastScrollY.current;
+        scrollVelocity.current = (scrollDelta / timeDelta) * 16; // Normalize to roughly 60fps
+      }
+
       lastScrollY.current = currentScrollY;
       lastTime.current = currentTime;
-
-      // Update target heights based on new velocity
-      targetHeights.current = stripHeights.current.map((_, i) => 
-        getTargetHeight(i, strips, scrollVelocity.current)
-      );
     };
 
-    // Create gradient
-    const createGradient = (ctx: CanvasRenderingContext2D, height: number): CanvasGradient => {
-      const gradient = ctx.createLinearGradient(0, 0, 0, height);
-      gradient.addColorStop(0, gradientEnd);
-      gradient.addColorStop(1, gradientStart);
-      return gradient;
-    };
-
-    // Animation loop
-    const animate = () => {
-      if (!ctx || !canvas) return;
-
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const totalWidth = (stripWidth + stripGap) * strips;
-      const startX = (canvas.width - totalWidth) / 2;
-
-      // Update heights with easing
-      stripHeights.current = stripHeights.current.map((height, i) => {
-        const target = targetHeights.current[i];
-        const easing = 0.15; // Smooth easing factor
-        return height + (target - height) * easing;
-      });
-
-      // Draw strips
-      stripHeights.current.forEach((height, i) => {
-        const x = startX + i * (stripWidth + stripGap);
-        const gradient = createGradient(ctx, height);
-        
-        // Always draw from bottom
-        ctx.fillStyle = gradient;
-        ctx.fillRect(x, canvas.height - height, stripWidth, height);
-      });
-
-      // Decay velocity and update target heights
-      scrollVelocity.current *= 0.95;
-      targetHeights.current = targetHeights.current.map((height, i) => 
-        Math.max(0, height * 0.95)
-      );
-
-      animationRef.current = requestAnimationFrame(animate);
-    };
-
-    // Setup
     window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', resize);
-    resize();
-    animate();
 
-    // Cleanup
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', resize);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
     };
-  }, [strips, gradientStart, gradientEnd, stripWidth, stripGap]);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient || !containerRef.current) return;
+
+    const updateStrips = () => {
+      const time = performance.now() * 0.001; // Convert to seconds
+      const velocity = Math.abs(scrollVelocity.current);
+      const velocityFactor = Math.min(velocity * 0.01, 1);
+
+      stripsRef.current.forEach((strip, index) => {
+        if (!strip) return;
+
+        const frequency = baseFrequency * Math.pow(frequencyMultiplier, index);
+        const targetHeight = Math.sin(time * frequency) * 0.5 + 0.5;
+        
+        targetHeights.current[index] = targetHeight;
+
+        const currentHeight = parseFloat(strip.style.height || '0');
+        const newHeight = gsap.utils.interpolate(
+          currentHeight,
+          targetHeight * 100 * maxHeightMultiplier * (1 + velocityFactor),
+          0.1
+        );
+
+        strip.style.height = `${newHeight}%`;
+      });
+
+      animationRef.current = requestAnimationFrame(updateStrips);
+    };
+
+    updateStrips();
+
+    return () => {
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
+  }, [isClient, baseFrequency, frequencyMultiplier, maxHeightMultiplier]);
+
+  if (!isClient) {
+    return null; // Or return a loading state/placeholder
+  }
 
   return (
-    <canvas
-      ref={canvasRef}
-      className={`absolute top-0 right-0 w-1/2 h-full pointer-events-none ${className}`}
-      aria-hidden="true"
-    />
+    <div 
+      ref={containerRef} 
+      className={`relative w-full h-full overflow-hidden ${className}`}
+    >
+      {Array.from({ length: count }).map((_, index) => (
+        <div
+          key={index}
+          ref={el => el && (stripsRef.current[index] = el)}
+          className="absolute bottom-0 w-full bg-royal_blue_traditional-600/10"
+          style={{
+            left: `${(index / count) * 100}%`,
+            width: `${100 / count}%`,
+            height: '0%',
+          }}
+        />
+      ))}
+    </div>
   );
 };
 
-export default AudioEqualizer;
+export default AnimatedStrips;

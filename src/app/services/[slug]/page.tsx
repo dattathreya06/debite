@@ -1,6 +1,4 @@
 // src/app/services/[slug]/page.tsx
-'use client'
-
 import { notFound } from 'next/navigation';
 import CloudServicePage from '@/components/services/cloud';
 import DataAIServicePage from '@/components/services/data-ai';
