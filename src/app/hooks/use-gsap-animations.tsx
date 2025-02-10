@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -22,7 +24,7 @@ interface AnimationConfig {
 
 interface GSAPAnimation {
   from?: gsap.TweenVars;
-  to: gsap.TweenVars;
+  to?: gsap.TweenVars;
   timeline?: boolean;
 }
 
