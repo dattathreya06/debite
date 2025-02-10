@@ -204,7 +204,7 @@ export const siteConfig: SiteConfig = {
             },
             {
               title: "Case Studies",
-              href: "/insights/cases-studies",
+              href: "/insights/case-studies",
               description: "Client success stories and implementations",
               items: [
                 {

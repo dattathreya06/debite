@@ -1,4 +1,3 @@
-
 import { notFound } from 'next/navigation';
 import { caseStudies } from '@/data/case-studies';
 import CaseStudyPage from '@/components/case-studies/page';
@@ -9,14 +8,18 @@ interface CaseStudyPageParams {
   };
 }
 
-export async function generateStaticParams() {
+// Generate static params for all case studies
+export function generateStaticParams() {
   return Object.keys(caseStudies).map((slug) => ({
     slug,
   }));
 }
 
-export default function CaseStudyDetailPage({ params }: CaseStudyPageParams) {
-  const { slug } = params;
+// ✅ Make this function async
+export default async function CaseStudyDetailPage({ params }: CaseStudyPageParams) {
+  // ✅ Await params inside function argument
+  const { slug } = await params; // Fix: Await params
+
   const caseStudy = caseStudies[slug];
 
   if (!caseStudy) {

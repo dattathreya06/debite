@@ -6,11 +6,10 @@ import InsurancePage from '@/components/industries/insurance';
 import ManufacturingPage from '@/components/industries/manufacturing';
 
 const INDUSTRY_COMPONENTS = {
-  'automotive': AutomotivePage,
-  'banking': BankingPage,
-  'manufacturing': ManufacturingPage,
-  'insurance': InsurancePage,
-
+  automotive: AutomotivePage,
+  banking: BankingPage,
+  manufacturing: ManufacturingPage,
+  insurance: InsurancePage,
 } as const;
 
 type IndustrySlug = keyof typeof INDUSTRY_COMPONENTS;
@@ -28,8 +27,9 @@ export default function IndustryPage({
 }: { 
   params: { slug: string } 
 }) {
-  const { slug } = params;
-  
+  // ❌ Removed `await` since params is not async
+  const { slug } = params;  
+
   // Type check the slug
   if (!isValidIndustry(slug)) {
     notFound();
@@ -37,7 +37,7 @@ export default function IndustryPage({
   
   // Get the component for this industry
   const IndustryComponent = INDUSTRY_COMPONENTS[slug];
-  
+
   return <IndustryComponent />;
 }
 
