@@ -4,12 +4,14 @@ import AutomotivePage from '@/components/industries/automotive';
 import BankingPage from '@/components/industries/banking';
 import InsurancePage from '@/components/industries/insurance';
 import ManufacturingPage from '@/components/industries/manufacturing';
+import GovernmentPage from '@/components/industries/government';
 
 const INDUSTRY_COMPONENTS = {
   automotive: AutomotivePage,
   banking: BankingPage,
   manufacturing: ManufacturingPage,
   insurance: InsurancePage,
+  government: GovernmentPage,
 } as const;
 
 type IndustrySlug = keyof typeof INDUSTRY_COMPONENTS;

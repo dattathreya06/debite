@@ -4,6 +4,8 @@ import CloudServicePage from '@/components/services/cloud';
 import DataAIServicePage from '@/components/services/data-ai';
 import CybersecurityPage from '@/components/services/cybersecurity';
 import ConsultingPage from '@/components/services/consulting';
+import UPIPaymentsServicePage from '@/components/services/upi-payments';
+import DigitalInvoicingServicePage from '@/components/services/digital-invoicing';
 
 
 const SERVICE_COMPONENTS = {
@@ -11,6 +13,8 @@ const SERVICE_COMPONENTS = {
   'consulting': ConsultingPage,
   'cloud': CloudServicePage,
   'cybersecurity': CybersecurityPage,
+  'upi-solutions' : UPIPaymentsServicePage,
+  'digital-invoicing-sms-pay' : DigitalInvoicingServicePage,
 
 
   // Add other services here as you create them

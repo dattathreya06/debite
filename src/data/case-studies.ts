@@ -405,5 +405,169 @@ export const caseStudies: Record<string, CaseStudy> = {
     role: "Chief Technology Officer, Leading Digital Bank",
     image: "/images/testimonials/david-williams.jpg",
   },
-    }
+    },
+    "ai-cybersecurity-threat-detection":{
+        slug: "ai-cybersecurity-threat-detection",
+        client: "A leading multinational corporation",
+        industry: "Enterprise Security & IT",
+        duration: "9 months",
+        teamSize: "14",
+        title: "AI-Powered Threat Detection & Response for a Global Enterprise",
+        description:
+          "Debite helped a multinational corporation enhance its cybersecurity posture by implementing AI-driven threat detection, real-time monitoring, and automated incident response. Our solution significantly reduced cyber attack risks and improved compliance with global security standards.",
+        heroImage: "https://images.pexels.com/photos/5380663/pexels-photo-5380663.jpeg",
+        challenge:
+          "The client faced frequent phishing attacks, ransomware threats, and vulnerabilities in their IT infrastructure. Traditional security solutions failed to detect sophisticated cyber threats in real time.",
+        approach:
+          "We deployed an AI-driven Security Information and Event Management (SIEM) system, combined with machine learning algorithms for anomaly detection. This allowed real-time monitoring, predictive threat intelligence, and automated response mechanisms.",
+        metrics: [
+          {
+            label: "Threat Detection Speed",
+            value: "90% faster",
+            description:
+              "AI-driven monitoring detected threats in real-time, reducing breach response time from hours to minutes.",
+          },
+          {
+            label: "Phishing Attack Reduction",
+            value: "85% decrease",
+            description:
+              "AI-powered email filtering and user training significantly lowered phishing attack success rates.",
+          },
+          {
+            label: "Compliance Score",
+            value: "ISO 27001 & GDPR certified",
+            description:
+              "Ensured the company met international cybersecurity standards and compliance requirements.",
+          },
+        ],
+        solutions: [
+          {
+            title: "AI-Driven Threat Intelligence",
+            description:
+              "Developed an AI-powered SIEM platform that continuously analyzed network traffic, identifying and mitigating potential threats in real time.",
+            image: "https://images.pexels.com/photos/1181351/pexels-photo-1181351.jpeg",
+          },
+          {
+            title: "Automated Incident Response",
+            description:
+              "Implemented automated security workflows to contain threats instantly, reducing the impact of cyber attacks.",
+            image: "https://images.pexels.com/photos/6239033/pexels-photo-6239033.jpeg",
+          },
+          {
+            title: "Employee Security Awareness Training",
+            description:
+              "Conducted AI-driven security awareness training to educate employees on identifying and avoiding phishing and social engineering attacks.",
+            image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg",
+          },
+        ],
+        technologies: [
+          {
+            name: "AI & Machine Learning",
+            description:
+              "Real-time anomaly detection and predictive analytics for proactive cybersecurity.",
+            logo: "/images/technologies/ai-ml-logo.png",
+          },
+          {
+            name: "SIEM & Threat Intelligence",
+            description:
+              "Security event management and predictive analytics for cyber threat detection.",
+            logo: "/images/technologies/siem-logo.png",
+          },
+          {
+            name: "Zero Trust Architecture",
+            description:
+              "Implemented a zero-trust framework to enhance network security and access control.",
+            logo: "/images/technologies/zero-trust-logo.png",
+          },
+        ],
+        testimonial: {
+          quote:
+            "With Debite’s AI-driven security solutions, we have dramatically improved our threat detection capabilities. We now detect and neutralize cyber threats before they cause damage.",
+          author: "Mark Reynolds",
+          role: "CISO, Leading Multinational Corporation",
+          image: "/images/testimonials/mark-reynolds.jpg",
+        },      
+      },
+      "cloud-security-data-protection":{
+        slug: "cloud-security-data-protection",
+  client: "A leading investment firm",
+  industry: "Financial Services & Cybersecurity",
+  duration: "12 months",
+  teamSize: "18",
+  title: "Cloud Security & Data Protection for a Global Financial Institution",
+  description:
+    "Debite collaborated with a leading investment firm to enhance cloud security, ensuring compliance with financial regulations and protecting sensitive customer data from cyber threats.",
+  heroImage: "https://images.pexels.com/photos/289236/pexels-photo-289236.jpeg",
+  challenge:
+    "The client faced growing security risks due to increased cloud adoption, unencrypted sensitive financial data, and a lack of robust access controls. Data breaches posed a major risk to their reputation and regulatory compliance.",
+  approach:
+    "We implemented a multi-layered security strategy using encryption, AI-based threat monitoring, and role-based access control (RBAC) to protect critical financial data in the cloud.",
+  metrics: [
+    {
+      label: "Cloud Security Score",
+      value: "99.8% compliance",
+      description:
+        "Achieved high security compliance with financial regulations like PCI-DSS, GDPR, and SOC 2.",
+    },
+    {
+      label: "Data Breach Incidents",
+      value: "Zero breaches",
+      description:
+        "AI-driven monitoring and encryption protocols eliminated major data breaches.",
+    },
+    {
+      label: "Data Access Speed",
+      value: "25% faster",
+      description:
+        "Optimized secure cloud data access without compromising security measures.",
+    },
+  ],
+  solutions: [
+    {
+      title: "End-to-End Data Encryption",
+      description:
+        "Implemented AES-256 encryption for data at rest and in transit, ensuring complete protection from unauthorized access.",
+      image: "https://images.pexels.com/photos/302769/pexels-photo-302769.jpeg",
+    },
+    {
+      title: "AI-Powered Cloud Security Monitoring",
+      description:
+        "Deployed AI-driven security monitoring tools that continuously scan for vulnerabilities and unauthorized access attempts.",
+      image: "https://images.pexels.com/photos/531767/pexels-photo-531767.jpeg",
+    },
+    {
+      title: "Zero Trust Network Access (ZTNA)",
+      description:
+        "Implemented a Zero Trust model that required continuous identity verification for access to financial data.",
+      image: "https://images.pexels.com/photos/735911/pexels-photo-735911.jpeg",
+    },
+  ],
+  technologies: [
+    {
+      name: "Cloud Security & Encryption",
+      description:
+        "Protecting sensitive data with advanced encryption protocols and secure access controls.",
+      logo: "/images/technologies/cloud-security-logo.png",
+    },
+    {
+      name: "AI-Powered Threat Detection",
+      description:
+        "Continuous monitoring and automated threat response for financial data security.",
+      logo: "/images/technologies/ai-threat-detection-logo.png",
+    },
+    {
+      name: "Zero Trust Security Framework",
+      description:
+        "Ensuring continuous verification and least-privilege access for financial data protection.",
+      logo: "/images/technologies/zero-trust-logo.png",
+    },
+  ],
+  testimonial: {
+    quote:
+      "Debite’s cloud security strategy provided us with unmatched data protection. Our financial transactions and customer data are now fully secure, with zero breaches.",
+    author: "Alex Thompson",
+    role: "Head of IT Security, Leading Investment Firm",
+    image: "/images/testimonials/alex-thompson.jpg",
+  },
+      }
   };

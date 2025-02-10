@@ -176,10 +176,10 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
           src={heroImage}
           alt={title}
           fill
-          className="object-cover opacity-40"
+          className="object-cover grayscale"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary to-transparent">
           <div className="container mx-auto px-6 py-20 h-full flex flex-col justify-end">
             <div className="max-w-3xl">
               <div className="hero-meta flex flex-wrap gap-6 mb-8 text-gold-300">

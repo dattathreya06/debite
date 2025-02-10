@@ -6,24 +6,24 @@ import type { IndustryPageProps } from './industry-page';
 
 const AutomotivePage = () => {
   const pageData: IndustryPageProps = {
-    title: "Automotive",
-    description: "Accelerating a connected and data-driven digital future.",
+    title: "Automotive Solutions",
+    description: "Driving digital transformation in the automotive industry with innovative software solutions.",
     heroImage: "https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg",
     
     overview: {
-      title: "Your partner for intelligent automotive transformation and smart mobility evolution",
+      title: "Your technology partner for automotive digital transformation",
       content: (
         <>
           <p className="mb-4">
-            With over 50 years of experience, and leading OEMs and suppliers as key clients, 
-            NTT DATA is your trusted partner for intelligent automotive transformation and 
-            smart mobility evolution.
+            Debite specializes in delivering cutting-edge software solutions and digital 
+            transformation services to the automotive industry. From payment gateway 
+            integration to comprehensive ERP systems, we help automotive businesses 
+            modernize their operations and enhance customer experiences.
           </p>
           <p className="mb-4">
-            Our "Connect & Create" strategy develops transformative automotive industry 
-            solutions and services. We leverage data values as part of an extended ecosystem 
-            to scale new product rollouts, explore joint ventures, use new technologies to 
-            accelerate innovation, and deliver advanced automotive use cases globally.
+            Our expertise in custom software development, payment solutions, and digital 
+            transformation enables automotive businesses to streamline operations, improve 
+            efficiency, and stay competitive in an increasingly digital marketplace.
           </p>
         </>
       ),
@@ -32,42 +32,42 @@ const AutomotivePage = () => {
 
     stats: [
       {
-        value: "90+",
-        label: "Global automotive clients including OEMs, suppliers and dealerships"
-      },
-      {
-        value: "Top 7",
-        label: "Automotive manufacturers worldwide are our clients"
-      },
-      {
-        value: "$3.6B+",
-        label: "R&D investments, including in ACES technologies"
-      },
-      {
         value: "50+",
-        label: "Years of experience servicing international industry leaders"
+        label: "Successful digital transformation projects delivered"
+      },
+      {
+        value: "25+",
+        label: "Integrated payment gateway solutions implemented"
+      },
+      {
+        value: "15+",
+        label: "Custom ERP systems deployed"
+      },
+      {
+        value: "99%",
+        label: "System uptime for our solutions"
       }
     ],
 
     caseStudies: [
       {
-        client: "McLaren",
-        title: "Modernizing McLaren's legacy IT systems for greater efficiency and growth",
-        description: "By moving application managed services under a single provider and implementing a shared data strategy, we helped McLaren pivot to a hybrid remote working model and improve organizational efficiency.",
-        image: "https://images.pexels.com/photos/30092951/pexels-photo-30092951/free-photo-of-classic-mclaren-racing-car-on-display.jpeg?auto=compress&cs=tinysrgb&w=600",
-        link: "#"
-      },
-      {
-        client: "Telefónica and CIE Automotive",
-        title: "Accelerating automation for a global automotive components supplier",
-        description: "We developed a 5G-enabled logistics platform that enables CIE Automotive to achieve end-to-end automation of its production line, driving productivity and cost efficiency.",
+        client: "AutoTech Solutions",
+        title: "Modernizing Dealership Operations with Custom ERP",
+        description: "We developed and implemented a comprehensive ERP solution that streamlined inventory management, sales processes, and customer relationships for a growing dealership network.",
         image: "https://images.pexels.com/photos/159293/car-engine-motor-clean-customized-159293.jpeg?auto=compress&cs=tinysrgb&w=600",
         link: "#"
       },
       {
-        client: "BMW Group",
-        title: "Transforming infrastructure operations for worldwide data centers",
-        description: "Putting cloud front and center, our Hybrid Infrastructure Managed Services transformed BMW Group's worldwide data centers, enabling global support for their manufacturing and production lines.",
+        client: "EV Service Pro",
+        title: "Integrated Payment Gateway for Multi-Location Service Centers",
+        description: "Our team implemented a secure, scalable payment solution that handles both in-person and online transactions across multiple service locations.",
+        image: "https://images.pexels.com/photos/30092951/pexels-photo-30092951/free-photo-of-classic-mclaren-racing-car-on-display.jpeg?auto=compress&cs=tinysrgb&w=600",
+        link: "#"
+      },
+      {
+        client: "Premier Auto Parts",
+        title: "E-commerce Platform with Real-time Inventory",
+        description: "Developed a custom e-commerce solution with real-time inventory management and integrated payment processing for this growing auto parts distributor.",
         image: "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=600",
         link: "#"
       }
@@ -75,51 +75,53 @@ const AutomotivePage = () => {
 
     services: [
       {
-        title: "Automotive Consulting",
-        description: "Enable organizational transformation from strategy to implementation with leading business and technology consultants."
+        title: "Custom Software Development",
+        description: "Tailored software solutions designed specifically for automotive business needs, from inventory management to customer relationship systems."
       },
       {
-        title: "Software-Defined Vehicle",
-        description: "Access in-vehicle, connectivity and off-vehicle backend data insights through integrated frameworks and technology solutions."
+        title: "Payment Gateway Solutions",
+        description: "Secure, integrated payment processing systems that handle both online and physical transactions seamlessly."
       },
       {
-        title: "Connected Services & Data Platform",
-        description: "Deliver connected experiences for drivers and OEMs, designed in collaboration with industry-leading tech partners."
+        title: "ERP Implementation",
+        description: "Comprehensive ERP solutions that integrate all aspects of automotive operations, from inventory to finance."
       },
       {
-        title: "Digital Factory & Smart Supply Chain",
-        description: "Unlock greater operational agility through digital transformations that minimize disruption, maximize productivity and enhance cost efficiency."
+        title: "Digital Transformation",
+        description: "End-to-end digital transformation services to modernize automotive business operations and customer experiences."
       },
       {
-        title: "Digital Marketing & Connected Customer Journey",
-        description: "Enhance customer loyalty, acquisition and engagement for sustainable revenue growth."
+        title: "E-commerce Solutions",
+        description: "Custom e-commerce platforms with integrated inventory management and payment processing."
       },
       {
-        title: "EV Charging & Data Management",
-        description: "Improve the EV user experience with customer journey design and enterprise data integration."
+        title: "Cloud Migration Services",
+        description: "Secure and efficient cloud migration services to modernize legacy systems and improve scalability."
       }
     ],
 
     resources: [
       {
         type: "BLOG",
-        title: "From Electric Vehicles to GenAI: How Technologies are Shaping the Future of the Automotive Industry",
+        title: "Digital Transformation in Automotive: From Legacy Systems to Modern Solutions",
         image: "https://images.pexels.com/photos/5473956/pexels-photo-5473956.jpeg?auto=compress&cs=tinysrgb&w=600",
         link: "#"
       },
       {
         type: "VIDEO",
-        title: "Transforming Mobility, Empowering Sustainability - Watch our video from Global Industries Leader",
+        title: "How Modern Payment Solutions Are Revolutionizing Auto Services",
         image: "/images/video-mobility.jpg",
         link: "#"
       },
       {
         type: "WHITEPAPER",
-        title: "The Future of Software-Defined Vehicles: Technology Trends and Implementation Strategies",
+        title: "The Future of Automotive ERP: Integration, Automation, and Innovation",
         image: "/images/whitepaper-sdv.jpg",
         link: "#"
       }
     ],
+
+  
   };
 
   return <IndustryPage {...pageData} />;

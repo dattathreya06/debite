@@ -7,7 +7,7 @@ export interface NavItem {
 }
 
 export interface NavItemWithChildren extends NavItem {
-  items: NavItem[];
+  items?: NavItem[];
 }
 
 export interface NavSection {
@@ -39,31 +39,11 @@ export const siteConfig: SiteConfig = {
               title: "Automotive",
               href: "/industries/automotive",
               description: "Digital solutions for automotive manufacturers and suppliers",
-              items: [
-                {
-                  title: "Connected Vehicles",
-                  href: "/industries/automotive/connected-vehicles"
-                },
-                {
-                  title: "Manufacturing Excellence",
-                  href: "/industries/automotive/manufacturing"
-                }
-              ]
             },
             {
               title: "Manufacturing",
               href: "/industries/manufacturing",
               description: "Smart factory and Industry 4.0 solutions",
-              items: [
-                {
-                  title: "Smart Factory",
-                  href: "/industries/manufacturing/smart-factory"
-                },
-                {
-                  title: "Supply Chain",
-                  href: "/industries/manufacturing/supply-chain"
-                }
-              ]
             }
           ]
         },
@@ -74,31 +54,26 @@ export const siteConfig: SiteConfig = {
               title: "Banking",
               href: "/industries/banking",
               description: "Digital transformation for banking and capital markets",
-              items: [
-                {
-                  title: "Digital Banking",
-                  href: "/banking/financial-services/digital-banking"
-                },
-                {
-                  title: "Payments",
-                  href: "/banking/financial-services/payments"
-                }
-              ]
             },
             {
               title: "Insurance",
               href: "/industries/insurance",
               description: "Innovation in insurance and risk management",
-              items: [
-                {
-                  title: "Digital Insurance",
-                  href: "/industries/insurance/digital"
-                },
-                {
-                  title: "Claims Management",
-                  href: "/industries/insurance/claims"
-                }
-              ]
+            }
+          ]
+        },
+        {
+          title: "Public Sector",
+          items: [
+            {
+              title: "Government",
+              href: "/industries/government",
+              description: "Digital transformation for government agencies",
+            },
+            {
+              title: "Insurance",
+              href: "/industries/insurance",
+              description: "Innovation in insurance and risk management",
             }
           ]
         }
@@ -115,31 +90,11 @@ export const siteConfig: SiteConfig = {
               title: "Cloud Services",
               href: "/services/cloud",
               description: "Cloud transformation and optimization",
-              items: [
-                {
-                  title: "Cloud Migration",
-                  href: "/services/cloud/migration"
-                },
-                {
-                  title: "Cloud Native",
-                  href: "/services/cloud/native"
-                }
-              ]
             },
             {
               title: "Data & AI",
               href: "/services/data-ai",
               description: "AI and analytics solutions",
-              items: [
-                {
-                  title: "Advanced Analytics",
-                  href: "/services/data-ai/analytics"
-                },
-                {
-                  title: "Machine Learning",
-                  href: "/services/data-ai/machine-learning"
-                }
-              ]
             }
           ]
         },
@@ -149,33 +104,53 @@ export const siteConfig: SiteConfig = {
             {
               title: "Consulting",
               href: "/services/consulting",
-              description: "Strategic business and technology consulting",
-              items: [
-                {
-                  title: "Digital Strategy",
-                  href: "/services/consulting/digital-strategy"
-                },
-                {
-                  title: "Technology Advisory",
-                  href: "/services/consulting/technology"
-                }
-              ]
+              description: "Strategic business and technology consulting"
             },
             {
               title: "Cybersecurity",
               href: "/services/cybersecurity",
               description: "Comprehensive security solutions",
-              items: [
-                {
-                  title: "Security Operations",
-                  href: "/services/cybersecurity/operations"
-                },
-                {
-                  title: "Identity & Access",
-                  href: "/services/cybersecurity/identity"
-                }
-              ]
             }
+          ]
+        },
+        {
+          title: "Payment Solutions",
+          items: [
+            {
+              title: "UPI Payment Solutions",
+              href: "/services/upi-solutions",
+              description: "Streamlined UPI payment solutions"
+            },
+            {
+              title: "Digital Invoicing & SMS Pay",
+              href: "/services/digital-invoicing-sms-pay",
+              description: " Digital invoicing and SMS-based payment solutions"
+            },
+            {
+              title: "Payment Gateway Services",
+              href: "/payments/upi-solutions",
+              description: "Streamlined UPI payment solutions"
+            },
+          ]
+        },
+        {
+          title: "ERP",
+          items: [
+            {
+              title: "Comprehensive Billing Applications",
+              href: "/payments/upi-solutions",
+              description: "Streamlined UPI payment solutions"
+            },
+            {
+              title: "POS & Invoicing Solutions",
+              href: "/payments/upi-solutions",
+              description: "Streamlined UPI payment solutions"
+            },
+            {
+              title: "Advanced Analytics & Reporting",
+              href: "/payments/upi-solutions",
+              description: "Streamlined UPI payment solutions"
+            },
           ]
         }
       ]

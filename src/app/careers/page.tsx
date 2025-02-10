@@ -73,22 +73,22 @@ const CareersPage = () => {
 
   const teamMembers: TeamMember[] = [
     {
-      name: 'Sarah Chen',
-      role: 'Senior Data Scientist',
-      quote: 'At Debite, I get to work on AI projects that truly make a difference. The collaborative culture here is incredible.',
-      image: '/api/placeholder/400/400'
+      name: 'Ramesh Yadav',
+      role: 'Senior Fullstack developer',
+      quote: 'At Debite, I get to work on projects that truly make a difference. The collaborative culture here is incredible.',
+      image: 'https://images.pexels.com/photos/899357/pexels-photo-899357.jpeg?auto=compress&cs=tinysrgb&w=600/api/placeholder/400/400'
     },
     {
-      name: 'Marcus Rodriguez',
+      name: 'Vikram Kumar P',
       role: 'Cloud Solutions Architect',
       quote: 'The opportunities for growth and learning are endless. Every day brings new challenges and innovations.',
-      image: '/api/placeholder/400/400'
+      image: 'https://images.pexels.com/photos/30589229/pexels-photo-30589229/free-photo-of-portrait-in-nadukani-tea-plantation-kerala.jpeg?auto=compress&cs=tinysrgb&w=600'
     },
     {
       name: 'Priya Patel',
       role: 'Digital Transformation Consultant',
       quote: 'Working with global teams and diverse clients has expanded my perspective and accelerated my career growth.',
-      image: '/api/placeholder/400/400'
+      image: 'https://images.pexels.com/photos/7544770/pexels-photo-7544770.jpeg?auto=compress&cs=tinysrgb&w=600'
     }
   ];
 
@@ -248,7 +248,7 @@ const CareersPage = () => {
                 key={index}
                 className="benefit-card p-8 bg-dark-dark border border-dark-light"
               >
-                <div className="text-gold-300 mb-4">
+                <div className="text-primary mb-4">
                   {benefit.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-4">{benefit.title}</h3>
@@ -347,12 +347,12 @@ const CareersPage = () => {
                     src={member.image}
                     alt={member.name}
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                   />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                  <p className="text-gold-300 mb-4">{member.role}</p>
+                  <p className="text-primary mb-4">{member.role}</p>
                   <p className="text-gray-300 italic">"{member.quote}"</p>
                 </div>
               </div>

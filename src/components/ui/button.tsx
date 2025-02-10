@@ -5,11 +5,11 @@ import { useHoverWordAnimation } from '@/app/anim/word-anim';
 import { cva, type VariantProps } from 'class-variance-authority';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-royal_blue_traditional-400 disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center  text-sm font-mono font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-royal_blue_traditional-400 disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
-        default: 'bg-primary text-white hover:bg-gold-600 text-royal_blue_traditional-600',
+        default: 'bg-dark text-white hover:dark-dark text-royal_blue_traditional-600',
         outline: 'border border-royal_blue_traditional text-royal_blue_traditional hover:bg-royal_blue_traditional-100',
         ghost: 'hover:bg-royal_blue_traditional-100 hover:text-royal_blue_traditional-900',
         link: 'text-royal_blue_traditional underline-offset-4 hover:underline',

@@ -65,7 +65,7 @@ const Eyebrow = ({
       >
         |
       </span>
-      <span className={`text-sm uppercase tracking-wider font-medium ${color}`}>
+      <span className={`text-sm uppercase tracking-4 font-medium ${color}`}>
         {text}
       </span>
       <span
