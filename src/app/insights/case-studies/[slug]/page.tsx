@@ -15,7 +15,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export  default function CaseStudyDetailPage({ params }: CaseStudyPageParams) {
+export default function CaseStudyDetailPage({ params }: CaseStudyPageParams) {
   const { slug } = params;
   const caseStudy = caseStudies[slug];
 
