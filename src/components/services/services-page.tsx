@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { textReveal, fadeIn } from "@/app/anim/text-anim";
 import Button from "../ui/button";
 import Card from "../ui/card";
-import CTA from "../layout/cta";
+import FooterCTA from "../layout/cta";
 import Eyebrow from "../ui/eyebrow";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -410,9 +410,8 @@ const ServicePage: React.FC<ServicePageProps> = ({
       </section>
 
       {/* CTA Section */}
-      <CTA
+      <FooterCTA
         title="Ready to Transform Your Business?"
-        description="Let's discuss how our services can help you achieve your goals."
         buttonText="Contact Us"
         buttonHref="/contact"
       />
