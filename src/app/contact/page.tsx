@@ -1,4 +1,5 @@
-'use client'
+// app/contact/page.tsx
+'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
@@ -16,7 +17,24 @@ interface FormField {
   error: string;
 }
 
-const ContactPage = () => {
+// Static form for Netlify to detect
+export function StaticForm() {
+  return (
+    <form
+      name="contact"
+      netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="company" />
+      <textarea name="message"></textarea>
+    </form>
+  );
+}
+
+export default function ContactPage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const infoRef = useRef<HTMLDivElement>(null);
@@ -118,6 +136,12 @@ const ContactPage = () => {
     return isValid;
   };
 
+  const encode = (data: { [key: string]: string }) => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&");
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -125,19 +149,21 @@ const ContactPage = () => {
     
     setFormStatus('submitting');
 
-    try {
-      const formData = new FormData();
-      formFields.forEach(field => formData.append(field.name, field.value));
+    const formData = {
+      'form-name': 'contact',
+      ...formFields.reduce((acc, field) => ({ ...acc, [field.name]: field.value }), {})
+    };
 
-      // Submit to Netlify forms
-      await fetch('/', {
+    try {
+      const response = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData as any).toString()
+        body: encode(formData)
       });
 
+      if (!response.ok) throw new Error('Form submission failed');
+
       setFormStatus('success');
-      // Reset form
       setFormFields(formFields.map(field => ({ ...field, value: '', error: '' })));
     } catch (error) {
       console.error('Form submission error:', error);
@@ -155,6 +181,9 @@ const ContactPage = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-dark text-white">
+      {/* Include the static form */}
+      <StaticForm />
+      
       {/* Hero Section */}
       <section className="relative py-20 bg-dark-dark" ref={heroRef}>
         <div className="container mx-auto px-6">
@@ -177,10 +206,16 @@ const ContactPage = () => {
                 ref={formRef}
                 onSubmit={handleSubmit}
                 className="space-y-6"
+                method="POST"
                 data-netlify="true"
+                data-netlify-honeypot="bot-field"
                 name="contact"
               >
+                {/* Required Netlify form fields */}
                 <input type="hidden" name="form-name" value="contact" />
+                <div hidden>
+                  <input name="bot-field" />
+                </div>
                 
                 {formFields.map(field => (
                   <div key={field.name} className="form-field">
@@ -222,6 +257,7 @@ const ContactPage = () => {
                   </div>
                 ))}
 
+                {/* Status messages */}
                 {formStatus === 'error' && (
                   <div className="p-4 bg-red-900/50 border border-red-500 rounded-md">
                     <p className="text-red-500 flex items-center">
@@ -276,6 +312,4 @@ const ContactPage = () => {
       </section>
     </div>
   );
-};
-
-export default ContactPage;
+}
