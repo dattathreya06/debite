@@ -35,7 +35,7 @@ const UPIPaymentsServicePage = () => {
           </p>
         </>
       ),
-      image: "/api/placeholder/800/600"
+      image: "https://paytmblogfinal.wpengine.com/wp-content/uploads/2024/10/How-Safe-is-UPI-AutoPay_-800x500.jpg"
     },
 
     capabilities: [
@@ -72,27 +72,27 @@ const UPIPaymentsServicePage = () => {
     ],
 
     caseStudies: [
-      {
-        client: "Major Retail Chain",
-        title: "Nationwide UPI Payment Implementation",
-        description: "Implemented UPI payment system across 500+ stores, resulting in 40% increase in digital transactions and improved customer satisfaction.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        client: "E-commerce Platform",
-        title: "Seamless UPI Integration",
-        description: "Integrated UPI payment gateway reducing checkout time by 60% and increasing payment success rate by 25%.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        client: "Quick Service Restaurant Chain",
-        title: "QR-Based Payment Solution",
-        description: "Deployed dynamic QR code payment system across 200+ locations, reducing payment processing time by 45%.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      }
+        {
+            client: "Global FinTech Startup",
+            title: "Cloud-Native Platform Transformation",
+            description: "Modernized legacy systems with a cloud-native architecture, reducing operational costs by 40% and improving scalability.",
+            image: "https://images.pexels.com/photos/8284731/pexels-photo-8284731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/cloud-native-fintech-transformation/"
+          },
+          {
+            client: "E-commerce Leader",
+            title: "Multi-Cloud Migration Success",
+            description: "Implemented a robust multi-cloud strategy that improved system reliability and reduced downtime by 99.9%.",
+            image: "https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg",
+            link: "/insights/case-studies/multi-cloud-migration-ecommerce/?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          },
+          {
+            client: "Healthcare Provider",
+            title: "Secure Cloud Infrastructure",
+            description: "Developed a HIPAA-compliant cloud infrastructure that enabled secure data management and improved patient care delivery.",
+            image: "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/digital-transformation-healthcare/"
+          }
     ],
 
     technologies: [

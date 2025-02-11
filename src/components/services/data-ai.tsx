@@ -16,7 +16,7 @@ const DataAIServicePage = () => {
       content: (
         <>
           <p className="mb-4">
-            NTT DATA's Data & AI services help organizations harness the full potential of their data 
+            Debite's Data & AI services help organizations harness the full potential of their data 
             through advanced analytics, machine learning, and artificial intelligence solutions. Our 
             expertise spans from data strategy and architecture to AI model development and deployment.
           </p>
@@ -123,25 +123,25 @@ const DataAIServicePage = () => {
 
     resources: [
       {
-        type: "WHITEPAPER",
-        title: "The Future of Enterprise AI: Trends and Strategies",
-        description: "Explore emerging AI technologies and their impact on business transformation.",
-        image: "/images/ai-whitepaper.jpg",
-        link: "#"
-      },
-      {
-        type: "WEBINAR",
-        title: "Building Responsible AI Systems",
-        description: "Learn best practices for developing ethical and transparent AI solutions.",
-        image: "/images/ai-webinar.jpg",
-        link: "#"
+        type: "BLOG",
+        title: "Cloud Migration Strategies: A Comprehensive Guide",
+        description: "Learn about different cloud migration approaches and best practices for successful implementation.",
+        image: "https://images.pexels.com/photos/14314638/pexels-photo-14314638.jpeg?auto=compress&cs=tinysrgb&w=600",
+        link: "/insights/blog/cloud-migration-strategies-guide/"
       },
       {
         type: "BLOG",
-        title: "Practical Applications of Large Language Models",
-        description: "Real-world examples of LLM implementation in enterprise settings.",
-        image: "/images/llm-blog.jpg",
-        link: "#"
+        title: "Cloud Security & Data Protection",
+        description: "Debite collaborated with a leading investment firm to enhance cloud security, ensuring compliance with financial regulations and protecting sensitive customer data from cyber threats.",
+        image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        link: "/insights/case-studies/cloud-security-data-protection/"
+      },
+      {
+        type: "BLOG",
+        title: "The Future of Cloud Computing: Trends and Innovations",
+        description: "The cloud computing landscape is rapidly evolving, bringing new possibilities and challenges for enterprises worldwide.",
+        image: "https://images.pexels.com/photos/6424590/pexels-photo-6424590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        link: "/insights/blog/future-of-cloud-computing-trends-and-innovations/"
       }
     ],
 

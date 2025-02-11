@@ -17,7 +17,7 @@ const DigitalInvoicingServicePage = () => {
   const pageData: ServicePageProps = {
     title: "Digital Invoicing & SMS Pay",
     description: "Transform your billing and payment collection with automated digital invoicing and SMS-based payment solutions.",
-    heroImage: "/api/placeholder/1920/600",
+    heroImage: "https://images.pexels.com/photos/6694529/pexels-photo-6694529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     
     overview: {
       title: "Streamline your billing process with intelligent invoicing and SMS payments",
@@ -36,7 +36,7 @@ const DigitalInvoicingServicePage = () => {
           </p>
         </>
       ),
-      image: "/api/placeholder/800/600"
+      image: "https://images.pexels.com/photos/10725897/pexels-photo-10725897.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
 
     capabilities: [
@@ -73,27 +73,27 @@ const DigitalInvoicingServicePage = () => {
     ],
 
     caseStudies: [
-      {
-        client: "Insurance Provider",
-        title: "Automated Premium Collection",
-        description: "Implemented digital invoicing and SMS payments for premium collection, reducing payment cycles by 60% and improving collection rate by 35%.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        client: "Education Institution",
-        title: "Fee Collection Transformation",
-        description: "Streamlined fee collection process with automated invoicing and SMS reminders, achieving 85% digital payment adoption.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        client: "B2B Service Provider",
-        title: "Invoice Automation Success",
-        description: "Reduced invoice processing time by 75% and improved payment collection speed by implementing digital invoicing with SMS pay.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      }
+        {
+            client: "Global FinTech Startup",
+            title: "Cloud-Native Platform Transformation",
+            description: "Modernized legacy systems with a cloud-native architecture, reducing operational costs by 40% and improving scalability.",
+            image: "https://images.pexels.com/photos/8284731/pexels-photo-8284731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/cloud-native-fintech-transformation/"
+          },
+          {
+            client: "E-commerce Leader",
+            title: "Multi-Cloud Migration Success",
+            description: "Implemented a robust multi-cloud strategy that improved system reliability and reduced downtime by 99.9%.",
+            image: "https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg",
+            link: "/insights/case-studies/multi-cloud-migration-ecommerce/?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          },
+          {
+            client: "Healthcare Provider",
+            title: "Secure Cloud Infrastructure",
+            description: "Developed a HIPAA-compliant cloud infrastructure that enabled secure data management and improved patient care delivery.",
+            image: "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/digital-transformation-healthcare/"
+          }
     ],
 
     technologies: [
@@ -131,27 +131,27 @@ const DigitalInvoicingServicePage = () => {
     },
 
     resources: [
-      {
-        type: "WHITEPAPER",
-        title: "Digital Invoicing: The Future of B2B Payments",
-        description: "Comprehensive guide to modern invoicing and payment collection methods.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        type: "WEBINAR",
-        title: "Maximizing Collections with SMS Payments",
-        description: "Expert insights on implementing effective SMS payment strategies.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        type: "BLOG",
-        title: "5 Ways to Optimize Your Digital Invoice Processing",
-        description: "Best practices for streamlining invoice management and payment collection.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      }
+        {
+            type: "BLOG",
+            title: "Cloud Migration Strategies: A Comprehensive Guide",
+            description: "Learn about different cloud migration approaches and best practices for successful implementation.",
+            image: "https://images.pexels.com/photos/14314638/pexels-photo-14314638.jpeg?auto=compress&cs=tinysrgb&w=600",
+            link: "/insights/blog/cloud-migration-strategies-guide/"
+          },
+          {
+            type: "BLOG",
+            title: "Cloud Security & Data Protection",
+            description: "Debite collaborated with a leading investment firm to enhance cloud security, ensuring compliance with financial regulations and protecting sensitive customer data from cyber threats.",
+            image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/cloud-security-data-protection/"
+          },
+          {
+            type: "BLOG",
+            title: "The Future of Cloud Computing: Trends and Innovations",
+            description: "The cloud computing landscape is rapidly evolving, bringing new possibilities and challenges for enterprises worldwide.",
+            image: "https://images.pexels.com/photos/6424590/pexels-photo-6424590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/blog/future-of-cloud-computing-trends-and-innovations/"
+          }
     ],
 
     relatedServices: [

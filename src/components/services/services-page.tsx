@@ -268,7 +268,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                 alt="Overview"
                 width={800}
                 height={600}
-                className="rounded-lg shadow-xl"
+                className="grayscale shadow-xl"
               />
             </div>
             <div className="lg:w-1/2 overview-content">

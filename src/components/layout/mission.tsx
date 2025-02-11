@@ -66,7 +66,7 @@ const MissionStatement = () => {
             className="mb-4"
           />
           <h3 className="font-medium text-white" ref={textRef}>
-            As a trusted global innovator, NTT DATA uses information technology
+            As a trusted global innovator, Debite uses information technology
             to create new paradigms and values, which help contribute to a more
             affluent and harmonious society.
           </h3>

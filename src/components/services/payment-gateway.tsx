@@ -16,7 +16,7 @@ const PaymentGatewayPage = () => {
   const pageData: ServicePageProps = {
     title: "Payment Gateway",
     description: "Fast, secure, and reliable payment processing for modern businesses",
-    heroImage: "/api/placeholder/1920/600",
+    heroImage: "https://images.pexels.com/photos/7620620/pexels-photo-7620620.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     
     overview: {
       title: "Transform your business with seamless payment processing",
@@ -35,7 +35,7 @@ const PaymentGatewayPage = () => {
           </p>
         </>
       ),
-      image: "/api/placeholder/800/600"
+      image: "https://images.pexels.com/photos/4841737/pexels-photo-4841737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
 
     capabilities: [
@@ -72,27 +72,27 @@ const PaymentGatewayPage = () => {
     ],
 
     caseStudies: [
-      {
-        client: "GrowthTech SaaS",
-        title: "Scaling Payment Operations",
-        description: "Helped a growing SaaS platform increase payment success rates by 15% while reducing processing costs.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        client: "EcoMarket",
-        title: "Marketplace Payment Solution",
-        description: "Implemented split payments and automated seller payouts for a sustainable products marketplace.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        client: "FitnessPro",
-        title: "Subscription Management",
-        description: "Streamlined recurring billing for a fitness platform, reducing failed payments by 25%.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      }
+        {
+            client: "Global FinTech Startup",
+            title: "Cloud-Native Platform Transformation",
+            description: "Modernized legacy systems with a cloud-native architecture, reducing operational costs by 40% and improving scalability.",
+            image: "https://images.pexels.com/photos/8284731/pexels-photo-8284731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/cloud-native-fintech-transformation/"
+          },
+          {
+            client: "E-commerce Leader",
+            title: "Multi-Cloud Migration Success",
+            description: "Implemented a robust multi-cloud strategy that improved system reliability and reduced downtime by 99.9%.",
+            image: "https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg",
+            link: "/insights/case-studies/multi-cloud-migration-ecommerce/?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          },
+          {
+            client: "Healthcare Provider",
+            title: "Secure Cloud Infrastructure",
+            description: "Developed a HIPAA-compliant cloud infrastructure that enabled secure data management and improved patient care delivery.",
+            image: "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/digital-transformation-healthcare/"
+          }
     ],
 
     technologies: [
@@ -130,27 +130,27 @@ const PaymentGatewayPage = () => {
     },
 
     resources: [
-      {
-        type: "BLOG",
-        title: "Optimizing Payment Success Rates: A Complete Guide",
-        description: "Learn strategies to improve your payment success rates and reduce processing costs.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        type: "WHITEPAPER",
-        title: "The Future of Digital Payments",
-        description: "Explore emerging payment technologies and trends shaping the future of commerce.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        type: "VIDEO",
-        title: "Payment Gateway Integration Tutorial",
-        description: "Step-by-step guide to integrating our payment gateway into your application.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      }
+        {
+            type: "BLOG",
+            title: "Cloud Migration Strategies: A Comprehensive Guide",
+            description: "Learn about different cloud migration approaches and best practices for successful implementation.",
+            image: "https://images.pexels.com/photos/14314638/pexels-photo-14314638.jpeg?auto=compress&cs=tinysrgb&w=600",
+            link: "/insights/blog/cloud-migration-strategies-guide/"
+          },
+          {
+            type: "BLOG",
+            title: "Cloud Security & Data Protection",
+            description: "Debite collaborated with a leading investment firm to enhance cloud security, ensuring compliance with financial regulations and protecting sensitive customer data from cyber threats.",
+            image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/cloud-security-data-protection/"
+          },
+          {
+            type: "BLOG",
+            title: "The Future of Cloud Computing: Trends and Innovations",
+            description: "The cloud computing landscape is rapidly evolving, bringing new possibilities and challenges for enterprises worldwide.",
+            image: "https://images.pexels.com/photos/6424590/pexels-photo-6424590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/blog/future-of-cloud-computing-trends-and-innovations/"
+          }
     ],
 
     relatedServices: [

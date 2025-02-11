@@ -16,7 +16,7 @@ const BillingApplicationsPage = () => {
   const pageData: ServicePageProps = {
     title: "Billing Applications",
     description: "Streamline your billing operations with flexible, automated solutions",
-    heroImage: "/api/placeholder/1920/600",
+    heroImage: "https://images.pexels.com/photos/7688191/pexels-photo-7688191.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     
     overview: {
       title: "Automate and scale your billing operations",
@@ -36,7 +36,7 @@ const BillingApplicationsPage = () => {
           </p>
         </>
       ),
-      image: "/api/placeholder/800/600"
+      image: "https://images.pexels.com/photos/6694529/pexels-photo-6694529.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
 
     capabilities: [
@@ -73,27 +73,27 @@ const BillingApplicationsPage = () => {
     ],
 
     caseStudies: [
-      {
-        client: "CloudServe Solutions",
-        title: "Automating SaaS Billing",
-        description: "Reduced billing processing time by 80% and improved collection rates for a growing cloud services provider.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        client: "DigitalPro Services",
-        title: "Usage-Based Billing Implementation",
-        description: "Implemented flexible usage-based billing for a digital services platform, increasing revenue accuracy by 25%.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        client: "TechStart Solutions",
-        title: "Subscription Revenue Optimization",
-        description: "Automated subscription management and reduced churn by 15% through smart dunning strategies.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      }
+        {
+            client: "Global FinTech Startup",
+            title: "Cloud-Native Platform Transformation",
+            description: "Modernized legacy systems with a cloud-native architecture, reducing operational costs by 40% and improving scalability.",
+            image: "https://images.pexels.com/photos/8284731/pexels-photo-8284731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/cloud-native-fintech-transformation/"
+          },
+          {
+            client: "E-commerce Leader",
+            title: "Multi-Cloud Migration Success",
+            description: "Implemented a robust multi-cloud strategy that improved system reliability and reduced downtime by 99.9%.",
+            image: "https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg",
+            link: "/insights/case-studies/multi-cloud-migration-ecommerce/?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          },
+          {
+            client: "Healthcare Provider",
+            title: "Secure Cloud Infrastructure",
+            description: "Developed a HIPAA-compliant cloud infrastructure that enabled secure data management and improved patient care delivery.",
+            image: "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/digital-transformation-healthcare/"
+          }
     ],
 
     technologies: [
@@ -131,27 +131,27 @@ const BillingApplicationsPage = () => {
     },
 
     resources: [
-      {
-        type: "BLOG",
-        title: "Mastering Subscription Billing",
-        description: "Best practices for managing recurring revenue and reducing churn.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        type: "WHITEPAPER",
-        title: "The Future of Automated Billing",
-        description: "Explore trends and innovations in billing automation and revenue management.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        type: "VIDEO",
-        title: "Billing Automation Demo",
-        description: "See how our billing platform streamlines revenue operations.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      }
+        {
+            type: "BLOG",
+            title: "Cloud Migration Strategies: A Comprehensive Guide",
+            description: "Learn about different cloud migration approaches and best practices for successful implementation.",
+            image: "https://images.pexels.com/photos/14314638/pexels-photo-14314638.jpeg?auto=compress&cs=tinysrgb&w=600",
+            link: "/insights/blog/cloud-migration-strategies-guide/"
+          },
+          {
+            type: "BLOG",
+            title: "Cloud Security & Data Protection",
+            description: "Debite collaborated with a leading investment firm to enhance cloud security, ensuring compliance with financial regulations and protecting sensitive customer data from cyber threats.",
+            image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/cloud-security-data-protection/"
+          },
+          {
+            type: "BLOG",
+            title: "The Future of Cloud Computing: Trends and Innovations",
+            description: "The cloud computing landscape is rapidly evolving, bringing new possibilities and challenges for enterprises worldwide.",
+            image: "https://images.pexels.com/photos/6424590/pexels-photo-6424590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/blog/future-of-cloud-computing-trends-and-innovations/"
+          }
     ],
 
     relatedServices: [

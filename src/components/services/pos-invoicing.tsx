@@ -16,7 +16,7 @@ const POSInvoicingPage = () => {
   const pageData: ServicePageProps = {
     title: "POS & Invoicing Solutions",
     description: "Modern point-of-sale and invoicing tools to power your business growth",
-    heroImage: "/api/placeholder/1920/600",
+    heroImage: "https://images.pexels.com/photos/7688191/pexels-photo-7688191.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     
     overview: {
       title: "Streamline sales and billing with an integrated solution",
@@ -36,7 +36,7 @@ const POSInvoicingPage = () => {
           </p>
         </>
       ),
-      image: "/api/placeholder/800/600"
+      image: "https://images.pexels.com/photos/23496892/pexels-photo-23496892/free-photo-of-people-in-a-restaurant.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
 
     capabilities: [
@@ -73,27 +73,27 @@ const POSInvoicingPage = () => {
     ],
 
     caseStudies: [
-      {
-        client: "Urban Cafe",
-        title: "Modernizing Cafe Operations",
-        description: "Streamlined ordering, payments, and inventory management, reducing service time by 40%.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        client: "StyleHub Boutique",
-        title: "Retail Success Story",
-        description: "Integrated online and in-store sales with automated inventory syncing, growing revenue by 35%.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        client: "ProService Solutions",
-        title: "Service Business Transformation",
-        description: "Automated billing and payment collection, reducing outstanding invoices by 60%.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      }
+        {
+            client: "Global FinTech Startup",
+            title: "Cloud-Native Platform Transformation",
+            description: "Modernized legacy systems with a cloud-native architecture, reducing operational costs by 40% and improving scalability.",
+            image: "https://images.pexels.com/photos/8284731/pexels-photo-8284731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/cloud-native-fintech-transformation/"
+          },
+          {
+            client: "E-commerce Leader",
+            title: "Multi-Cloud Migration Success",
+            description: "Implemented a robust multi-cloud strategy that improved system reliability and reduced downtime by 99.9%.",
+            image: "https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg",
+            link: "/insights/case-studies/multi-cloud-migration-ecommerce/?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          },
+          {
+            client: "Healthcare Provider",
+            title: "Secure Cloud Infrastructure",
+            description: "Developed a HIPAA-compliant cloud infrastructure that enabled secure data management and improved patient care delivery.",
+            image: "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/digital-transformation-healthcare/"
+          }
     ],
 
     technologies: [
@@ -131,27 +131,27 @@ const POSInvoicingPage = () => {
     },
 
     resources: [
-      {
-        type: "VIDEO",
-        title: "POS & Invoicing Platform Demo",
-        description: "See how our integrated solution can transform your business operations.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        type: "BLOG",
-        title: "Maximizing Sales with Modern POS",
-        description: "Tips and strategies for leveraging your POS system for business growth.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        type: "WHITEPAPER",
-        title: "The Future of Retail Technology",
-        description: "Insights into emerging trends in POS and payment solutions.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      }
+        {
+            type: "BLOG",
+            title: "Cloud Migration Strategies: A Comprehensive Guide",
+            description: "Learn about different cloud migration approaches and best practices for successful implementation.",
+            image: "https://images.pexels.com/photos/14314638/pexels-photo-14314638.jpeg?auto=compress&cs=tinysrgb&w=600",
+            link: "/insights/blog/cloud-migration-strategies-guide/"
+          },
+          {
+            type: "BLOG",
+            title: "Cloud Security & Data Protection",
+            description: "Debite collaborated with a leading investment firm to enhance cloud security, ensuring compliance with financial regulations and protecting sensitive customer data from cyber threats.",
+            image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/cloud-security-data-protection/"
+          },
+          {
+            type: "BLOG",
+            title: "The Future of Cloud Computing: Trends and Innovations",
+            description: "The cloud computing landscape is rapidly evolving, bringing new possibilities and challenges for enterprises worldwide.",
+            image: "https://images.pexels.com/photos/6424590/pexels-photo-6424590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/blog/future-of-cloud-computing-trends-and-innovations/"
+          }
     ],
 
     relatedServices: [

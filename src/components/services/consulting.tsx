@@ -16,7 +16,7 @@ const ConsultingServicePage = () => {
       content: (
         <>
           <p className="mb-4">
-            NTT DATA's consulting services combine deep industry expertise with cutting-edge 
+            Debite's consulting services combine deep industry expertise with cutting-edge 
             technology insights to help organizations navigate digital transformation, optimize 
             operations, and drive innovation. Our consultants work closely with you to develop 
             tailored strategies that address your unique challenges and opportunities.
@@ -67,25 +67,25 @@ const ConsultingServicePage = () => {
 
     caseStudies: [
       {
-        client: "Global Financial Institution",
-        title: "Digital Banking Transformation",
-        description: "Led the strategic planning and implementation of a comprehensive digital transformation program, resulting in 40% improved customer satisfaction and 25% reduction in operational costs.",
-        image: "https://images.pexels.com/photos/936722/pexels-photo-936722.jpeg",
-        link: "#"
+        client: "Global FinTech Startup",
+        title: "Cloud-Native Platform Transformation",
+        description: "Modernized legacy systems with a cloud-native architecture, reducing operational costs by 40% and improving scalability.",
+        image: "https://images.pexels.com/photos/8284731/pexels-photo-8284731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        link: "/insights/case-studies/cloud-native-fintech-transformation/"
       },
       {
-        client: "Healthcare Provider Network",
-        title: "Operating Model Redesign",
-        description: "Developed and implemented a new operating model that improved care delivery efficiency by 30% and reduced administrative overhead by 20%.",
-        image: "https://images.pexels.com/photos/1170979/pexels-photo-1170979.jpeg",
-        link: "#"
+        client: "E-commerce Leader",
+        title: "Multi-Cloud Migration Success",
+        description: "Implemented a robust multi-cloud strategy that improved system reliability and reduced downtime by 99.9%.",
+        image: "https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg",
+        link: "/insights/case-studies/multi-cloud-migration-ecommerce/?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       },
       {
-        client: "Retail Corporation",
-        title: "Customer Experience Strategy",
-        description: "Created an omnichannel customer experience strategy that increased digital sales by 45% and improved customer retention rates by 35%.",
-        image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg",
-        link: "#"
+        client: "Healthcare Provider",
+        title: "Secure Cloud Infrastructure",
+        description: "Developed a HIPAA-compliant cloud infrastructure that enabled secure data management and improved patient care delivery.",
+        image: "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        link: "/insights/case-studies/digital-transformation-healthcare/"
       }
     ],
 
@@ -125,25 +125,25 @@ const ConsultingServicePage = () => {
 
     resources: [
       {
-        type: "WHITEPAPER",
-        title: "Digital Transformation: A Leader's Guide to Success",
-        description: "Key strategies and best practices for successful digital transformation initiatives.",
-        image: "https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg",
-        link: "#"
-      },
-      {
-        type: "WEBINAR",
-        title: "The Future of Work: Trends and Strategies",
-        description: "Expert insights on preparing your organization for the evolving workplace.",
-        image: "https://images.pexels.com/photos/3182781/pexels-photo-3182781.jpeg",
-        link: "#"
+        type: "BLOG",
+        title: "Cloud Migration Strategies: A Comprehensive Guide",
+        description: "Learn about different cloud migration approaches and best practices for successful implementation.",
+        image: "https://images.pexels.com/photos/14314638/pexels-photo-14314638.jpeg?auto=compress&cs=tinysrgb&w=600",
+        link: "/insights/blog/cloud-migration-strategies-guide/"
       },
       {
         type: "BLOG",
-        title: "Building Resilient Organizations",
-        description: "Strategies for developing adaptable and future-ready business models.",
-        image: "https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg",
-        link: "#"
+        title: "Cloud Security & Data Protection",
+        description: "Debite collaborated with a leading investment firm to enhance cloud security, ensuring compliance with financial regulations and protecting sensitive customer data from cyber threats.",
+        image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        link: "/insights/case-studies/cloud-security-data-protection/"
+      },
+      {
+        type: "BLOG",
+        title: "The Future of Cloud Computing: Trends and Innovations",
+        description: "The cloud computing landscape is rapidly evolving, bringing new possibilities and challenges for enterprises worldwide.",
+        image: "https://images.pexels.com/photos/6424590/pexels-photo-6424590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        link: "/insights/blog/future-of-cloud-computing-trends-and-innovations/"
       }
     ],
 

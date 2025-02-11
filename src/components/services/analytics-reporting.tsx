@@ -16,7 +16,7 @@ const AnalyticsReportingPage = () => {
   const pageData: ServicePageProps = {
     title: "Advanced Analytics & Reporting",
     description: "Transform your business data into actionable insights with powerful analytics tools",
-    heroImage: "/api/placeholder/1920/600",
+    heroImage: "https://images.pexels.com/photos/577210/pexels-photo-577210.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2600",
     
     overview: {
       title: "Make data-driven decisions with confidence",
@@ -36,7 +36,7 @@ const AnalyticsReportingPage = () => {
           </p>
         </>
       ),
-      image: "/api/placeholder/800/600"
+      image: "https://images.pexels.com/photos/572056/pexels-photo-572056.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
 
     capabilities: [
@@ -73,27 +73,27 @@ const AnalyticsReportingPage = () => {
     ],
 
     caseStudies: [
-      {
-        client: "TechGrow Solutions",
-        title: "Data-Driven Growth Strategy",
-        description: "Helped a SaaS startup optimize pricing and reduce customer acquisition costs by 30% using advanced analytics.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        client: "RetailPlus",
-        title: "Revenue Intelligence",
-        description: "Implemented predictive analytics to improve inventory management and increase profit margins by 20%.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        client: "ServicePro Inc",
-        title: "Performance Optimization",
-        description: "Used customer behavior analytics to improve service delivery and increase customer retention by 25%.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      }
+        {
+            client: "Global FinTech Startup",
+            title: "Cloud-Native Platform Transformation",
+            description: "Modernized legacy systems with a cloud-native architecture, reducing operational costs by 40% and improving scalability.",
+            image: "https://images.pexels.com/photos/8284731/pexels-photo-8284731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/cloud-native-fintech-transformation/"
+          },
+          {
+            client: "E-commerce Leader",
+            title: "Multi-Cloud Migration Success",
+            description: "Implemented a robust multi-cloud strategy that improved system reliability and reduced downtime by 99.9%.",
+            image: "https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg",
+            link: "/insights/case-studies/multi-cloud-migration-ecommerce/?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+          },
+          {
+            client: "Healthcare Provider",
+            title: "Secure Cloud Infrastructure",
+            description: "Developed a HIPAA-compliant cloud infrastructure that enabled secure data management and improved patient care delivery.",
+            image: "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/digital-transformation-healthcare/"
+          }
     ],
 
     technologies: [
@@ -131,27 +131,27 @@ const AnalyticsReportingPage = () => {
     },
 
     resources: [
-      {
-        type: "VIDEO",
-        title: "Analytics Platform Demo",
-        description: "See how our analytics tools can transform your business decision-making.",
-        image: "/api/placeholder/400/300",
-        link: "#"
-      },
-      {
-        type: "BLOG",
-        title: "Why You Need to Invest in Analytics for Your Business",
-        description: "Discover how investing in analytics can drive business success through data-driven insights.",
-        image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg/?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        link: "/insights/blog/invest-in-analytics-business/"
-      },
-      {
-        type: "BLOG",
-        title: "Key Metrics That Matter for Any Business",
-        description: "Identify and track essential business metrics that drive growth and success.",
-        image: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        link: "/insights/blog/key-metrics-that-matter-business/"
-      }
+        {
+            type: "BLOG",
+            title: "Cloud Migration Strategies: A Comprehensive Guide",
+            description: "Learn about different cloud migration approaches and best practices for successful implementation.",
+            image: "https://images.pexels.com/photos/14314638/pexels-photo-14314638.jpeg?auto=compress&cs=tinysrgb&w=600",
+            link: "/insights/blog/cloud-migration-strategies-guide/"
+          },
+          {
+            type: "BLOG",
+            title: "Cloud Security & Data Protection",
+            description: "Debite collaborated with a leading investment firm to enhance cloud security, ensuring compliance with financial regulations and protecting sensitive customer data from cyber threats.",
+            image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/cloud-security-data-protection/"
+          },
+          {
+            type: "BLOG",
+            title: "The Future of Cloud Computing: Trends and Innovations",
+            description: "The cloud computing landscape is rapidly evolving, bringing new possibilities and challenges for enterprises worldwide.",
+            image: "https://images.pexels.com/photos/6424590/pexels-photo-6424590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/blog/future-of-cloud-computing-trends-and-innovations/"
+          }
     ],
 
     relatedServices: [

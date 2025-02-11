@@ -76,14 +76,14 @@ const CloudServicePage = () => {
         title: "Multi-Cloud Migration Success",
         description: "Implemented a robust multi-cloud strategy that improved system reliability and reduced downtime by 99.9%.",
         image: "https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg",
-        link: "/insights/case-studies/multi-cloud-migration-ecommerce/"
+        link: "/insights/case-studies/multi-cloud-migration-ecommerce/?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
       },
       {
         client: "Healthcare Provider",
         title: "Secure Cloud Infrastructure",
         description: "Developed a HIPAA-compliant cloud infrastructure that enabled secure data management and improved patient care delivery.",
-        image: "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg",
-        link: "#"
+        image: "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        link: "/insights/case-studies/digital-transformation-healthcare/"
       }
     ],
 
