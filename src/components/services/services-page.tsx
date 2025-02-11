@@ -264,7 +264,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
           <div className="flex flex-col lg:flex-row-reverse gap-12">
             <div className="lg:w-1/2 overview-content">
               <Image
-                src={overview.image || "/api/placeholder/800/600"}
+                src={overview.image || "/api/placeholder/800"}
                 alt="Overview"
                 width={800}
                 height={600}
