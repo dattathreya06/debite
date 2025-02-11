@@ -7,9 +7,9 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Leaf, Globe2, Heart, Recycle, Wind, TreePine, Shield, Users } from 'lucide-react';
 import Button from '@/components/ui/button';
-import { textReveal, fadeIn } from '@/app/anim/text-anim';
 import FooterCTA from '@/components/layout/cta';
 import Eyebrow from '@/components/ui/eyebrow';
+import { createSplitText } from '@/app/anim/text-anim';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,9 +29,14 @@ interface Commitment {
 const SustainabilityPage = () => {
   // Refs for animations
   const heroRef = useRef<HTMLDivElement>(null);
+  const heroTitleRef = useRef<HTMLHeadingElement>(null);
+  const heroDescRef = useRef<HTMLParagraphElement>(null);
   const commitmentsRef = useRef<HTMLDivElement>(null);
+  const commitmentsHeadingRef = useRef<HTMLHeadingElement>(null);
   const initiativesRef = useRef<HTMLDivElement>(null);
+  const initiativesHeadingRef = useRef<HTMLHeadingElement>(null);
   const impactRef = useRef<HTMLDivElement>(null);
+  const impactHeadingRef = useRef<HTMLHeadingElement>(null);
 
   const commitments: Commitment[] = [
     {
@@ -81,67 +86,141 @@ const SustainabilityPage = () => {
     {
       value: '45%',
       label: 'Reduction in carbon emissions since 2020',
-      icon: <Wind className="w-8 h-8" />
+      icon: <Wind className="w-14 h-14" strokeWidth={1} />
     },
     {
       value: '100+',
       label: 'Sustainability projects worldwide',
-      icon: <TreePine className="w-8 h-8" />
+      icon: <TreePine className="w-14 h-14" strokeWidth={1} />
     },
     {
       value: '1M+',
       label: 'Lives positively impacted',
-      icon: <Users className="w-8 h-8" />
+      icon: <Users className="w-14 h-14" strokeWidth={1} />
     },
     {
       value: '200+',
       label: 'Green technology solutions deployed',
-      icon: <Shield className="w-8 h-8" />
+      icon: <Shield className="w-14 h-14" strokeWidth={1} />
     }
   ];
 
   useEffect(() => {
-    // Hero animation
-    if (heroRef.current) {
-      const heroTitle = heroRef.current.querySelector('h1');
-      const heroDesc = heroRef.current.querySelector('p');
-      
-      if (heroTitle && heroDesc) {
-        const tl = gsap.timeline();
-        tl.add(textReveal(heroTitle))
-          .from(heroDesc, {
-            opacity: 0,
-            y: 30,
-            duration: 0.8,
-            ease: 'power3.out'
-          }, '-=0.4');
-      }
-    }
+    // Hero animations with new split text
+    if (heroTitleRef.current && heroDescRef.current) {
+      const titleSplit = createSplitText(heroTitleRef.current);
+      const descSplit = createSplitText(heroDescRef.current);
 
-    // Scroll animations for sections
-    const sections = [
-      { ref: commitmentsRef, selector: '.commitment-card' },
-      { ref: initiativesRef, selector: '.initiative-card' },
-      { ref: impactRef, selector: '.impact-card' }
+      const { words: titlewords } = titleSplit.split({ types: ['words'] });
+      const { words: descWords } = descSplit.split({ types: ['words'] });
+
+      // Initial state
+      gsap.set(titlewords, { 
+        opacity: 0, 
+        y: 100,
+        rotateX: -90
+      });
+      
+      gsap.set(descWords, { 
+        opacity: 0, 
+        y: 50,
+        rotateX: -45
+      });
+
+      // Hero animation timeline
+      const tl = gsap.timeline();
+
+      tl.to(titlewords, {
+        opacity: 1,
+        y: 0,
+        rotateX: 0,
+        duration: 1,
+        stagger: 0.02,
+        ease: "power4.out"
+      })
+      .to(descWords, {
+        opacity: 1,
+        y: 0,
+        rotateX: 0,
+        duration: 0.8,
+        stagger: 0.03,
+        ease: "power3.out"
+      }, "-=0.5");
+
+      // Cleanup
+      return () => {
+        titleSplit.revert();
+        descSplit.revert();
+        tl.kill();
+      };
+    }
+  }, []);
+
+  useEffect(() => {
+    // Section headings animation with scroll triggers
+    const headings = [
+      { ref: commitmentsHeadingRef, trigger: commitmentsRef },
+      { ref: initiativesHeadingRef, trigger: initiativesRef },
+      { ref: impactHeadingRef, trigger: impactRef }
     ];
 
-    sections.forEach(({ ref, selector }) => {
+    headings.forEach(({ ref, trigger }) => {
+      if (ref.current && trigger.current) {
+        const split = createSplitText(ref.current);
+        const { words } = split.split({ types: ['words'] });
+
+        gsap.from(words, {
+          scrollTrigger: {
+            trigger: trigger.current,
+            start: "top 80%",
+            end: "top 20%",
+            toggleActions: "play none none reverse"
+          },
+          opacity: 0,
+          y: 20,
+          rotateX: -90,
+          duration: 0.8,
+          stagger: 0.02,
+          ease: "power3.out"
+        });
+
+        // Cleanup
+        return () => split.revert();
+      }
+    });
+  }, []);
+
+  useEffect(() => {
+    // Content animations
+    const animateContent = (elements: NodeListOf<Element>, stagger = 0.1) => {
+      gsap.from(elements, {
+        scrollTrigger: {
+          trigger: elements[0],
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse"
+        },
+        opacity: 0,
+        y: 30,
+        scale: 0.95,
+        duration: 0.8,
+        stagger,
+        ease: "power3.out"
+      });
+    };
+
+    // Animate cards and sections
+    const sections = [
+      { ref: commitmentsRef, selector: '.commitment-card', stagger: 0.1 },
+      { ref: initiativesRef, selector: '.initiative-card', stagger: 0.2 },
+      { ref: impactRef, selector: '.impact-card', stagger: 0.1 }
+    ];
+
+    sections.forEach(({ ref, selector, stagger }) => {
       if (ref.current) {
         const elements = ref.current.querySelectorAll(selector);
         if (elements.length) {
-          gsap.from(elements, {
-            scrollTrigger: {
-              trigger: ref.current,
-              start: 'top 80%',
-              end: 'bottom 20%',
-              toggleActions: 'play none none reverse'
-            },
-            opacity: 0,
-            y: 30,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: 'power3.out'
-          });
+          animateContent(elements, stagger);
         }
       }
     });
@@ -161,8 +240,10 @@ const SustainabilityPage = () => {
         <div className="absolute inset-0 bg-gradient-to-tr from-primary to-transparent">
           <div className="container mx-auto px-6 h-full flex items-center">
             <div className="max-w-3xl">
-              <h1 className="text-6xl font-bold mb-6">Building a Sustainable Future</h1>
-              <p className="text-xl text-gray-200 mb-8">
+              <h1 ref={heroTitleRef} className="text-6xl font-bold mb-6">
+                Building a Sustainable Future
+              </h1>
+              <p ref={heroDescRef} className="text-xl text-gray-200 mb-8">
                 We're committed to creating positive environmental and social impact through technology 
                 and innovation, working towards a more sustainable future for all.
               </p>
@@ -183,14 +264,16 @@ const SustainabilityPage = () => {
       <section className="py-20 bg-dark" ref={commitmentsRef}>
         <div className="container mx-auto px-6">
           <Eyebrow text="OUR COMMITMENTS" />
-          <h2 className="text-4xl font-bold mb-12">Sustainable by Design</h2>
+          <h2 ref={commitmentsHeadingRef} className="text-4xl font-bold mb-12">
+            Sustainable by Design
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {commitments.map((commitment, index) => (
               <div
                 key={index}
-                className="commitment-card p-8 bg-dark-dark border border-dark-light"
+                className="commitment-card p-8 bg-dark-dark border border-dark-light transform transition-transform hover:scale-105"
               >
-                <div className="text-gold-300 mb-4">
+                <div className="text-primary mb-4">
                   {commitment.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-4">{commitment.title}</h3>
@@ -205,7 +288,9 @@ const SustainabilityPage = () => {
       <section className="py-20 bg-dark-dark" ref={initiativesRef}>
         <div className="container mx-auto px-6">
           <Eyebrow text="IN ACTION" />
-          <h2 className="text-4xl font-bold mb-12">Our Initiatives</h2>
+          <h2 ref={initiativesHeadingRef} className="text-4xl font-bold mb-12">
+            Our Initiatives
+          </h2>
           <div className="space-y-12">
             {initiatives.map((initiative, index) => (
               <div
@@ -218,7 +303,7 @@ const SustainabilityPage = () => {
                     alt={initiative.title}
                     width={800}
                     height={600}
-                    className="rounded-lg grayscale"
+                    className="rounded-lg grayscale transition-transform hover:scale-105"
                   />
                 </div>
                 <div className="lg:w-1/2">
@@ -238,14 +323,16 @@ const SustainabilityPage = () => {
       <section className="py-20 bg-dark" ref={impactRef}>
         <div className="container mx-auto px-6">
           <Eyebrow text="OUR IMPACT" />
-          <h2 className="text-4xl font-bold mb-12">Making a Difference</h2>
+          <h2 ref={impactHeadingRef} className="text-4xl font-bold mb-12">
+            Making a Difference
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {impactStats.map((stat, index) => (
               <div
                 key={index}
-                className="impact-card p-8 bg-dark-dark border border-dark-light text-center"
+                className="impact-card p-8 bg-dark-dark border border-dark-light text-center transform transition-transform hover:scale-105"
               >
-                <div className="text-gold-300 flex justify-center mb-4">
+                <div className="text-primary flex justify-center mb-4">
                   {stat.icon}
                 </div>
                 <p className="text-4xl font-bold text-gold-300 mb-4">{stat.value}</p>

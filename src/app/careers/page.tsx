@@ -52,22 +52,22 @@ const CareersPage = () => {
     {
       title: 'Career Growth',
       description: 'Continuous learning and development opportunities with clear career paths',
-      icon: <GraduationCap className="w-8 h-8" />
+      icon: <GraduationCap className="w-14 h-14" strokeWidth={1} />
     },
     {
       title: 'Global Impact',
       description: 'Work on transformative projects for leading organizations worldwide',
-      icon: <Building2 className="w-8 h-8" />
+      icon: <Building2 className="w-14 h-14" strokeWidth={1} />
     },
     {
       title: 'Work-Life Balance',
       description: 'Flexible work arrangements and comprehensive wellness programs',
-      icon: <Users className="w-8 h-8" />
+      icon: <Users className="w-14 h-14" strokeWidth={1} />
     },
     {
       title: 'Innovation Culture',
       description: 'Access to cutting-edge technologies and innovative projects',
-      icon: <Briefcase className="w-8 h-8" />
+      icon: <Briefcase className="w-14 h-14" strokeWidth={1} />
     }
   ];
 
@@ -200,10 +200,10 @@ const CareersPage = () => {
       {/* Hero Section */}
       <section className="hero relative h-screen max-h-[800px] w-full">
         <Image
-          src="/api/placeholder/1920/1080"
+          src="https://images.pexels.com/photos/1595385/pexels-photo-1595385.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="Careers at Debite"
           fill
-          className="object-cover"
+          className="object-cover grayscale"
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-tr from-primary to-transparent">

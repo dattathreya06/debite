@@ -40,7 +40,7 @@ const HeroSlider: React.FC = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const sliderRef = useRef<HTMLDivElement>(null);
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const timeoutRef = useRef<number>();
+  const timeoutRef = useRef<number>(0);
   const contentRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<gsap.Context | null>(null);
 
@@ -80,7 +80,7 @@ const HeroSlider: React.FC = () => {
         if (!isAnimating) {
           handleNext();
         }
-      }, 5000);
+      }, 4000);
     };
 
     startTimer();
@@ -205,7 +205,7 @@ const HeroSlider: React.FC = () => {
   };
 
   return (
-    <div ref={sliderRef} className="relative h-screen w-full overflow-hidden bg-dark">
+    <div ref={sliderRef} className="relative h-[calc(100vh-4rem)] w-full overflow-hidden bg-dark">
       {slides.map((slide, index) => (
         <div
           key={index}

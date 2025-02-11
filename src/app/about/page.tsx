@@ -113,22 +113,22 @@ const AboutPage = () => {
 
   const values: ValueProps[] = [
     {
-      icon: <Globe2 className="w-8 h-8" />,
+      icon: <Globe2 className="w-14 h-14" strokeWidth={1} />,
       title: "Global Perspective",
       description: "We bring worldwide expertise and diverse insights to deliver innovative solutions across borders."
     },
     {
-      icon: <Users className="w-8 h-8" />,
+      icon: <Users className="w-14 h-14" strokeWidth={1} />,
       title: "Client First",
       description: "Our success is measured by our clients' success, building lasting partnerships through trust and collaboration."
     },
     {
-      icon: <Target className="w-8 h-8" />,
+      icon: <Target className="w-14 h-14" strokeWidth={1} />,
       title: "Foresight",
       description: "We anticipate industry trends and prepare our clients for tomorrow's digital challenges."
     },
     {
-      icon: <Lightbulb className="w-8 h-8" />,
+      icon: <Lightbulb className="w-14 h-14" strokeWidth={1} />,
       title: "Innovation",
       description: "We embrace emerging technologies and methodologies to drive meaningful digital transformation."
     }
@@ -187,13 +187,13 @@ const AboutPage = () => {
       {/* Hero Section */}
       <section className="relative h-[70vh] w-full">
         <Image
-          src="/api/placeholder/1920/800"
+          src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           alt="About Debite"
           fill
-          className="object-cover opacity-40"
+          className="object-cover opacity-40 grayscale"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary to-transparent">
           <div className="container mx-auto px-6 h-full flex items-center">
             <div className="max-w-3xl">
               <h1 className="hero-title text-6xl font-bold mb-6">Trusted Global Technology Partner</h1>
@@ -218,7 +218,7 @@ const AboutPage = () => {
                 key={index}
                 className="value-card p-8 bg-dark-dark border border-dark-light hover:border-gold-500 transition-colors"
               >
-                <div className="text-gold-300 mb-4">
+                <div className="text-primary mb-4">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-4">{value.title}</h3>

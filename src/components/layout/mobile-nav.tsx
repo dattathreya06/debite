@@ -96,13 +96,12 @@ export function MobileNav({ items = siteConfig.mainNav, children }: MobileNavPro
           {/* Menu panel */}
           <div 
             ref={menuRef}
-            className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-dark shadow-xl border-l border-gold-700/20"
+            className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-dark shadow-xl border-l border-dark-dark"
             role="dialog"
             aria-modal="true"
           >
             {/* Close button container */}
-            <div className="sticky top-0 z-20 flex h-16 items-center justify-between bg-royal_blue_traditional-900/95 px-4 backdrop-blur supports-[backdrop-filter]:bg-royal_blue_traditional-900/75">
-              <span className="text-lg font-semibold text-white">Menu</span>
+            <div className="sticky top-0 z-20 flex h-16 items-center justify-between bg-dark-dark px-4 backdrop-blur supports-[backdrop-filter]:bg-royal_blue_traditional-900/75">
               <button
                 onClick={() => setIsOpen(false)}
                 className="rounded-sm opacity-70 ring-offset-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2"
@@ -116,7 +115,7 @@ export function MobileNav({ items = siteConfig.mainNav, children }: MobileNavPro
 
             {/* Menu content */}
             <div className="h-[calc(100vh-4rem)] overflow-y-auto pb-20">
-              <div className="divide-y divide-gold-900/10">
+              <div className="divide-y divide-dark-dark">
                 {items?.map((item, i) => (
                   <div key={i} className="py-6 mobile-nav-item px-4">
                     <Link
@@ -130,7 +129,7 @@ export function MobileNav({ items = siteConfig.mainNav, children }: MobileNavPro
                       <div className="mt-4 ml-4 space-y-4">
                         {item.sections.map((section, sectionIndex) => (
                           <div key={sectionIndex}>
-                            <h3 className="text-sm font-medium text-gold-400">
+                            <h3 className="text-sm font-medium font-mono uppercase text-primary">
                               {section.title}
                             </h3>
                             <ul className="mt-2 space-y-2">

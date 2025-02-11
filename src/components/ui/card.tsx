@@ -1,13 +1,10 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import SplitType from "split-type";
+import { createSplitText } from "@/app/anim/text-anim";
 import Eyebrow from "./eyebrow";
-
-gsap.registerPlugin(ScrollTrigger);
+import Button from "./button";
 
 type CardVariant = "default" | "featured" | "compact" | "full-bg";
 type CardSize = "sm" | "md" | "lg";
@@ -21,6 +18,8 @@ interface CardProps {
   href: string;
   variant?: CardVariant;
   size?: CardSize;
+  buttonText?: string;
+  buttonHref?: string;
 }
 
 const Card = ({
@@ -32,6 +31,8 @@ const Card = ({
   href,
   variant = "default",
   size = "md",
+  buttonHref = "#",
+  buttonText = "read more"
 }: CardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
@@ -40,6 +41,8 @@ const Card = ({
   const linkRef = useRef<HTMLSpanElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const borderRef = useRef<HTMLDivElement>(null);
+  const splitTitleRef = useRef<any>(null);
+  const splitDescRef = useRef<any>(null);
 
   useEffect(() => {
     const card = cardRef.current;
@@ -50,129 +53,88 @@ const Card = ({
     const imageElement = imageRef.current;
     const borderElement = borderRef.current;
 
-    if (
-      !card ||
-      !titleElement ||
-      !descElement ||
-      !linkElement ||
-      !imageElement ||
-      !borderElement
-    )
-      return;
+    if (!card || !titleElement || !descElement || !linkElement || !imageElement || !borderElement) return;
 
-    const splitTitle = new SplitType(titleElement, { types: "chars" });
-    const splitDesc = new SplitType(descElement, { types: "lines" });
-    const chars = splitTitle.chars;
-    const lines = splitDesc.lines;
+    // Create split text instances
+    splitTitleRef.current = createSplitText(titleElement);
+    splitDescRef.current = createSplitText(descElement);
+
+    const { words: titlewords } = splitTitleRef.current.split({ types: ['words'] });
+    const { lines: descLines } = splitDescRef.current.split({ types: ['lines'] });
 
     const tl = gsap.timeline({ paused: true });
 
     // Border animation
     tl.fromTo(
       borderElement,
-      {
-        scaleX: 0,
-      },
-      {
-        scaleX: 1,
-        duration: 0.6,
-        ease: "power2.out",
-      },
+      { scaleX: 0 },
+      { scaleX: 1, duration: 0.6, ease: "power2.out" },
       0
     );
 
     if (variant === "full-bg") {
-      tl.to(
-        card,
-        {
-          scale: 1.02,
-          duration: 0.3,
-          ease: "power2.out",
-        },
-        0
-      )
-        .to(
-          imageElement,
-          {
-            scale: 1.1,
-            duration: 0.4,
-            ease: "power2.out",
-          },
-          0
-        )
-        .to(
-          [chars, lines],
-          {
-            y: -3,
-            duration: 0.3,
-            ease: "power2.out",
-          },
-          0
-        );
+      tl.to(card, {
+        scale: 1.02,
+        duration: 0.3,
+        ease: "power2.out",
+      }, 0)
+      .to(imageElement, {
+        scale: 1.1,
+        duration: 0.4,
+        ease: "power2.out",
+      }, 0)
+      .to(titlewords, {
+        y: -3,
+        stagger: 0.02,
+        duration: 0.3,
+        ease: "power2.out",
+      }, 0)
+      .to(descLines, {
+        y: -3,
+        stagger: 0.05,
+        duration: 0.3,
+        ease: "power2.out",
+      }, 0);
     } else {
-      tl.to(
-        card,
-        {
-          y: -10,
-          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-          duration: 0.3,
-          ease: "power2.out",
-        },
-        0
-      )
-        .to(
-          imageElement,
-          {
-            scale: 1.05,
-            duration: 0.4,
-            ease: "power2.out",
-          },
-          0
-        )
-        .to(
-          chars,
-          {
-            y: -2,
-            stagger: 0.02,
-            duration: 0.3,
-            ease: "power2.out",
-          },
-          0
-        )
-        .to(
-          lines,
-          {
-            y: -3,
-            opacity: 0.8,
-            stagger: 0.05,
-            duration: 0.3,
-            ease: "power2.out",
-          },
-          0
-        );
+      tl.to(card, {
+        y: -10,
+        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+        duration: 0.3,
+        ease: "power2.out",
+      }, 0)
+      .to(imageElement, {
+        scale: 1.05,
+        duration: 0.4,
+        ease: "power2.out",
+      }, 0)
+      .to(titlewords, {
+        y: -2,
+        stagger: 0.02,
+        duration: 0.3,
+        ease: "power2.out",
+      }, 0)
+      .to(descLines, {
+        y: -3,
+        opacity: 0.8,
+        stagger: 0.05,
+        duration: 0.3,
+        ease: "power2.out",
+      }, 0);
     }
 
-    tl.to(
-      linkElement,
-      {
-        x: 5,
-        ease: "power2.out",
-        duration: 0.3,
-      },
-      0
-    );
+    tl.to(linkElement, {
+      x: 5,
+      ease: "power2.out",
+      duration: 0.3,
+    }, 0);
 
     if (categoryElement) {
-      tl.to(
-        categoryElement,
-        {
-          y: -2,
-          scale: 1.02,
-          duration: 0.3,
-          ease: "power2.out",
-        },
-        0
-      );
+      tl.to(categoryElement, {
+        y: -2,
+        scale: 1.02,
+        duration: 0.3,
+        ease: "power2.out",
+      }, 0);
     }
 
     const mouseEnter = () => tl.play();
@@ -184,26 +146,29 @@ const Card = ({
     return () => {
       card.removeEventListener("mouseenter", mouseEnter);
       card.removeEventListener("mouseleave", mouseLeave);
+      splitTitleRef.current?.revert();
+      splitDescRef.current?.revert();
       tl.kill();
     };
   }, [variant]);
 
+  // Responsive size classes using aspect ratio and min-height
   const sizeClasses = {
-    sm: "w-64 h-96",
-    md: "w-80 h-[32rem]",
-    lg: "w-96 h-[36rem]",
+    sm: "w-full min-h-[20rem] aspect-[4/5] md:w-64",
+    md: "w-full min-h-[24rem] aspect-[3/4] md:aspect-[4/5]",
+    lg: "w-full min-h-[28rem] aspect-[3/4] lg:aspect-[4/5]",
   };
 
   const variantClasses = {
-    default: "bg-white dark:bg-gray-800",
-    featured: "bg-royal_blue_traditional-500 text-white",
-    compact: "bg-white dark:bg-gray-800 h-auto",
+    default: "bg-dark",
+    featured: "bg-dark text-white",
+    compact: "bg-dark",
     "full-bg": "bg-transparent text-white",
   };
 
   if (variant === "full-bg") {
     return (
-      <Link href={href} className="block">
+      <Link href={href} className="block group">
         <div
           ref={cardRef}
           className={`
@@ -211,14 +176,14 @@ const Card = ({
             transform-gpu will-change-transform
             ${sizeClasses[size]} 
             ${variantClasses[variant]}
-            relative group
+            relative
           `}
         >
           {/* Bottom border container */}
           <div className="absolute bottom-0 left-0 right-0 z-20 pointer-events-none overflow-hidden">
             <div
               ref={borderRef}
-              className="w-full h-[4px] bg-gadient-to-r from-primary to-accent origin-left"
+              className="w-full h-1 bg-gradient-to-r from-primary to-accent origin-left"
               style={{ transform: "scaleX(0)" }}
             />
           </div>
@@ -231,28 +196,27 @@ const Card = ({
               src={imageUrl}
               alt={title}
               fill
-              className="object-cover transform-gpu"
+              className="object-cover transform-gpu grayscale"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               placeholder={imageBlur ? "blur" : "empty"}
               blurDataURL={imageBlur}
               priority={false}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-accent/100 via-black/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-black/50 to-transparent" />
           </div>
 
           <div className="relative h-full flex flex-col justify-end p-6 z-10">
             {category && (
-              <Eyebrow
+              <Eyebrow 
                 text={category}
-                color="text-white"
-                dashColor="text-primary-light"
-                animationDuration={1.5}
-                className="mb-4"
+                variant="background"
+                color="text-blue-500"
+                bgColor="bg-blue-500/10"
               />
             )}
             <h3
               ref={titleRef}
-              className="text-2xl font-bold mb-3 leading-tight"
+              className="text-xl md:text-2xl text-white font-bold mb-3 leading-tight"
             >
               {title}
             </h3>
@@ -262,18 +226,11 @@ const Card = ({
 
             <span
               ref={linkRef}
-              className="mt-4 text-slate-950 text-sm font-medium inline-flex items-center gap-1"
+              className="mt-4 text-white text-sm font-medium inline-flex items-center gap-1"
             >
-              Read more
-              <svg
-                className="w-4 h-4"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+              <Button variant="default" size="lg" onClick={() => window.location.href = buttonHref}>
+                {buttonText}
+              </Button>
             </span>
           </div>
         </div>
@@ -282,26 +239,27 @@ const Card = ({
   }
 
   return (
-    <Link href={href} className="block">
+    <Link href={href} className="block group">
       <div
         ref={cardRef}
         className={`
           overflow-hidden shadow-lg transition-colors
-          transform-gpu will-change-transform
+          will-change-transform
           ${sizeClasses[size]} 
           ${variantClasses[variant]}
-          relative
+          relative flex flex-col border border-dark-light
         `}
       >
         <div
           ref={imageRef}
-          className="card-image relative overflow-hidden h-1/2"
+          className="relative overflow-hidden w-full"
+          style={{ flex: '1 1 50%' }}
         >
           <Image
             src={imageUrl}
             alt={title}
             fill
-            className="object-cover transform-gpu"
+            className="object-cover grayscale"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             placeholder={imageBlur ? "blur" : "empty"}
             blurDataURL={imageBlur}
@@ -310,27 +268,30 @@ const Card = ({
           {category && (
             <span
               ref={categoryRef}
-              className="absolute top-4 left-4 px-3 py-1 text-sm font-medium bg-white/90 dark:bg-gray-800/90 rounded-full transform-gpu z-10"
+              className="absolute top-4 left-4 z-10"
             >
-              {category}
+               <Eyebrow 
+            text={category}
+            variant="background"
+            color="text-white"
+            bgColor="bg-primary"
+          />
             </span>
           )}
         </div>
-        <div className="p-6">
-          <h3 ref={titleRef} className="text-xl font-bold mb-3 leading-tight">
+        <div className="p-6 flex flex-col flex-1">
+          <h3 ref={titleRef} className="text-lg md:text-xl font-bold mb-3 text-white leading-tight">
             {title}
           </h3>
           <p
             ref={descRef}
-            className="text-sm text-gray-600 dark:text-gray-300 line-clamp-3"
+            className="text-sm text-white line-clamp-3 flex-1"
           >
             {description}
           </p>
-        </div>
-        <div className="absolute bottom-4 right-4 transform-gpu">
           <span
             ref={linkRef}
-            className="text-primary text-sm font-medium inline-flex items-center gap-1"
+            className="mt-4 text-primary text-lg uppercase font-mono font-medium inline-flex items-center gap-1"
           >
             Read more
             <svg
@@ -345,11 +306,11 @@ const Card = ({
           </span>
         </div>
 
-        {/* Bottom border for non-full-bg variants */}
+        {/* Bottom border */}
         <div className="absolute bottom-0 left-0 right-0 overflow-hidden">
           <div
             ref={borderRef}
-            className="w-full h-[4px] bg-primary origin-left"
+            className="w-full h-1 bg-primary origin-left"
             style={{ transform: "scaleX(0)" }}
           />
         </div>

@@ -3,14 +3,14 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import SplitType from "split-type";
+import { createSplitText } from "@/app/anim/text-anim";
 import Eyebrow from "../ui/eyebrow";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const MissionStatement = () => {
-  const sectionRef = useRef(null);
-  const textRef = useRef(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const textRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -18,20 +18,12 @@ const MissionStatement = () => {
 
     if (!section || !text) return;
 
-    const splitText = new SplitType(text, { types: "chars" });
-    const chars = splitText.chars;
+    // Create split text instance
+    const splitter = createSplitText(text);
+    const { words } = splitter.split({ types: ['words'] });
 
-    gsap.set(chars, {
-      opacity: 0.05,
-      y: 0,
-    });
-
-    gsap.to(chars, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      stagger: 0.02,
-      ease: "power4.out",
+    // Create animation timeline
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
         start: "top 50%",
@@ -40,8 +32,26 @@ const MissionStatement = () => {
       },
     });
 
+    // Set initial state
+    gsap.set(words, {
+      opacity: 0.05,
+      y: 0,
+    });
+
+    // Animate
+    tl.to(words, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      stagger: 0.02,
+      ease: "power4.out",
+    });
+
+    // Cleanup
     return () => {
-      splitText.revert();
+      splitter.revert();
+      tl.kill();
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
 

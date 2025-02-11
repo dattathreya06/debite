@@ -13,6 +13,7 @@ import { textReveal, fadeIn } from "@/app/anim/text-anim";
 import CTA from "../layout/cta";
 import Eyebrow from "../ui/eyebrow";
 import { useGSAPAnimations } from "@/app/hooks/use-gsap-animations";
+import FooterCTA from "../layout/cta";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -402,6 +403,7 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
       {/* Services Section */}
       <section id="services" className="py-20 bg-dark">
         <div className="container mx-auto px-6">
+        <Eyebrow text="WE SERVE"></Eyebrow>
           <h2 className="text-4xl font-bold mb-12 text-white">Our Services</h2>
           <div className="servanim grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -422,6 +424,7 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
       {/* Impact Stats */}
       <section className="py-20 bg-dark-dark">
         <div className="container mx-auto px-6">
+        <Eyebrow text="WE CREATED GROWTH"></Eyebrow>
           <h2 className="text-4xl font-bold mb-12 text-white">Our Impact</h2>
           <div className="statanim grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -445,6 +448,7 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
         className="py-20 bg-dark"
       >
         <div className="container mx-auto px-6">
+        <Eyebrow text="KNOWLEDGE"></Eyebrow>
           <h2 className="text-4xl font-bold mb-12 text-white">
             Resource Library
           </h2>
@@ -452,24 +456,28 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
             {resources.map((resource, index) => (
               <div
                 key={index}
-                className="resource-card flex flex-col overflow-hidden  bg-royal_blue_traditional-900 shadow-xl border border-royal_blue_traditional-700"
+                className="resource-card flex flex-col overflow-hidden  bg-royal_blue_traditional-900 shadow-xl border border-dark-light"
               >
                 <div className="relative h-48">
                   <Image
                     src={resource.image || "/api/placeholder/400/300"}
                     alt={resource.title}
                     fill
-                    className="object-cover"
+                    className="object-cover grayscale"
                   />
                 </div>
-                <div className="p-6 flex flex-col inline-flex">
-                  <p className="text-sm px-2 py-1 text-white mb-2 bg-gradient-to-r from-primary to-accent">{resource.type}</p>
-                  <h3 className="text-xl font-bold mb-3 text-white">
+                <div className="p-6 flex flex-col h-60 justify-between inline-flex">
+                  <Eyebrow
+                   text={resource.type}
+                   variant="background"
+                   color="text-white"
+                   bgColor="bg-primary"/>
+                  <h3 className="text-xl mt-4 font-bold mb-3 text-white">
                     {resource.title}
                   </h3>
                   <Button
-                    variant="ghost"
-                    className="mt-auto text-gold-300 hover:text-gold-200 hover:bg-royal_blue_traditional-700"
+                    variant="default"
+                    className="mt-auto bg-primary text-white hover:white/50 hover:bg-royal_blue_traditional-700"
                   >
                     {resource.type === "VIDEO"
                       ? "Watch the video"
@@ -483,9 +491,8 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
         </div>
       </section>
 
-      <CTA
+      <FooterCTA
         title="Ready to Transform Your Business?"
-        description="Join leading enterprises in digital transformation with NTT DATA's innovative solutions."
         buttonText="Get Started"
         buttonHref="/contact"
       />

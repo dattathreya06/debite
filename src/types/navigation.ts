@@ -128,8 +128,8 @@ export const siteConfig: SiteConfig = {
             },
             {
               title: "Payment Gateway Services",
-              href: "/payments/upi-solutions",
-              description: "Streamlined UPI payment solutions"
+              href: "/services/payment-gateway",
+              description: "Payment gateway for Businesess of any size"
             },
           ]
         },
@@ -138,17 +138,17 @@ export const siteConfig: SiteConfig = {
           items: [
             {
               title: "Comprehensive Billing Applications",
-              href: "/payments/upi-solutions",
+              href: "/services/billing-application",
               description: "Streamlined UPI payment solutions"
             },
             {
               title: "POS & Invoicing Solutions",
-              href: "/payments/upi-solutions",
+              href: "/services/pos-invoicing",
               description: "Streamlined UPI payment solutions"
             },
             {
               title: "Advanced Analytics & Reporting",
-              href: "/payments/upi-solutions",
+              href: "/services/analytics-reporting",
               description: "Streamlined UPI payment solutions"
             },
           ]
@@ -166,69 +166,14 @@ export const siteConfig: SiteConfig = {
               title: "Blog",
               href: "/insights/blog",
               description: "Latest insights and thought leadership",
-              items: [
-                {
-                  title: "Technology Trends",
-                  href: "/insights/blog/tech-trends"
-                },
-                {
-                  title: "Digital Innovation",
-                  href: "/insights/blog/innovation"
-                }
-              ]
             },
             {
               title: "Case Studies",
               href: "/insights/case-studies",
               description: "Client success stories and implementations",
-              items: [
-                {
-                  title: "Featured Cases",
-                  href: "/insights/cases/featured"
-                },
-                {
-                  title: "Industry Solutions",
-                  href: "/insights/cases/solutions"
-                }
-              ]
             }
           ]
         },
-        {
-          title: "Resources",
-          items: [
-            {
-              title: "Research & Reports",
-              href: "/insights/research",
-              description: "In-depth research and industry reports",
-              items: [
-                {
-                  title: "Market Analysis",
-                  href: "/insights/research/market"
-                },
-                {
-                  title: "Technology Reports",
-                  href: "/insights/research/tech"
-                }
-              ]
-            },
-            {
-              title: "Events",
-              href: "/insights/events",
-              description: "Upcoming events and webinars",
-              items: [
-                {
-                  title: "Conferences",
-                  href: "/insights/events/conferences"
-                },
-                {
-                  title: "Webinars",
-                  href: "/insights/events/webinars"
-                }
-              ]
-            }
-          ]
-        }
       ]
     },
     {
@@ -240,33 +185,13 @@ export const siteConfig: SiteConfig = {
           items: [
             {
               title: "About Us",
-              href: "/about/corporate-profile",
+              href: "/about",
               description: "Our mission, values, and leadership",
-              items: [
-                {
-                  title: "Leadership",
-                  href: "/about/leadership"
-                },
-                {
-                  title: "History",
-                  href: "/about/history"
-                }
-              ]
             },
             {
               title: "Sustainability",
               href: "/about/sustainability",
               description: "Our commitment to sustainability",
-              items: [
-                {
-                  title: "ESG",
-                  href: "/about/sustainability/esg"
-                },
-                {
-                  title: "Social Impact",
-                  href: "/about/sustainability/social-impact"
-                }
-              ]
             }
           ]
         },
@@ -277,32 +202,7 @@ export const siteConfig: SiteConfig = {
               title: "Careers",
               href: "/careers",
               description: "Join our global team",
-              items: [
-                {
-                  title: "Open Positions",
-                  href: "/careers/search"
-                },
-                {
-                  title: "Life at Debite",
-                  href: "/careers/life"
-                }
-              ]
             },
-            {
-              title: "Partners",
-              href: "/about/partners",
-              description: "Our strategic partnerships",
-              items: [
-                {
-                  title: "Technology Partners",
-                  href: "/about/partners/technology"
-                },
-                {
-                  title: "Alliance Partners",
-                  href: "/about/partners/alliance"
-                }
-              ]
-            }
           ]
         }
       ]

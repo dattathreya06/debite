@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import HeroSlider from "@/components/layout/HeroSlider";
-import HorizontalScroll from "@/components/layout/insight-slider";
+import HorizontalScrollSection from "@/components/layout/insight-slider";
 import MissionStatement from "@/components/layout/mission";
 import ResourcesSection from "@/components/layout/resources-section";
 import FooterCTA from "@/components/layout/cta";
@@ -13,14 +13,14 @@ const HomePage = () => {
     <main className="relative">
       <HeroSlider />
       <MissionStatement />
-      <HorizontalScroll />
+      <HorizontalScrollSection
+      />
       <ResourcesSection />
 
       <FooterCTA
-        title="Upgrade your trip experience today"
+        title="Learn how we can transform your Business"
         buttonText="Get started"
-        buttonHref="/sign-up"
-        logomarkSrc="/path-to-your-logomark.svg"
+        buttonHref="/contact"
       />
     </main>
   );

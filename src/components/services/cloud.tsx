@@ -69,14 +69,14 @@ const CloudServicePage = () => {
         title: "Cloud-Native Platform Transformation",
         description: "Modernized legacy systems with a cloud-native architecture, reducing operational costs by 40% and improving scalability.",
         image: "https://images.pexels.com/photos/7567460/pexels-photo-7567460.jpeg",
-        link: "#"
+        link: "/insights/case-studies/cloud-native-fintech-transformation/"
       },
       {
         client: "E-commerce Leader",
         title: "Multi-Cloud Migration Success",
         description: "Implemented a robust multi-cloud strategy that improved system reliability and reduced downtime by 99.9%.",
         image: "https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg",
-        link: "#"
+        link: "/insights/case-studies/multi-cloud-migration-ecommerce/"
       },
       {
         client: "Healthcare Provider",

@@ -1,163 +1,130 @@
-"use client";
-
 import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+import Eyebrow from "../ui/eyebrow";
 import Card from "../ui/card";
 
-gsap.registerPlugin(ScrollTrigger);
-
-interface Props {
-  width?: string;
-  className?: string;
+// Define Service Type
+interface Service {
+  title: string;
+  description: string;
+  href: string;
+  imageUrl: string;
+  buttonText: string;
 }
 
-const insights = [
+// Services Data
+const services: Service[] = [
   {
-    title: "The Future of AI in Business",
-    description:
-      "Exploring how artificial intelligence is transforming business operations and decision-making processes.",
-    category: "Technology",
-    href: "/insights/ai-future",
-    imageUrl:
-      "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
+    title: "Cloud Services",
+    description: "Helping businesses build a strong brand identity and positioning.",
+    href: "/services/cloud",
+    imageUrl: "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=600",
+    buttonText: 'read more',
   },
   {
-    title: "Digital Transformation Trends",
-    description:
-      "Key trends shaping the digital transformation landscape in 2024 and beyond.",
-    category: "Business",
-    href: "/insights/digital-transformation",
-    imageUrl:
-      "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg",
+    title: "Data & AI",
+    description: "Crafting intuitive and visually appealing digital experiences.",
+    href: "/services/data-ai",
+    imageUrl: "https://images.pexels.com/photos/17483868/pexels-photo-17483868/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-represents-how-machine-learning-is-inspired-by-neuroscience-and-the-human-brain-it-was-created-by-novoto-studio-as-par.jpeg?auto=compress&cs=tinysrgb&w=600",
+    buttonText: 'read more',
   },
   {
-    title: "Sustainable Technology",
-    description:
-      "How green technologies are revolutionizing industries and promoting sustainability.",
-    category: "Sustainability",
-    href: "/insights/sustainable-tech",
-    imageUrl:
-      "https://images.pexels.com/photos/356036/pexels-photo-356036.jpeg",
+    title: "UPI Payments",
+    description: "Creating dynamic animations that bring stories to life.",
+    href: "/services/upi-solutions",
+    imageUrl: "https://www.chequpi.com/wp-content/uploads/2023/08/Greuok0YzOUYY1hN9XQmngu3Y04-1.webp",
+    buttonText: 'read more',
   },
   {
-    title: "Cybersecurity Best Practices",
-    description:
-      "Essential security measures for protecting your business in the digital age.",
-    category: "Security",
-    href: "/insights/cybersecurity",
-    imageUrl:
-      "https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg",
+    title: "Digital Invoicing & SMS Pay",
+    description: "Developing fast and scalable websites with modern technologies.",
+    href: "/services/digital-invoicing-sms-pay",
+    imageUrl: "https://images.pexels.com/photos/1458283/pexels-photo-1458283.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    buttonText: 'read more',
   },
   {
-    title: "Cloud Computing Solutions",
-    description:
-      "Modern cloud strategies for scalable and efficient business operations.",
-    category: "Technology",
-    href: "/insights/cloud-computing",
-    imageUrl:
-      "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg",
+    title: "Payment Gateway",
+    description: "High-quality 3D renders for products, interiors, and branding.",
+    href: "/services/payment-gateway",
+    imageUrl: "https://images.pexels.com/photos/442579/pexels-photo-442579.jpeg",
+    buttonText: 'read more',
   },
   {
-    title: "Data Analytics Insights",
-    description:
-      "Leveraging data analytics for better business intelligence and growth.",
-    category: "Analytics",
-    href: "/insights/data-analytics",
-    imageUrl:
-      "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg",
+    title: "Consulting",
+    description: "Full-service video production from concept to execution.",
+    href: "/services/consulting",
+    imageUrl: "https://images.pexels.com/photos/3760093/pexels-photo-3760093.jpeg?auto=compress&cs=tinysrgb&w=600",
+    buttonText: 'read more'
+  },
+  {
+    title: "Cybersecurity",
+    description: "Creating visually stunning and persuasive presentations.",
+    href: "/services/cybersecurity",
+    imageUrl: "https://images.pexels.com/photos/5952651/pexels-photo-5952651.jpeg?auto=compress&cs=tinysrgb&w=600",
+    buttonText: 'read more',
+  },
+  {
+    title: "POS & Invoicing Solutions",
+    description: "Building robust e-commerce platforms for businesses.",
+    href: "/services/pos-invoicing",
+    imageUrl: "https://images.pexels.com/photos/2988232/pexels-photo-2988232.jpeg?auto=compress&cs=tinysrgb&w=600",
+    buttonText: 'read more',
+  },
+  {
+    title: "Comprehensive Billing Applications",
+    description: "Producing compelling content for brands across platforms.",
+    href: "/services/billing-application",
+    imageUrl: "https://images.pexels.com/photos/3182834/pexels-photo-3182834.jpeg?auto=compress&cs=tinysrgb&w=600",
+    buttonText: 'read more',
+  },
+  {
+    title: "Advanced Analytics & Reporting",
+    description: "Using AI to enhance creative workflows and design automation.",
+    href: "/services/analytics-reporting",
+    imageUrl: "https://images.pexels.com/photos/1181271/pexels-photo-1181271.jpeg?auto=compress&cs=tinysrgb&w=600",
+    buttonText: 'read more',
   },
 ];
 
-const HorizontalScroll = ({ width = "100%", className = "" }: Props) => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const sectionRef = useRef<HTMLElement>(null);
-  const triggerRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+const ServicesGrid = () => {
+  const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const container = containerRef.current;
-    const trigger = triggerRef.current;
-    const section = sectionRef.current;
-    const cards = cardRefs.current;
+    if (!gridRef.current) return;
 
-    if (!container || !trigger || !section) return;
-
-    // Set initial state of cards
-    gsap.set(cards, {
-      opacity: 0,
-      y: 20,
-      scale: 0.95,
-    });
-
-    // Main horizontal scroll animation
-    const scrollTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: trigger,
-        start: "top",
-        end: "+=300%",
-        pin: true,
-        anticipatePin: 1,
-        scrub: 0.5,
-        invalidateOnRefresh: true,
-      },
-    });
-
-    const width = container.scrollWidth - window.innerWidth;
-
-    scrollTl.to(container, {
-      x: -width,
-      ease: "none",
-    });
-
-    // Card reveal animations
-    cards.forEach((card, index) => {
-      if (!card) return;
-
-      gsap.to(card, {
+    gsap.fromTo(
+      gridRef.current.children,
+      { opacity: 0, y: 30, scale: 0.9 },
+      {
         opacity: 1,
         y: 0,
         scale: 1,
-        duration: 0.8,
+        stagger: 0.15, // Staggered animation
+        duration: 0.7,
         ease: "power3.out",
-        scrollTrigger: {
-          trigger: card,
-          containerAnimation: scrollTl,
-          start: "left +=1400",
-          toggleActions: "play none none reverse",
-        },
-      });
-    });
-
-    return () => {
-      scrollTl.scrollTrigger?.kill();
-    };
+      }
+    );
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className={`bg-dark-dark text-white overflow-hidden ${className}`}
-      style={{ width }}
-    >
-      <div ref={triggerRef} className="relative overflow-hidden">
-        <div className="py-8 md:pt-24 pb-12 px-4 md:px-6">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8">
-            Latest Insights
-          </h2>
-        </div>
+    <section className="w-full bg-dark-dark text-white py-16">
+      <div className="container mx-auto px-6">
+        {/* Eyebrow Component */}
+        <Eyebrow text="Our Services" className="text-gray-400 text-center mb-4" />
 
+        {/* Section Title */}
+        <h2 className="text-2xl md:text-4xl font-bold mb-12">
+          Transforming your Businesses
+        </h2>
+
+        {/* Card Grid */}
         <div
-          ref={containerRef}
-          className="flex gap-6 px-4 md:px-6 pb-12 will-change-transform"
+          ref={gridRef}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6"
         >
-          {insights.map((insight, index) => (
-            <div
-              key={index}
-              ref={(el) => (cardRefs.current[index] = el)}
-              className="w-[420px] md:w-[420px] h-[36rem] sm:w-[500px] h-[36rem] flex-shrink-0 will-change-transform"
-            >
-              <Card {...insight} variant="full-bg" size="lg" />
+          {services.map((service, index) => (
+            <div key={index} className="w-full">
+              <Card {...service} variant="full-bg" size="lg" />
             </div>
           ))}
         </div>
@@ -166,4 +133,4 @@ const HorizontalScroll = ({ width = "100%", className = "" }: Props) => {
   );
 };
 
-export default HorizontalScroll;
+export default ServicesGrid;

@@ -569,5 +569,169 @@ export const caseStudies: Record<string, CaseStudy> = {
     role: "Head of IT Security, Leading Investment Firm",
     image: "/images/testimonials/alex-thompson.jpg",
   },
-      }
+      },
+      'cloud-native-fintech-transformation': {
+        slug: "cloud-native-fintech-transformation",
+        client: "A global FinTech startup",
+        industry: "Financial Technology & Cloud Services",
+        duration: "10 months",
+        teamSize: "15",
+        title: "Cloud-Native Platform Transformation for a Global FinTech Startup",
+        description:
+          "Debite partnered with a fast-growing FinTech startup to modernize their infrastructure by migrating to a cloud-native architecture. The goal was to enhance scalability, improve security, and ensure high availability for their financial services platform.",
+        heroImage: "https://images.pexels.com/photos/45111/pexels-photo-45111.jpeg",
+        challenge:
+          "The FinTech company struggled with an outdated monolithic system that lacked scalability, suffered from performance bottlenecks, and posed security risks due to fragmented cloud integrations.",
+        approach:
+          "We transitioned their platform to a fully cloud-native, microservices-based architecture using Kubernetes and serverless technologies. Our solution included API modernization, real-time fraud detection, and CI/CD pipeline automation.",
+        metrics: [
+          {
+            label: "Scalability",
+            value: "5x improvement",
+            description:
+              "The platform now automatically scales based on transaction volume, improving uptime and performance.",
+          },
+          {
+            label: "Deployment Speed",
+            value: "80% faster",
+            description:
+              "CI/CD automation enabled rapid feature releases and improved developer efficiency.",
+          },
+          {
+            label: "Cost Savings",
+            value: "40% reduction",
+            description:
+              "Optimized cloud resource allocation reduced operational expenses significantly.",
+          },
+        ],
+        solutions: [
+          {
+            title: "Cloud-Native Microservices Architecture",
+            description:
+              "Implemented a Kubernetes-based microservices infrastructure to enhance modularity and performance.",
+            image: "https://images.pexels.com/photos/270373/pexels-photo-270373.jpeg",
+          },
+          {
+            title: "Serverless Payment Processing",
+            description:
+              "Leveraged serverless computing to ensure seamless payment transactions with minimal latency.",
+            image: "https://images.pexels.com/photos/11035364/pexels-photo-11035364.jpeg",
+          },
+          {
+            title: "Automated Security & Compliance",
+            description:
+              "Implemented DevSecOps best practices to ensure regulatory compliance with PCI-DSS and GDPR.",
+            image: "https://images.pexels.com/photos/6914589/pexels-photo-6914589.jpeg",
+          },
+        ],
+        technologies: [
+          {
+            name: "AWS Lambda & Kubernetes",
+            description:
+              "Serverless and containerized applications for high-performance cloud operations.",
+            logo: "/images/technologies/aws-kubernetes-logo.png",
+          },
+          {
+            name: "API Gateway & Microservices",
+            description:
+              "Scalable API integrations and modular cloud-based application architecture.",
+            logo: "/images/technologies/api-microservices-logo.png",
+          },
+          {
+            name: "DevSecOps & Cloud Security",
+            description:
+              "Automated security checks and compliance monitoring for FinTech regulations.",
+            logo: "/images/technologies/devsecops-logo.png",
+          },
+        ],
+        testimonial: {
+          quote:
+            "Debite helped us build a resilient, scalable, and secure cloud-native financial platform. We can now deploy features faster and scale effortlessly to meet demand.",
+          author: "Liam Parker",
+          role: "CTO, Leading FinTech Startup",
+          image: "/images/testimonials/liam-parker.jpg",
+        },
+      },
+      "multi-cloud-migration-ecommerce" : {
+        slug: "multi-cloud-migration-ecommerce",
+        client: "A global eCommerce leader",
+        industry: "Retail & Cloud Computing",
+        duration: "12 months",
+        teamSize: "20",
+        title: "Seamless Multi-Cloud Migration for a Global E-commerce Leader",
+        description:
+          "Debite assisted a global eCommerce giant in migrating their entire infrastructure to a multi-cloud environment. The objective was to enhance redundancy, optimize performance, and prevent vendor lock-in.",
+        heroImage: "https://images.pexels.com/photos/4127648/pexels-photo-4127648.jpeg",
+        challenge:
+          "The company faced frequent downtime during peak sales periods, limited cloud scalability, and high dependency on a single cloud provider, making them vulnerable to outages and cost inefficiencies.",
+        approach:
+          "We designed a multi-cloud strategy utilizing AWS, Azure, and Google Cloud, ensuring seamless workload distribution, redundancy, and disaster recovery across platforms.",
+        metrics: [
+          {
+            label: "Downtime Reduction",
+            value: "99.99% uptime",
+            description:
+              "Multi-cloud load balancing eliminated single points of failure.",
+          },
+          {
+            label: "Operational Costs",
+            value: "30% cost optimization",
+            description:
+              "Dynamic cloud resource allocation improved efficiency and reduced over-provisioning.",
+          },
+          {
+            label: "Page Load Speed",
+            value: "2x faster",
+            description:
+              "Optimized cloud architecture improved website performance globally.",
+          },
+        ],
+        solutions: [
+          {
+            title: "Multi-Cloud Load Balancing",
+            description:
+              "Distributed workloads across AWS, Azure, and Google Cloud to optimize performance and ensure redundancy.",
+            image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
+          },
+          {
+            title: "Auto-Scaling Infrastructure",
+            description:
+              "Implemented an auto-scaling cloud environment that adjusts resources dynamically based on traffic.",
+            image: "https://images.pexels.com/photos/4974916/pexels-photo-4974916.jpeg",
+          },
+          {
+            title: "Disaster Recovery & Cloud Security",
+            description:
+              "Deployed a cloud-based disaster recovery plan ensuring business continuity with encrypted backups.",
+            image: "https://images.pexels.com/photos/2291876/pexels-photo-2291876.jpeg",
+          },
+        ],
+        technologies: [
+          {
+            name: "AWS, Azure & Google Cloud",
+            description:
+              "Multi-cloud integration for reliability and performance optimization.",
+            logo: "/images/technologies/multi-cloud-logo.png",
+          },
+          {
+            name: "Cloud Load Balancing",
+            description:
+              "Dynamic workload distribution to maintain high availability.",
+            logo: "/images/technologies/load-balancer-logo.png",
+          },
+          {
+            name: "Cloud Backup & Disaster Recovery",
+            description:
+              "Automated failover solutions ensuring business continuity.",
+            logo: "/images/technologies/cloud-backup-logo.png",
+          },
+        ],
+        testimonial: {
+          quote:
+            "Debite’s multi-cloud strategy helped us scale globally while reducing costs. Our site now runs seamlessly, even during major sales events.",
+          author: "Emma Roberts",
+          role: "VP of IT, Global eCommerce Leader",
+          image: "/images/testimonials/emma-roberts.jpg",
+        },
+      },
   };

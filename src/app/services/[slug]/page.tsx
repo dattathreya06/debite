@@ -6,6 +6,10 @@ import CybersecurityPage from '@/components/services/cybersecurity';
 import ConsultingPage from '@/components/services/consulting';
 import UPIPaymentsServicePage from '@/components/services/upi-payments';
 import DigitalInvoicingServicePage from '@/components/services/digital-invoicing';
+import PaymentGatewayPage from '@/components/services/payment-gateway';
+import BillingApplicationsPage from '@/components/services/billing-application';
+import AnalyticsReportingPage from '@/components/services/analytics-reporting';
+import POSInvoicingPage from '@/components/services/pos-invoicing';
 
 
 const SERVICE_COMPONENTS = {
@@ -15,6 +19,10 @@ const SERVICE_COMPONENTS = {
   'cybersecurity': CybersecurityPage,
   'upi-solutions' : UPIPaymentsServicePage,
   'digital-invoicing-sms-pay' : DigitalInvoicingServicePage,
+  'payment-gateway' : PaymentGatewayPage,
+  'billing-application' : BillingApplicationsPage,
+  'pos-invoicing' : POSInvoicingPage,
+  'analytics-reporting' : AnalyticsReportingPage,
 
 
   // Add other services here as you create them

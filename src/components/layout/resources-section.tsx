@@ -4,6 +4,8 @@ import React, { useEffect, useRef } from 'react';
 import Card from '@/components/ui/card';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Eyebrow from '../ui/eyebrow';
+import { Eye } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,44 +15,44 @@ const ResourcesSection = () => {
 
   const resources = [
     {
-      title: "Digital Transformation Guide",
-      description: "Comprehensive guide to transforming your business for the digital age. Learn key strategies and best practices.",
-      imageUrl: "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg",
+      title: "Smart Manufacturing with IoT & AI for an Automotive Parts Manufacturer",
+      description: "Debite helped an automotive parts manufacturer transform its production lines by integrating IoT-enabled sensors, AI-driven analytics, and automated quality control. This resulted in reduced downtime, improved efficiency, and predictive maintenance capabilities.",
+      imageUrl: "https://images.pexels.com/photos/5532845/pexels-photo-5532845.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       category: "Guide",
-      href: "/resources/digital-transformation"
+      href: "/insights/case-studies/smart-manufacturing-iot/"
     },
     {
-      title: "Cloud Migration Playbook",
-      description: "Step-by-step playbook for successful cloud migration. Includes checklists and case studies.",
-      imageUrl: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg",
+      title: "Maximizing Cloud ROI Through Optimization",
+      description: "Organizations invest in cloud computing to enhance agility, scalability, and efficiency, but without proper cost management, expenses can quickly escalate. ",
+      imageUrl: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       category: "Playbook",
       href: "/resources/cloud-migration"
     },
     {
       title: "AI Implementation Toolkit",
       description: "Essential tools and frameworks for implementing AI in your organization. From planning to deployment.",
-      imageUrl: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
+      imageUrl: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg/?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       category: "Toolkit",
       href: "/resources/ai-toolkit"
     },
     {
       title: "Cybersecurity Best Practices",
       description: "Latest cybersecurity best practices and guidelines for enterprise security.",
-      imageUrl: "https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg",
+      imageUrl: "https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       category: "Security",
       href: "/resources/cybersecurity"
     },
     {
       title: "Data Analytics Framework",
       description: "Comprehensive framework for building and scaling data analytics capabilities.",
-      imageUrl: "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg",
+      imageUrl: "https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       category: "Framework",
       href: "/resources/data-analytics"
     },
     {
       title: "Digital Innovation Report",
       description: "Annual report on digital innovation trends and their impact on business.",
-      imageUrl: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg",
+      imageUrl: "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       category: "Report",
       href: "/resources/innovation-report"
     }
@@ -67,7 +69,6 @@ const ResourcesSection = () => {
 
     if (!titleElement || !cardsContainer) return;
 
-    // Fade in the section title
     gsap.fromTo(titleElement,
       { 
         y: 50, 
@@ -85,7 +86,6 @@ const ResourcesSection = () => {
       }
     );
 
-    // Stagger the cards appearance
     gsap.fromTo(cards,
       {
         y: 100,
@@ -106,7 +106,6 @@ const ResourcesSection = () => {
       }
     );
 
-    // Clean up
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
@@ -115,19 +114,21 @@ const ResourcesSection = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="py-16 bg-gray-50 dark:bg-gray-900"
+      className="relative w-full py-16 z-50 bg-dark"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="max-w-2xl mx-auto text-center mb-12 section-title">
-          <h2 className="text-4xl font-bold text-royal_blue_traditional-900 dark:text-white mb-4">
+      <div className="container px-6 mx-auto">
+        <div className="w-full mb-12 section-title">
+          <Eyebrow text='INSIGHTS' />
+          <h2 className="text-4xl font-bold text-white mb-4">
             Resources & Insights
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300">
+          <p className="text-lg text-white">
             Explore our latest guides, playbooks, and reports to help drive your business forward
           </p>
         </div>
         
-        <div className="cards-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Updated grid layout with centered cards */}
+        <div className="cards-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 place-items-center">
           {resources.map((resource, index) => (
             <div
               key={index}
@@ -136,13 +137,15 @@ const ResourcesSection = () => {
                   cardsRef.current[index] = el;
                 }
               }}
-              className="h-full"
+              className="w-full flex justify-center"
             >
-              <Card
-                {...resource}
-                variant="default"
-                size="md"
-              />
+              <div className="w-full max-w-md">
+                <Card
+                  {...resource}
+                  variant="default"
+                  size="md"
+                />
+              </div>
             </div>
           ))}
         </div>
