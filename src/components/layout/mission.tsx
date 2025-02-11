@@ -56,7 +56,7 @@ const MissionStatement = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="w-full py-24 bg-dark">
+    <section ref={sectionRef} className="w-full py-24 bg-dark-dark">
       <div className="max-w-4xl mx-auto px-6">
         <div className="space-y-8">
           <Eyebrow

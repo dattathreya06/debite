@@ -70,11 +70,6 @@ export const siteConfig: SiteConfig = {
               href: "/industries/government",
               description: "Digital transformation for government agencies",
             },
-            {
-              title: "Insurance",
-              href: "/industries/insurance",
-              description: "Innovation in insurance and risk management",
-            }
           ]
         }
       ]

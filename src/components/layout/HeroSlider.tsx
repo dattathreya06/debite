@@ -9,6 +9,7 @@ interface Slide {
   description: string;
   image: string;
   cta: string;
+  link: string;
 }
 
 const slides: Slide[] = [
@@ -17,21 +18,24 @@ const slides: Slide[] = [
     subtitle: "Drive innovation with cutting-edge solutions",
     description: "Partner with us to accelerate your digital transformation journey",
     image: "https://images.pexels.com/photos/5473955/pexels-photo-5473955.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    cta: "Learn More"
+    cta: "Learn More",
+    link: "/services/consulting"
   },
   {
     title: "Data-Driven Insights",
     subtitle: "Unlock the power of your data",
     description: "Turn complex data into actionable business intelligence",
     image: "https://images.pexels.com/photos/5475752/pexels-photo-5475752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    cta: "Explore Solutions"
+    cta: "Explore Solutions",
+    link: "/services/data-ai"
   },
   {
     title: "Cloud Excellence",
     subtitle: "Scale with confidence",
     description: "Modernize your infrastructure with cloud-native solutions",
     image: "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-    cta: "Get Started"
+    cta: "Get Started",
+    link: "/services/cloud"
   }
 ];
 
@@ -237,9 +241,11 @@ const HeroSlider: React.FC = () => {
             <p className="slide-description text-xl text-gray-300 mb-8">
               {slides[currentSlide].description}
             </p>
+            <a href = {slides[currentSlide].link}>
             <button className="slide-cta px-8 py-3 bg-dark text-white font-semibold font-mono hover:bg-gold-600 transition-colors pointer-events-auto">
               {slides[currentSlide].cta}
             </button>
+            </a>
           </div>
         </div>
       </div>

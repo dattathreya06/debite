@@ -329,7 +329,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                     src={study.image || "/api/placeholder/400/300"}
                     alt={study.title}
                     fill
-                    className="object-cover"
+                    className="object-cover grayscale"
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
@@ -340,7 +340,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                   <p className="text-gray-300 mb-4 flex-1">{study.description}</p>
                   <Button
                     variant="default"
-                    className="mt-auto bg-primary text-gold-300 hover:text-gold-200 hover:bg-royal_blue_traditional-700"
+                    className="mt-auto bg-primary text-white hover:text-white/50 hover:bg-primary/50"
                   >
                     <a href={study.link}>
                     Read the case study  </a>

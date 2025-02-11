@@ -59,41 +59,34 @@ const FooterSection: React.FC<FooterSectionProps> = ({ title, links, sectionRef 
 );
 
 const Footer: React.FC = () => {
-  const footerRef = useRef<HTMLDivElement>(null);
-  const section1Ref = useRef<HTMLDivElement>(null);
-  const section2Ref = useRef<HTMLDivElement>(null);
-  const section3Ref = useRef<HTMLDivElement>(null);
-  const section4Ref = useRef<HTMLDivElement>(null);
-  const bottomRef = useRef<HTMLDivElement>(null);
+  const footerRef = useRef<HTMLDivElement>(null!);
+  const section1Ref = useRef<HTMLDivElement>(null!);
+  const section2Ref = useRef<HTMLDivElement>(null!);
+  const section3Ref = useRef<HTMLDivElement>(null!);
+  const section4Ref = useRef<HTMLDivElement>(null!);
+  const bottomRef = useRef<HTMLDivElement>(null!);
   
   const sections: Sections = {
     industries: [
       { label: 'Automotive', href: '/industries/automotive' },
-      { label: 'Financial Services', href: '/industries/financial-services' },
-      { label: 'Healthcare', href: '/industries/healthcare' },
+      { label: 'banking', href: '/industries/banking' },
+      { label: 'Insurance', href: '/industries/insurance' },
       { label: 'Manufacturing', href: '/industries/manufacturing' },
-      { label: 'Public Sector', href: '/industries/public-sector' }
+      { label: 'Public Sector', href: '/industries/government' }
     ],
     services: [
       { label: 'Cloud', href: '/services/cloud' },
       { label: 'Consulting', href: '/services/consulting' },
       { label: 'Data & AI', href: '/services/data-ai' },
       { label: 'Cybersecurity', href: '/services/cybersecurity' },
-      { label: 'Digital Workplace', href: '/services/digital-workplace' }
+      { label: 'UPI Payment', href: '/services/upi-solutions' }
     ],
     company: [
-      { label: 'About Us', href: '/about/corporate-profile' },
+      { label: 'About Us', href: '/about' },
       { label: 'Careers', href: '/careers' },
-      { label: 'Investors', href: '/investors' },
-      { label: 'News', href: '/news' },
+      { label: 'Blogs', href: '/insights/blog' },
+      { label: 'Case Studies', href: '/insights/case-studies' },
       { label: 'Sustainability', href: '/about/sustainability' }
-    ],
-    legal: [
-      { label: 'Terms of Use', href: '/information/terms' },
-      { label: 'Privacy Statement', href: '/information/privacy' },
-      { label: 'Cookie Policy', href: '/information/cookies' },
-      { label: 'Social Media Policy', href: '/information/social-media-policy' },
-      { label: 'GDPR', href: '/information/gdpr' }
     ]
   };
 
@@ -216,7 +209,7 @@ const Footer: React.FC = () => {
         
         <div className="footer-bottom border-t border-gray-700 pt-8">
           <div className="text-sm text-gray-400 text-center">
-            © {new Date().getFullYear()} Debite technologies Pvt Ltd. All rights reserved.
+            © {new Date().getFullYear()} Debite Solutions Pvt Ltd. All rights reserved.
           </div>
         </div>
       </div>

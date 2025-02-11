@@ -114,7 +114,7 @@ export default function BlogPage({ posts, featuredPost }: BlogPageProps) {
                 placeholder="Search articles..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-12 pr-4 py-3 bg-dark-dark border border-dark-light rounded-lg text-white placeholder:text-gray-400 focus:outline-none focus:border-primary"
+                className="w-full pl-12 pr-4 py-3 bg-dark-dark border border-dark-light text-white placeholder:text-gray-400 focus:outline-none focus:border-primary"
               />
             </div>
           </div>
@@ -133,12 +133,12 @@ export default function BlogPage({ posts, featuredPost }: BlogPageProps) {
                     src={featuredPost.image}
                     alt={featuredPost.title}
                     fill
-                    className="object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover grayscale group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-center gap-4 text-sm text-gray-400">
-                    <span className="bg-primary px-3 py-1 rounded-full text-white">
+                    <span className="bg-primary px-3 py-1 text-white">
                       {featuredPost.category}
                     </span>
                     <span className="flex items-center">

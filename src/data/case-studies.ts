@@ -497,7 +497,7 @@ export const caseStudies: Record<string, CaseStudy> = {
   title: "Cloud Security & Data Protection for a Global Financial Institution",
   description:
     "Debite collaborated with a leading investment firm to enhance cloud security, ensuring compliance with financial regulations and protecting sensitive customer data from cyber threats.",
-  heroImage: "https://images.pexels.com/photos/289236/pexels-photo-289236.jpeg",
+  heroImage: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
   challenge:
     "The client faced growing security risks due to increased cloud adoption, unencrypted sensitive financial data, and a lack of robust access controls. Data breaches posed a major risk to their reputation and regulatory compliance.",
   approach:
@@ -579,7 +579,7 @@ export const caseStudies: Record<string, CaseStudy> = {
         title: "Cloud-Native Platform Transformation for a Global FinTech Startup",
         description:
           "Debite partnered with a fast-growing FinTech startup to modernize their infrastructure by migrating to a cloud-native architecture. The goal was to enhance scalability, improve security, and ensure high availability for their financial services platform.",
-        heroImage: "https://images.pexels.com/photos/45111/pexels-photo-45111.jpeg",
+        heroImage: "https://images.pexels.com/photos/6266273/pexels-photo-6266273.jpeg?auto=compress&cs=tinysrgb&w=600",
         challenge:
           "The FinTech company struggled with an outdated monolithic system that lacked scalability, suffered from performance bottlenecks, and posed security risks due to fragmented cloud integrations.",
         approach:
@@ -661,7 +661,7 @@ export const caseStudies: Record<string, CaseStudy> = {
         title: "Seamless Multi-Cloud Migration for a Global E-commerce Leader",
         description:
           "Debite assisted a global eCommerce giant in migrating their entire infrastructure to a multi-cloud environment. The objective was to enhance redundancy, optimize performance, and prevent vendor lock-in.",
-        heroImage: "https://images.pexels.com/photos/4127648/pexels-photo-4127648.jpeg",
+        heroImage: "https://images.pexels.com/photos/4127648/pexels-photo-4127648.jpeg?auto=compress&cs=tinysrgb&w=600",
         challenge:
           "The company faced frequent downtime during peak sales periods, limited cloud scalability, and high dependency on a single cloud provider, making them vulnerable to outages and cost inefficiencies.",
         approach:
@@ -691,19 +691,19 @@ export const caseStudies: Record<string, CaseStudy> = {
             title: "Multi-Cloud Load Balancing",
             description:
               "Distributed workloads across AWS, Azure, and Google Cloud to optimize performance and ensure redundancy.",
-            image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
+            image: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600",
           },
           {
             title: "Auto-Scaling Infrastructure",
             description:
               "Implemented an auto-scaling cloud environment that adjusts resources dynamically based on traffic.",
-            image: "https://images.pexels.com/photos/4974916/pexels-photo-4974916.jpeg",
+            image: "https://images.pexels.com/photos/4974916/pexels-photo-4974916.jpeg?auto=compress&cs=tinysrgb&w=600",
           },
           {
             title: "Disaster Recovery & Cloud Security",
             description:
               "Deployed a cloud-based disaster recovery plan ensuring business continuity with encrypted backups.",
-            image: "https://images.pexels.com/photos/2291876/pexels-photo-2291876.jpeg",
+            image: "https://images.pexels.com/photos/2291876/pexels-photo-2291876.jpeg?auto=compress&cs=tinysrgb&w=600",
           },
         ],
         technologies: [
@@ -734,4 +734,170 @@ export const caseStudies: Record<string, CaseStudy> = {
           image: "/images/testimonials/emma-roberts.jpg",
         },
       },
+        "dealership-erp-modernization":{
+          slug: "dealership-erp-modernization",
+          client: "A leading automotive dealership group",
+          industry: "Automotive & Retail Management",
+          duration: "12 months",
+          teamSize: "16",
+          title: "Modernizing Dealership Operations with a Custom ERP Solution",
+          description:
+            "Debite partnered with a leading automotive dealership group to develop a custom ERP solution that streamlined inventory management, sales tracking, and customer interactions. The new system improved operational efficiency, reduced costs, and enhanced customer satisfaction.",
+          heroImage: "https://images.pexels.com/photos/97075/pexels-photo-97075.jpeg?auto=compress&cs=tinysrgb&w=600",
+          challenge:
+            "The dealership was operating on outdated legacy software that lacked real-time inventory tracking, resulted in slow sales processing, and provided limited customer insights. Fragmented systems led to inefficiencies across sales, service, and finance departments.",
+          approach:
+            "We designed and implemented a cloud-based, AI-powered ERP system that integrated sales, inventory, customer data, and financial reporting into a single unified platform. The solution leveraged automation and analytics to optimize dealership operations.",
+          metrics: [
+            {
+              label: "Sales Processing Speed",
+              value: "50% faster",
+              description:
+                "Automated workflows reduced paperwork and accelerated transaction processing.",
+            },
+            {
+              label: "Inventory Accuracy",
+              value: "95% improvement",
+              description:
+                "Real-time inventory tracking minimized stock discrepancies and improved order fulfillment.",
+            },
+            {
+              label: "Operational Costs",
+              value: "30% reduction",
+              description:
+                "Process automation and centralized data management lowered administrative expenses.",
+            },
+          ],
+          solutions: [
+            {
+              title: "AI-Driven Inventory Management",
+              description:
+                "Implemented an AI-powered inventory tracking system that optimized stock levels and provided predictive insights for vehicle demand.",
+              image: "https://images.pexels.com/photos/97075/pexels-photo-97075.jpeg?auto=compress&cs=tinysrgb&w=600",
+            },
+            {
+              title: "Automated Sales & CRM Integration",
+              description:
+                "Developed a seamless CRM system that integrated customer history, financing options, and automated follow-ups to improve customer engagement.",
+              image: "https://images.pexels.com/photos/97079/pexels-photo-97079.jpeg?auto=compress&cs=tinysrgb&w=600",
+            },
+            {
+              title: "Financial & Reporting Dashboard",
+              description:
+                "Designed a custom analytics dashboard that provided real-time insights into sales performance, expenses, and revenue trends.",
+              image: "https://images.pexels.com/photos/97083/pexels-photo-97083.jpeg?auto=compress&cs=tinysrgb&w=600",
+            },
+          ],
+          technologies: [
+            {
+              name: "Cloud-Based ERP",
+              description:
+                "Centralized dealership management for inventory, sales, and finance.",
+              logo: "/images/technologies/cloud-erp-logo.png",
+            },
+            {
+              name: "AI & Machine Learning",
+              description:
+                "Predictive analytics for inventory forecasting and customer behavior insights.",
+              logo: "/images/technologies/ai-ml-logo.png",
+            },
+            {
+              name: "Automated CRM & Sales Tracking",
+              description:
+                "Streamlined customer management and sales automation for dealership efficiency.",
+              logo: "/images/technologies/crm-logo.png",
+            },
+          ],
+          testimonial: {
+            quote:
+              "Debite's custom ERP transformed our dealership operations. Sales processing is faster, inventory is more accurate, and our customers have a seamless experience.",
+            author: "James Carter",
+            role: "Director of Operations, Leading Dealership Group",
+            image: "/images/testimonials/james-carter.jpg",
+        
+      },
+    },
+    "integrated-payment-gateway-service-centers":{
+      slug: "integrated-payment-gateway-service-centers",
+      client: "A national chain of automotive service centers",
+      industry: "Automotive & Financial Technology",
+      duration: "8 months",
+      teamSize: "12",
+      title: "Seamless Payment Gateway Integration for Multi-Location Service Centers",
+      description:
+        "Debite partnered with a leading automotive service chain to implement a secure, cloud-based payment gateway. The integration enabled frictionless transactions across multiple locations, reducing payment processing time and enhancing customer convenience.",
+      heroImage: "https://images.pexels.com/photos/4488641/pexels-photo-4488641.jpeg?auto=compress&cs=tinysrgb&w=600",
+      challenge:
+        "The service centers relied on outdated POS systems that lacked digital payment options, leading to slow transaction processing and customer dissatisfaction. Additionally, managing payments across multiple locations was inefficient and prone to errors.",
+      approach:
+        "We implemented a cloud-based payment gateway that integrated seamlessly with the existing ERP and POS systems, allowing real-time payment tracking, automated invoicing, and multi-location reconciliation. Our solution supported contactless payments, digital wallets, and subscription-based billing.",
+      metrics: [
+        {
+          label: "Transaction Processing Speed",
+          value: "60% faster",
+          description:
+            "Optimized digital payment solutions reduced checkout time significantly.",
+        },
+        {
+          label: "Customer Satisfaction",
+          value: "40% improvement",
+          description:
+            "Frictionless payments improved the overall service experience.",
+        },
+        {
+          label: "Revenue Collection Efficiency",
+          value: "30% increase",
+          description:
+            "Automated invoicing and digital payment tracking reduced errors and late payments.",
+        },
+      ],
+      solutions: [
+        {
+          title: "Cloud-Based Payment Gateway",
+          description:
+            "Integrated a centralized payment system that connects multiple service locations with real-time transaction tracking.",
+          image: "https://images.pexels.com/photos/6863180/pexels-photo-6863180.jpeg?auto=compress&cs=tinysrgb&w=600",
+        },
+        {
+          title: "Contactless & Digital Wallet Payments",
+          description:
+            "Enabled Google Pay, Apple Pay, and other digital payment methods for seamless transactions.",
+          image: "https://images.pexels.com/photos/4386324/pexels-photo-4386324.jpeg?auto=compress&cs=tinysrgb&w=600",
+        },
+        {
+          title: "Automated Billing & Reconciliation",
+          description:
+            "Developed an automated invoicing system with real-time reconciliation across multiple service centers.",
+          image: "https://images.pexels.com/photos/4386367/pexels-photo-4386367.jpeg?auto=compress&cs=tinysrgb&w=600",
+        },
+      ],
+      technologies: [
+        {
+          name: "Stripe & PayPal API Integration",
+          description:
+            "Secure, seamless payment processing across multiple locations.",
+          logo: "/images/technologies/stripe-paypal-logo.png",
+        },
+        {
+          name: "Cloud-Based POS & ERP Integration",
+          description:
+            "Real-time transaction tracking and reconciliation with ERP and POS systems.",
+          logo: "/images/technologies/cloud-pos-logo.png",
+        },
+        {
+          name: "AI-Driven Fraud Detection",
+          description:
+            "Implemented AI-powered security checks to prevent fraudulent transactions.",
+          logo: "/images/technologies/ai-fraud-detection-logo.png",
+        },
+      ],
+      testimonial: {
+        quote:
+          "Debite’s payment gateway integration streamlined our transactions across all locations. We now have faster processing, fewer errors, and happier customers.",
+        author: "Michael Anderson",
+        role: "CFO, National Automotive Service Chain",
+        image: "/images/testimonials/michael-anderson.jpg",
+      },
+
+    },
   };

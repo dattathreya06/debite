@@ -1,4 +1,3 @@
-// app/contact/page.tsx
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
@@ -6,8 +5,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Mail, Phone, MapPin, Clock, AlertCircle, Check } from 'lucide-react';
 import Button from '@/components/ui/button';
-import { textReveal } from '@/app/anim/text-anim';
 import Eyebrow from '@/components/ui/eyebrow';
+import { createSplitText } from '@/app/anim/text-anim';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,6 +35,8 @@ export function StaticForm() {
 
 export default function ContactPage() {
   const heroRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
   const formRef = useRef<HTMLFormElement>(null);
   const infoRef = useRef<HTMLDivElement>(null);
 
@@ -51,41 +52,60 @@ export default function ContactPage() {
     {
       icon: <Mail className="w-6 h-6" />,
       title: 'Email',
-      details: ['contact@company.com', 'support@company.com']
+      details: ['info@debite.com']
     },
     {
       icon: <Phone className="w-6 h-6" />,
       title: 'Phone',
-      details: ['+1 (555) 123-4567', '+1 (555) 765-4321']
+      details: ['+91 9281144143', '+91 9166616143']
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: 'Location',
-      details: ['123 Business Street', 'New York, NY 10001']
+      details: ['RAM SVR, Plot No 4/2, Sector 1 Madhapur, HUDA Techno Enclave, HITEC City, Hyderabad, Telangana 500081']
     },
     {
       icon: <Clock className="w-6 h-6" />,
       title: 'Hours',
-      details: ['Monday - Friday', '9:00 AM - 6:00 PM EST']
+      details: ['Monday - Friday', '9:00 AM - 6:00 PM IST']
     }
   ];
 
   useEffect(() => {
-    // Hero animation
-    if (heroRef.current) {
-      const heroTitle = heroRef.current.querySelector('h1');
-      const heroDesc = heroRef.current.querySelector('p');
-      
-      if (heroTitle && heroDesc) {
-        const tl = gsap.timeline();
-        tl.add(textReveal(heroTitle))
-          .from(heroDesc, {
-            opacity: 0,
-            y: 30,
-            duration: 0.8,
-            ease: 'power3.out'
-          }, '-=0.4');
-      }
+    // Hero text splitting and animation
+    if (titleRef.current && descRef.current) {
+      const titleSplit = createSplitText(titleRef.current);
+      const descSplit = createSplitText(descRef.current);
+
+      const { words: titlewords } = titleSplit.split({ types: ['words'] });
+      const { words: descWords } = descSplit.split({ types: ['words'] });
+
+      const tl = gsap.timeline();
+
+      // Animate title characters
+      tl.from(titlewords, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        stagger: 0.02,
+        ease: 'power3.out'
+      });
+
+      // Animate description words
+      tl.from(descWords, {
+        opacity: 0,
+        y: 30,
+        duration: 0.6,
+        stagger: 0.05,
+        ease: 'power3.out'
+      }, '-=0.4');
+
+      // Cleanup function
+      return () => {
+        titleSplit.revert();
+        descSplit.revert();
+        tl.kill();
+      };
     }
 
     // Scroll animations
@@ -94,11 +114,13 @@ export default function ContactPage() {
       { ref: infoRef, selector: '.info-card' }
     ];
 
+    const scrollTriggers: ScrollTrigger[] = [];
+
     sections.forEach(({ ref, selector }) => {
       if (ref.current) {
         const elements = ref.current.querySelectorAll(selector);
         if (elements.length) {
-          gsap.from(elements, {
+          const tl = gsap.from(elements, {
             scrollTrigger: {
               trigger: ref.current,
               start: 'top 80%',
@@ -111,11 +133,21 @@ export default function ContactPage() {
             stagger: 0.15,
             ease: 'power3.out'
           });
+
+          if (tl.scrollTrigger) {
+            scrollTriggers.push(tl.scrollTrigger);
+          }
         }
       }
     });
+
+    // Cleanup scroll triggers
+    return () => {
+      scrollTriggers.forEach(trigger => trigger.kill());
+    };
   }, []);
 
+  // ... Rest of the component code remains the same ...
   const validateForm = () => {
     let isValid = true;
     const updatedFields = formFields.map(field => {
@@ -188,8 +220,8 @@ export default function ContactPage() {
       <section className="relative py-20 bg-dark-dark" ref={heroRef}>
         <div className="container mx-auto px-6">
           <div className="max-w-3xl">
-            <h1 className="text-5xl font-bold mb-6">Get in Touch</h1>
-            <p className="text-xl text-gray-300">
+            <h1 ref={titleRef} className="text-5xl font-bold mb-6">Get in Touch</h1>
+            <p ref={descRef} className="text-xl text-gray-300">
               Have a question or want to learn more? We're here to help. Fill out the form below and our team will get back to you shortly.
             </p>
           </div>

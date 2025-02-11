@@ -51,25 +51,25 @@ const BankingPage = () => {
 
     caseStudies: [
       {
-        client: "Major UK Retail Bank",
-        title: "Digital Banking Platform Modernization",
-        description: "Implemented a cloud-native digital banking platform that reduced transaction processing time by 60% and improved customer satisfaction scores by 40%.",
-        image: "https://images.pexels.com/photos/5849577/pexels-photo-5849577.jpeg",
-        link: "#"
+        client: "An Auto Dealer",
+        title: "Modernizing Dealership Operations with Custom ERP",
+        description: "We developed and implemented a comprehensive ERP solution that streamlined inventory management, sales processes, and customer relationships for a growing dealership network.",
+        image: "https://images.pexels.com/photos/97075/pexels-photo-97075.jpeg?auto=compress&cs=tinysrgb&w=600",
+        link: "/insights/case-studies/dealership-erp-modernization/"
       },
       {
-        client: "European Investment Bank",
-        title: "AI-Powered Risk Assessment System",
-        description: "Developed an AI-driven risk assessment system that improved accuracy by 35% and reduced assessment time from days to hours.",
-        image: "https://images.pexels.com/photos/7567437/pexels-photo-7567437.jpeg",
-        link: "#"
+        client: "Automotive Service Centers",
+        title: "Integrated Payment Gateway for Multi-Location Service Centers",
+        description: "Our team implemented a secure, scalable payment solution that handles both in-person and online transactions across multiple service locations.",
+        image: "https://images.pexels.com/photos/4488641/pexels-photo-4488641.jpeg?auto=compress&cs=tinysrgb&w=600",
+        link: "/insights/case-studies/integrated-payment-gateway-service-centers"
       },
       {
-        client: "Digital Challenger Bank",
-        title: "Cloud Migration & System Integration",
-        description: "Successfully migrated core banking systems to the cloud, reducing operational costs by 45% and enabling rapid scaling capabilities.",
-        image: "https://images.pexels.com/photos/8370752/pexels-photo-8370752.jpeg",
-        link: "#"
+        client: "Automotive Parts Manufacturer",
+        title: "Smart Manufacturing with IoT & AI",
+        description: "Debite helped an automotive parts manufacturer transform its production lines by integrating IoT-enabled sensors, AI-driven analytics, and automated quality control.",
+        image: "https://images.pexels.com/photos/10664009/pexels-photo-10664009.jpeg?auto=compress&cs=tinysrgb&w=600",
+        link: "/insights/case-studies/smart-manufacturing-iot/"
       }
     ],
 
@@ -102,22 +102,22 @@ const BankingPage = () => {
 
     resources: [
       {
-        type: "WHITEPAPER",
-        title: "The Future of Digital Banking: Trends and Technologies Shaping Financial Services",
-        image: "https://images.pexels.com/photos/8370752/pexels-photo-8370752.jpeg",
-        link: "#"
+        type: "BLOG",
+        title: "Cloud Migration Strategies: A Comprehensive Guide",
+        image: "https://images.pexels.com/photos/14314638/pexels-photo-14314638.jpeg?auto=compress&cs=tinysrgb&w=600",
+        link: "/insights/blog/cloud-migration-strategies-guide/"
       },
       {
         type: "BLOG",
-        title: "How Cloud Migration Transformed a Traditional Bank into a Digital Leader",
-        image: "https://images.pexels.com/photos/7567437/pexels-photo-7567437.jpeg",
-        link: "#"
+        title: "Cloud Security & Data Protection",
+        image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        link: "/insights/case-studies/cloud-security-data-protection/"
       },
       {
         type: "BLOG",
-        title: "Implementing Open Banking: Challenges and Opportunities",
-        image: "https://images.pexels.com/photos/5849577/pexels-photo-5849577.jpeg",
-        link: "#"
+        title: "The Future of Cloud Computing: Trends and Innovations",
+        image: "https://images.pexels.com/photos/6424590/pexels-photo-6424590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        link: "/insights/blog/future-of-cloud-computing-trends-and-innovations/"
       }
     ]
   };

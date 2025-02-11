@@ -19,12 +19,12 @@ export default function BlogGrid({ posts }: BlogGridProps) {
                 src={post.image}
                 alt={post.title}
                 fill
-                className="object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
+                className="object-cover grayscale group-hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="space-y-3">
               <div className="flex items-center gap-4 text-sm text-gray-400">
-                <span className="bg-primary px-3 py-1 rounded-full text-white">
+                <span className="bg-primary px-3 py-1  text-white">
                   {post.category}
                 </span>
                 <span className="flex items-center">

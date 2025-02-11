@@ -68,7 +68,7 @@ const CloudServicePage = () => {
         client: "Global FinTech Startup",
         title: "Cloud-Native Platform Transformation",
         description: "Modernized legacy systems with a cloud-native architecture, reducing operational costs by 40% and improving scalability.",
-        image: "https://images.pexels.com/photos/7567460/pexels-photo-7567460.jpeg",
+        image: "https://images.pexels.com/photos/8284731/pexels-photo-8284731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         link: "/insights/case-studies/cloud-native-fintech-transformation/"
       },
       {
@@ -123,25 +123,25 @@ const CloudServicePage = () => {
 
     resources: [
       {
-        type: "WHITEPAPER",
+        type: "BLOG",
         title: "Cloud Migration Strategies: A Comprehensive Guide",
         description: "Learn about different cloud migration approaches and best practices for successful implementation.",
-        image: "/images/cloud-whitepaper.jpg",
-        link: "#"
+        image: "https://images.pexels.com/photos/14314638/pexels-photo-14314638.jpeg?auto=compress&cs=tinysrgb&w=600",
+        link: "/insights/blog/cloud-migration-strategies-guide/"
       },
       {
-        type: "WEBINAR",
-        title: "Maximizing Cloud ROI Through Optimization",
-        description: "Expert insights on cloud cost optimization and performance enhancement strategies.",
-        image: "/images/cloud-webinar.jpg",
-        link: "#"
+        type: "BLOG",
+        title: "Cloud Security & Data Protection",
+        description: "Debite collaborated with a leading investment firm to enhance cloud security, ensuring compliance with financial regulations and protecting sensitive customer data from cyber threats.",
+        image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        link: "/insights/case-studies/cloud-security-data-protection/"
       },
       {
         type: "BLOG",
         title: "The Future of Cloud Computing: Trends and Innovations",
-        description: "Explore emerging cloud technologies and their impact on business transformation.",
-        image: "/images/cloud-blog.jpg",
-        link: "#"
+        description: "The cloud computing landscape is rapidly evolving, bringing new possibilities and challenges for enterprises worldwide.",
+        image: "https://images.pexels.com/photos/6424590/pexels-photo-6424590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        link: "/insights/blog/future-of-cloud-computing-trends-and-innovations/"
       }
     ],
 

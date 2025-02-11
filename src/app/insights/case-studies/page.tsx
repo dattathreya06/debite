@@ -23,7 +23,7 @@ export default function CaseStudiesPage() {
                   src={study.heroImage}
                   alt={study.title}
                   fill
-                  className="object-cover"
+                  className="object-cover grayscale"
                 />
               </div>
               <div className="p-6">

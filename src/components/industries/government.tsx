@@ -50,27 +50,27 @@ const GovernmentPage = () => {
     ],
 
     caseStudies: [
-      {
-        client: "Local Council",
-        title: "Digital Citizen Services Portal",
-        description: "Developed and implemented a modern, user-friendly portal that simplified access to council services, reducing wait times by 50% and increasing online service adoption by 300%.",
-        image: "https://images.pexels.com/photos/327540/pexels-photo-327540.jpeg",
-        link: "#"
-      },
-      {
-        client: "Regional Transport Authority",
-        title: "Smart Transportation Management System",
-        description: "Created an integrated platform for real-time transport monitoring and management, improving service reliability by 35% and reducing operational costs by 25%.",
-        image: "https://images.pexels.com/photos/1367269/pexels-photo-1367269.jpeg",
-        link: "#"
-      },
-      {
-        client: "Municipal Government",
-        title: "Cloud Migration & Modernization",
-        description: "Successfully migrated legacy systems to a secure cloud infrastructure, enhancing system performance by 60% while ensuring strict data protection compliance.",
-        image: "https://images.pexels.com/photos/6476589/pexels-photo-6476589.jpeg",
-        link: "#"
-      }
+        {
+            client: "An Auto Dealer",
+            title: "Modernizing Dealership Operations with Custom ERP",
+            description: "We developed and implemented a comprehensive ERP solution that streamlined inventory management, sales processes, and customer relationships for a growing dealership network.",
+            image: "https://images.pexels.com/photos/97075/pexels-photo-97075.jpeg?auto=compress&cs=tinysrgb&w=600",
+            link: "/insights/case-studies/dealership-erp-modernization/"
+          },
+          {
+            client: "Automotive Service Centers",
+            title: "Integrated Payment Gateway for Multi-Location Service Centers",
+            description: "Our team implemented a secure, scalable payment solution that handles both in-person and online transactions across multiple service locations.",
+            image: "https://images.pexels.com/photos/4488641/pexels-photo-4488641.jpeg?auto=compress&cs=tinysrgb&w=600",
+            link: "/insights/case-studies/integrated-payment-gateway-service-centers"
+          },
+          {
+            client: "Automotive Parts Manufacturer",
+            title: "Smart Manufacturing with IoT & AI",
+            description: "Debite helped an automotive parts manufacturer transform its production lines by integrating IoT-enabled sensors, AI-driven analytics, and automated quality control.",
+            image: "https://images.pexels.com/photos/10664009/pexels-photo-10664009.jpeg?auto=compress&cs=tinysrgb&w=600",
+            link: "/insights/case-studies/smart-manufacturing-iot/"
+          }
     ],
 
     services: [
@@ -101,24 +101,24 @@ const GovernmentPage = () => {
     ],
 
     resources: [
-      {
-        type: "WHITEPAPER",
-        title: "The Agile Government: Digital Transformation Guide",
-        image: "https://images.pexels.com/photos/5473337/pexels-photo-5473337.jpeg",
-        link: "#"
-      },
-      {
-        type: "BLOG",
-        title: "Modernizing Public Services: A Step-by-Step Approach",
-        image: "https://images.pexels.com/photos/8847471/pexels-photo-8847471.jpeg",
-        link: "#"
-      },
-      {
-        type: "VIDEO",
-        title: "Digital Government Success Stories: Client Testimonials",
-        image: "https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg",
-        link: "#"
-      }
+        {
+            type: "BLOG",
+            title: "Cloud Migration Strategies: A Comprehensive Guide",
+            image: "https://images.pexels.com/photos/14314638/pexels-photo-14314638.jpeg?auto=compress&cs=tinysrgb&w=600",
+            link: "/insights/blog/cloud-migration-strategies-guide/"
+          },
+          {
+            type: "BLOG",
+            title: "Cloud Security & Data Protection",
+            image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/case-studies/cloud-security-data-protection/"
+          },
+          {
+            type: "BLOG",
+            title: "The Future of Cloud Computing: Trends and Innovations",
+            image: "https://images.pexels.com/photos/6424590/pexels-photo-6424590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+            link: "/insights/blog/future-of-cloud-computing-trends-and-innovations/"
+          }
     ],
 
   };

@@ -51,25 +51,25 @@ const AutomotivePage = () => {
 
     caseStudies: [
       {
-        client: "AutoTech Solutions",
+        client: "An Auto Dealer",
         title: "Modernizing Dealership Operations with Custom ERP",
         description: "We developed and implemented a comprehensive ERP solution that streamlined inventory management, sales processes, and customer relationships for a growing dealership network.",
-        image: "https://images.pexels.com/photos/159293/car-engine-motor-clean-customized-159293.jpeg?auto=compress&cs=tinysrgb&w=600",
-        link: "#"
+        image: "https://images.pexels.com/photos/97075/pexels-photo-97075.jpeg?auto=compress&cs=tinysrgb&w=600",
+        link: "/insights/case-studies/dealership-erp-modernization/"
       },
       {
-        client: "EV Service Pro",
+        client: "Automotive Service Centers",
         title: "Integrated Payment Gateway for Multi-Location Service Centers",
         description: "Our team implemented a secure, scalable payment solution that handles both in-person and online transactions across multiple service locations.",
-        image: "https://images.pexels.com/photos/30092951/pexels-photo-30092951/free-photo-of-classic-mclaren-racing-car-on-display.jpeg?auto=compress&cs=tinysrgb&w=600",
-        link: "#"
+        image: "https://images.pexels.com/photos/4488641/pexels-photo-4488641.jpeg?auto=compress&cs=tinysrgb&w=600",
+        link: "/insights/case-studies/integrated-payment-gateway-service-centers"
       },
       {
-        client: "Premier Auto Parts",
-        title: "E-commerce Platform with Real-time Inventory",
-        description: "Developed a custom e-commerce solution with real-time inventory management and integrated payment processing for this growing auto parts distributor.",
-        image: "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=600",
-        link: "#"
+        client: "Automotive Parts Manufacturer",
+        title: "Smart Manufacturing with IoT & AI",
+        description: "Debite helped an automotive parts manufacturer transform its production lines by integrating IoT-enabled sensors, AI-driven analytics, and automated quality control.",
+        image: "https://images.pexels.com/photos/10664009/pexels-photo-10664009.jpeg?auto=compress&cs=tinysrgb&w=600",
+        link: "/insights/case-studies/smart-manufacturing-iot/"
       }
     ],
 
@@ -103,21 +103,21 @@ const AutomotivePage = () => {
     resources: [
       {
         type: "BLOG",
-        title: "Digital Transformation in Automotive: From Legacy Systems to Modern Solutions",
-        image: "https://images.pexels.com/photos/5473956/pexels-photo-5473956.jpeg?auto=compress&cs=tinysrgb&w=600",
-        link: "#"
+        title: "Cloud Migration Strategies: A Comprehensive Guide",
+        image: "https://images.pexels.com/photos/14314638/pexels-photo-14314638.jpeg?auto=compress&cs=tinysrgb&w=600",
+        link: "/insights/blog/cloud-migration-strategies-guide/"
       },
       {
-        type: "VIDEO",
-        title: "How Modern Payment Solutions Are Revolutionizing Auto Services",
-        image: "/images/video-mobility.jpg",
-        link: "#"
+        type: "BLOG",
+        title: "Cloud Security & Data Protection",
+        image: "https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        link: "/insights/case-studies/cloud-security-data-protection/"
       },
       {
-        type: "WHITEPAPER",
-        title: "The Future of Automotive ERP: Integration, Automation, and Innovation",
-        image: "/images/whitepaper-sdv.jpg",
-        link: "#"
+        type: "BLOG",
+        title: "The Future of Cloud Computing: Trends and Innovations",
+        image: "https://images.pexels.com/photos/6424590/pexels-photo-6424590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        link: "/insights/blog/future-of-cloud-computing-trends-and-innovations/"
       }
     ],
 

@@ -159,7 +159,7 @@ export interface Author {
       tags: ["Cloud Native", "Edge Computing", "Sustainability", "AI", "Multi-Cloud"],
       readTime: "10 min read",
       publishDate: "2025-02-11",
-      image: "https://images.pexels.com/photos/6424590/pexels-photo-6424590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      image: "https://images.pexels.com/photos/6424590/pexels-photo-6424590.jpeg?auto=compress&cs=tinysrgb&w=600",
       featured: true
     },
     {
@@ -216,7 +216,7 @@ export interface Author {
         tags: ["Cloud Migration", "Hybrid Cloud", "Re-platforming", "Refactoring"],
         readTime: "8 min read",
         publishDate: "2025-02-11",
-        image: "https://images.pexels.com/photos/1181672/pexels-photo-1181672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        image: "https://images.pexels.com/photos/14314638/pexels-photo-14314638.jpeg?auto=compress&cs=tinysrgb&w=600",
         featured: false
       },
       {
@@ -280,7 +280,7 @@ export interface Author {
         tags: ["Cloud Optimization", "Cost Savings", "Serverless", "Cloud Governance"],
         readTime: "9 min read",
         publishDate: "2025-02-11",
-        image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=600",
         featured: true
       },
       {
@@ -323,7 +323,7 @@ export interface Author {
         tags: ["AI", "LLMs", "Automation", "Innovation"],
         readTime: "7 min read",
         publishDate: "2025-02-11",
-        image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg",
+        image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=600",
         featured: false
       },
       {
@@ -362,7 +362,7 @@ export interface Author {
         tags: ["AI Ethics", "Bias Mitigation", "Transparency", "AI Governance"],
         readTime: "6 min read",
         publishDate: "2025-02-11",
-        image: "https://images.pexels.com/photos/1181269/pexels-photo-1181269.jpeg",
+        image: "https://images.pexels.com/photos/1181269/pexels-photo-1181269.jpeg?auto=compress&cs=tinysrgb&w=600",
         featured: false
       },
       {
@@ -401,7 +401,7 @@ export interface Author {
         tags: ["Resilience", "Cybersecurity", "Business Strategy", "Crisis Management"],
         readTime: "8 min read",
         publishDate: "2025-02-11",
-        image: "https://images.pexels.com/photos/3182764/pexels-photo-3182764.jpeg",
+        image: "https://images.pexels.com/photos/3182764/pexels-photo-3182764.jpeg?auto=compress&cs=tinysrgb&w=600",
         featured: false
       },
       {
@@ -440,7 +440,7 @@ export interface Author {
         tags: ["AI Security", "Threat Detection", "Fraud Prevention", "Cyber Defense"],
         readTime: "9 min read",
         publishDate: "2025-02-11",
-        image: "https://images.pexels.com/photos/5380644/pexels-photo-5380644.jpeg",
+        image: "https://images.pexels.com/photos/5380644/pexels-photo-5380644.jpeg?auto=compress&cs=tinysrgb&w=600",
         featured: true
       },
       {
@@ -480,7 +480,7 @@ export interface Author {
         tags: ["Cyber Threats", "Ransomware", "AI Attacks", "Cyber Defense"],
         readTime: "7 min read",
         publishDate: "2025-02-11",
-        image: "https://images.pexels.com/photos/1181242/pexels-photo-1181242.jpeg",
+        image: "https://images.pexels.com/photos/1181242/pexels-photo-1181242.jpeg?auto=compress&cs=tinysrgb&w=600",
         featured: false
       },
       {
@@ -520,7 +520,7 @@ export interface Author {
         tags: ["UPI", "Fintech", "Payment Security", "Business Transactions"],
         readTime: "6 min read",
         publishDate: "2025-02-11",
-        image: "https://images.pexels.com/photos/4386376/pexels-photo-4386376.jpeg",
+        image: "https://images.pexels.com/photos/4386376/pexels-photo-4386376.jpeg?auto=compress&cs=tinysrgb&w=600",
         featured: false
       },
       {
@@ -559,7 +559,7 @@ export interface Author {
         tags: ["UPI Security", "Payment Fraud Prevention", "Fintech", "Encryption"],
         readTime: "7 min read",
         publishDate: "2025-02-11",
-        image: "https://images.pexels.com/photos/4386379/pexels-photo-4386379.jpeg",
+        image: "https://images.pexels.com/photos/4386379/pexels-photo-4386379.jpeg?auto=compress&cs=tinysrgb&w=600",
         featured: false
       },
       {
@@ -594,7 +594,7 @@ export interface Author {
         tags: ["POS", "Retail Tech", "Sales Optimization", "E-commerce"],
         readTime: "6 min read",
         publishDate: "2025-02-11",
-        image: "https://images.pexels.com/photos/5632380/pexels-photo-5632380.jpeg",
+        image: "https://images.pexels.com/photos/5632380/pexels-photo-5632380.jpeg?auto=compress&cs=tinysrgb&w=600",
         featured: false
       },
       {
@@ -629,7 +629,7 @@ export interface Author {
         tags: ["KPIs", "Analytics", "Business Growth", "Performance Metrics"],
         readTime: "5 min read",
         publishDate: "2025-02-11",
-        image: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg",
+        image: "https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=600",
         featured: false
       },
       {
@@ -664,7 +664,52 @@ export interface Author {
         tags: ["Business Intelligence", "Data Analytics", "Growth Strategy", "Market Insights"],
         readTime: "6 min read",
         publishDate: "2025-02-11",
-        image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg",
+        image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600",
+        featured: false
+      },
+      {
+        id: "14",
+        title: "Modernizing Public Services: A Step-by-Step Approach",
+        slug: "modernizing-public-services-step-by-step",
+        excerpt: "Discover a structured approach to modernizing public services using digital transformation, AI, and citizen-centric strategies.",
+        content: `
+    # Modernizing Public Services: A Step-by-Step Approach
+    
+    Governments and public institutions worldwide are embracing digital transformation to enhance efficiency, accessibility, and citizen satisfaction. This guide outlines a step-by-step approach to modernizing public services.
+    
+    ## Step 1: Assess Current Infrastructure
+    - Conduct an audit of existing processes and technologies.
+    - Identify bottlenecks, inefficiencies, and security risks.
+    
+    ## Step 2: Establish a Digital Transformation Strategy
+    - Define clear modernization goals aligned with citizen needs.
+    - Prioritize key services for digitization.
+    
+    ## Step 3: Implement AI and Automation
+    - Leverage AI-powered chatbots for citizen support.
+    - Automate administrative tasks to improve efficiency.
+    
+    ## Step 4: Enhance Cybersecurity and Data Protection
+    - Implement end-to-end encryption and multi-factor authentication.
+    - Ensure compliance with data privacy regulations.
+    
+    ## Step 5: Foster Public-Private Partnerships
+    - Collaborate with technology providers for seamless integration.
+    - Leverage cloud computing for scalable public services.
+    
+    ## Step 6: Enable Citizen-Centric Digital Services
+    - Develop mobile-friendly platforms for easy access to services.
+    - Utilize data analytics for personalized and efficient service delivery.
+    
+    ## Conclusion
+    Modernizing public services requires a strategic, technology-driven approach that enhances accessibility, security, and efficiency. A citizen-first mindset will drive success in the digital era.
+        `,
+        author: authors[1],
+        category: "Digital Innovation",
+        tags: ["Public Sector", "Digital Transformation", "AI in Governance", "Cybersecurity"],
+        readTime: "8 min read",
+        publishDate: "2025-02-11",
+        image: "https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=600",
         featured: false
       }
   ];
