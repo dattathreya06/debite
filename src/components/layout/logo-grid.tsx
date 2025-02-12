@@ -86,6 +86,7 @@ const LogoGrid = ({
   };
 
   return (
+    <section class="w-full py-24 bg-dark">
     <div ref={containerRef} className="container mx-auto px-6 py-12 bg-dark">
       {(title || description) && (
         <div className="mb-12">
@@ -123,6 +124,7 @@ const LogoGrid = ({
         ))}
       </div>
     </div>
+    </section>
   );
 };
 
