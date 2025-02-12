@@ -1,15 +1,21 @@
-'use client'
+"use client";
 
-import React, { useRef } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { ChevronRight, ExternalLink, Building2, Clock, Users } from 'lucide-react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Button from '@/components/ui/button';
-import Eyebrow from '@/components/ui/eyebrow';
-import { useGSAPAnimations } from '@/app/hooks/use-gsap-animations';
-import FooterCTA from '../layout/cta';
+import React, { useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  ChevronRight,
+  ExternalLink,
+  Building2,
+  Clock,
+  Users,
+} from "lucide-react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Button from "@/components/ui/button";
+import Eyebrow from "@/components/ui/eyebrow";
+import { useGSAPAnimations } from "@/app/hooks/use-gsap-animations";
+import FooterCTA from "../layout/cta";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,7 +71,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
   metrics,
   solutions,
   technologies,
-  testimonial
+  testimonial,
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -73,104 +79,107 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
     trigger: containerRef,
     selectors: [
       {
-        target: '.hero-meta',
+        target: ".hero-meta",
         animation: {
           from: {
             opacity: 0,
             y: -20,
             duration: 0.6,
-            ease: 'power3.out'
+            ease: "power3.out",
           },
           to: {
             opacity: 1,
-            y: 0
-          }
-        }
+            y: 0,
+          },
+        },
       },
       {
-        target: '.hero-title',
+        target: ".hero-title",
         animation: {
           from: {
             opacity: 0,
             y: 30,
             duration: 0.8,
-            ease: 'power3.out'
+            ease: "power3.out",
           },
           to: {
             opacity: 1,
-            y: 0
-          }
-        }
+            y: 0,
+          },
+        },
       },
       {
-        target: '.hero-description',
+        target: ".hero-description",
         animation: {
           from: {
             opacity: 0,
             y: 30,
             duration: 0.8,
-            ease: 'power3.out'
+            ease: "power3.out",
           },
           to: {
             opacity: 1,
-            y: 0
-          }
-        }
-      }
+            y: 0,
+          },
+        },
+      },
     ],
     scrollAnimations: [
       {
-        selector: '.overview-content',
+        selector: ".overview-content",
         animation: {
           from: {
             opacity: 0,
             y: 30,
             duration: 0.8,
             stagger: 0.15,
-            ease: 'power3.out'
-          }
-        }
+            ease: "power3.out",
+          },
+        },
       },
       {
-        selector: '.metric-card',
+        selector: ".metric-card",
         animation: {
           from: {
             opacity: 0,
             y: 30,
             duration: 0.8,
             stagger: 0.15,
-            ease: 'power3.out'
-          }
-        }
+            ease: "power3.out",
+          },
+        },
       },
       {
-        selector: '.solution-card',
+        selector: ".solution-card",
         animation: {
           from: {
             opacity: 0,
             y: 30,
             duration: 0.8,
             stagger: 0.15,
-            ease: 'power3.out'
-          }
-        }
+            ease: "power3.out",
+          },
+        },
       },
       {
-        selector: '.testimonial-content',
+        selector: ".testimonial-content",
         animation: {
           from: {
             opacity: 0,
             y: 30,
             duration: 0.8,
-            ease: 'power3.out'
-          }
-        }
-      }
-    ]
+            ease: "power3.out",
+          },
+        },
+      },
+    ],
   });
 
   return (
-    <div ref={containerRef} className="flex flex-col min-h-screen bg-dark text-white">
+    <div
+      ref={containerRef}
+      className="flex flex-col min-h-screen bg-dark text-white"
+    >
       {/* Hero Section */}
       <section className="relative h-[calc(100vh-4rem)] md:h-[calc(100vh-4rem)] w-ful">
         <Image
@@ -197,8 +206,12 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
                   <span>{teamSize} team members</span>
                 </div>
               </div>
-              <h1 className="hero-title lg:text-5xl sm:text-3xl font-bold mb-6">{title}</h1>
-              <p className="hero-description text-sm text-gray-200 mb-8">{description}</p>
+              <h1 className="hero-title lg:text-5xl sm:text-3xl font-bold mb-6">
+                {title}
+              </h1>
+              <p className="hero-description text-sm text-gray-200 mb-8">
+                {description}
+              </p>
             </div>
           </div>
         </div>
@@ -251,19 +264,19 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
       </section>
 
       {/* Rest of the sections remain the same... */}
-      
+
       {/* Solutions Section */}
       <section className="py-20 bg-dark">
         <div className="container mx-auto px-6">
           <Eyebrow text="THE SOLUTION" />
           <h2 className="text-4xl font-bold mb-12">Key Components</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {solutions.map((solution, index) => (
               <div
                 key={index}
                 className="solution-card flex flex-col md:flex-row gap-8 p-8 bg-dark-dark border border-dark-light"
               >
-                {solution.image && (
+                {/*{solution.image && (
                   <div className="md:w-1/3">
                     <Image
                       src={solution.image}
@@ -273,8 +286,8 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
                       className="rounded-lg"
                     />
                   </div>
-                )}
-                <div className="md:w-2/3">
+                )} */}
+                <div>
                   <h3 className="text-xl font-bold mb-4">{solution.title}</h3>
                   <p className="text-gray-300">{solution.description}</p>
                 </div>
@@ -289,13 +302,13 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
         <div className="container mx-auto px-6">
           <Eyebrow text="TECH STACK" />
           <h2 className="text-4xl font-bold mb-12">Technologies Used</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid lg:grid-cols-3 gap-8">
             {technologies.map((tech, index) => (
               <div
                 key={index}
                 className="p-6 bg-dark border border-dark-light rounded-lg"
               >
-                {tech.logo && (
+                {/*{tech.logo && (
                   <Image
                     src={tech.logo}
                     alt={tech.name}
@@ -303,7 +316,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
                     height={48}
                     className="mb-4"
                   />
-                )}
+                )}*/}
                 <h3 className="text-xl font-bold mb-2">{tech.name}</h3>
                 <p className="text-gray-300">{tech.description}</p>
               </div>
@@ -322,7 +335,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
                 "{testimonial.quote}"
               </blockquote>
               <div className="flex items-center">
-                {testimonial.image && (
+                {/* {testimonial.image && (
                   <Image
                     src={testimonial.image}
                     alt={testimonial.author}
@@ -330,7 +343,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
                     height={64}
                     className="rounded-full mr-4"
                   />
-                )}
+                )} */}
                 <div className="text-left">
                   <div className="font-bold">{testimonial.author}</div>
                   <div className="text-gold-300">{testimonial.role}</div>
@@ -340,11 +353,11 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
           </div>
         </section>
       )}
-      <FooterCTA title='Ready for your digital transformation'
-       buttonHref='/contact'
-       buttonText='Contact Us'
-       />
-      
+      <FooterCTA
+        title="Ready for your digital transformation"
+        buttonHref="/contact"
+        buttonText="Contact Us"
+      />
     </div>
   );
 };
