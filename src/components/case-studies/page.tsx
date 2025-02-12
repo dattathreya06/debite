@@ -9,6 +9,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Button from '@/components/ui/button';
 import Eyebrow from '@/components/ui/eyebrow';
 import { useGSAPAnimations } from '@/app/hooks/use-gsap-animations';
+import FooterCTA from '../layout/cta';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -171,7 +172,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
   return (
     <div ref={containerRef} className="flex flex-col min-h-screen bg-dark text-white">
       {/* Hero Section */}
-      <section className="relative h-[70vh] w-full">
+      <section className="relative h-[calc(100vh-4rem)] md:h-[calc(100vh-4rem)] w-ful">
         <Image
           src={heroImage}
           alt={title}
@@ -196,8 +197,8 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
                   <span>{teamSize} team members</span>
                 </div>
               </div>
-              <h1 className="hero-title text-5xl font-bold mb-6">{title}</h1>
-              <p className="hero-description text-xl text-gray-200 mb-8">{description}</p>
+              <h1 className="hero-title lg:text-5xl sm:text-3xl font-bold mb-6">{title}</h1>
+              <p className="hero-description text-sm text-gray-200 mb-8">{description}</p>
             </div>
           </div>
         </div>
@@ -315,12 +316,12 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
       {testimonial && (
         <section className="py-20 bg-dark">
           <div className="container mx-auto px-6">
-            <div className="max-w-3xl mx-auto text-center testimonial-content">
+            <div className="max-w-3xl mx-auto testimonial-content">
               <Eyebrow text="CLIENT FEEDBACK" />
               <blockquote className="text-2xl font-medium mb-8">
                 "{testimonial.quote}"
               </blockquote>
-              <div className="flex items-center justify-center">
+              <div className="flex items-center">
                 {testimonial.image && (
                   <Image
                     src={testimonial.image}
@@ -339,24 +340,11 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({
           </div>
         </section>
       )}
-
-      {/* CTA Section */}
-      <section className="py-20 bg-dark-dark">
-        <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold mb-8">Ready to Transform Your Business?</h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Let's discuss how we can help you achieve similar results.
-          </p>
-          <div className="flex justify-center gap-4">
-            <Button size="lg">
-              Contact Us
-            </Button>
-            <Button variant="outline" size="lg">
-              View More Case Studies
-            </Button>
-          </div>
-        </div>
-      </section>
+      <FooterCTA title='Ready for your digital transformation'
+       buttonHref='/contact'
+       buttonText='Contact Us'
+       />
+      
     </div>
   );
 };
