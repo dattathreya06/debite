@@ -74,7 +74,7 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
   const heroDescRef = useRef<HTMLParagraphElement>(null);
   const overviewTitleRef = useRef<HTMLHeadingElement>(null);
   const sectionTitles = useRef<(HTMLHeadingElement | null)[]>([]);
-  
+
   useEffect(() => {
     if (!heroTitleRef.current || !heroDescRef.current) return;
 
@@ -83,18 +83,18 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
     const descSplit = createSplitText(heroDescRef.current);
 
     // Split the text
-    const { words: titlewords } = titleSplit.split({ types: ['words'] });
-    const { words: descWords } = descSplit.split({ types: ['words'] });
+    const { words: titlewords } = titleSplit.split({ types: ["words"] });
+    const { words: descWords } = descSplit.split({ types: ["words"] });
 
     // Initial state
-    gsap.set(titlewords, { 
+    gsap.set(titlewords, {
       opacity: 0,
-      y: 50
+      y: 50,
     });
-    
+
     gsap.set(descWords, {
       opacity: 0,
-      y: 20
+      y: 20,
     });
 
     // Create animation timeline
@@ -106,25 +106,29 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
       y: 0,
       duration: 0.8,
       stagger: 0.02,
-      ease: "power4.out"
+      ease: "power4.out",
     });
 
     // Animate description words
-    tl.to(descWords, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      stagger: 0.03,
-      ease: "power3.out"
-    }, "-=0.4");
+    tl.to(
+      descWords,
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.03,
+        ease: "power3.out",
+      },
+      "-=0.4"
+    );
 
     // Setup section title animations
     sectionTitles.current.forEach((titleEl) => {
       if (!titleEl) return;
-      
+
       const sectionSplit = createSplitText(titleEl);
-      const { words } = sectionSplit.split({ types: ['words'] });
-      
+      const { words } = sectionSplit.split({ types: ["words"] });
+
       gsap.from(words, {
         opacity: 0,
         y: 20,
@@ -135,8 +139,8 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
           trigger: titleEl,
           start: "top 80%",
           end: "bottom 20%",
-          toggleActions: "play none none reverse"
-        }
+          toggleActions: "play none none reverse",
+        },
       });
     });
 
@@ -153,80 +157,83 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
     trigger: pageRef,
     scrollAnimations: [
       {
-        selector: '.overview-content',
-        trigger: '#overview',
+        selector: ".overview-content",
+        trigger: "#overview",
         animation: {
           from: {
             opacity: 0,
             y: 50,
             duration: 0.8,
             stagger: 0.2,
-            ease: "power3.out"
+            ease: "power3.out",
           },
-          to: { opacity: 1, y: 0 }
-        }
+          to: { opacity: 1, y: 0 },
+        },
       },
       {
-        selector: '.case-study-card',
-        trigger: '#case-studies',
+        selector: ".case-study-card",
+        trigger: "#case-studies",
         animation: {
           from: {
             opacity: 0,
             y: 30,
             duration: 0.6,
             stagger: 0.1,
-            ease: "power2.out"
+            ease: "power2.out",
           },
-          to: { opacity: 1, y: 0 }
-        }
+          to: { opacity: 1, y: 0 },
+        },
       },
       {
-        selector: '.service-card',
-        trigger: '#services',
+        selector: ".service-card",
+        trigger: "#services",
         animation: {
           from: {
             opacity: 0,
             y: 30,
             duration: 0.6,
             stagger: 0.1,
-            ease: "power2.out"
+            ease: "power2.out",
           },
-          to: { opacity: 1, y: 0 }
-        }
+          to: { opacity: 1, y: 0 },
+        },
       },
       {
-        selector: '.stat-card',
-        trigger: '.stats-section',
+        selector: ".stat-card",
+        trigger: ".stats-section",
         animation: {
           from: {
             opacity: 0,
             y: 30,
             duration: 0.6,
             stagger: 0.1,
-            ease: "power2.out"
+            ease: "power2.out",
           },
-          to: { opacity: 1, y: 0 }
-        }
+          to: { opacity: 1, y: 0 },
+        },
       },
       {
-        selector: '.resource-card',
-        trigger: '#resources',
+        selector: ".resource-card",
+        trigger: "#resources",
         animation: {
           from: {
             opacity: 0,
             y: 30,
             duration: 0.6,
             stagger: 0.1,
-            ease: "power2.out"
+            ease: "power2.out",
           },
-          to: { opacity: 1, y: 0 }
-        }
-      }
-    ]
+          to: { opacity: 1, y: 0 },
+        },
+      },
+    ],
   });
 
   return (
-    <div ref={pageRef} className="flex flex-col min-h-screen bg-royal_blue_traditional-900 text-white">
+    <div
+      ref={pageRef}
+      className="flex flex-col min-h-screen bg-royal_blue_traditional-900 text-white"
+    >
       {/* Hero Section */}
       <section className="relative h-96 w-full">
         <Image
@@ -242,7 +249,10 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
               <nav className="mb-8">
                 <ol className="flex items-center space-x-2 text-sm text-gold-300">
                   <li>
-                    <Link href="/" className="hover:text-gold-200 transition-colors">
+                    <Link
+                      href="/"
+                      className="hover:text-gold-200 transition-colors"
+                    >
                       Home
                     </Link>
                   </li>
@@ -250,14 +260,21 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
                     <ChevronRight className="w-4 h-4" />
                   </li>
                   <li>
-                    <Link href="/industries" className="hover:text-gold-200 transition-colors">
+                    <Link
+                      href="/industries"
+                      className="hover:text-gold-200 transition-colors"
+                    >
                       Industries
                     </Link>
                   </li>
                 </ol>
               </nav>
-              <h1 ref={heroTitleRef} className="text-5xl font-bold mb-4">{title}</h1>
-              <p ref={heroDescRef} className="text-xl text-gray-200">{description}</p>
+              <h1 ref={heroTitleRef} className="text-5xl font-bold mb-4">
+                {title}
+              </h1>
+              <p ref={heroDescRef} className="text-xl text-gray-200">
+                {description}
+              </p>
             </div>
           </div>
         </div>
@@ -267,16 +284,23 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
       <nav className="sticky top-16 z-40 bg-dark-dark shadow-lg">
         <div className="container mx-auto px-6">
           <ul className="flex space-x-8 overflow-x-auto">
-            {["overview", "case-studies", "services", "resources"].map((item) => (
-              <li key={item}>
-                <a
-                  href={`#${item}`}
-                  className="py-4 block text-gold-300 hover:text-gold-200 transition-colors"
-                >
-                  {item.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")}
-                </a>
-              </li>
-            ))}
+            {["overview", "case-studies", "services", "resources"].map(
+              (item) => (
+                <li key={item}>
+                  <a
+                    href={`#${item}`}
+                    className="py-4 block text-gold-300 hover:text-gold-200 transition-colors"
+                  >
+                    {item
+                      .split("-")
+                      .map(
+                        (word) => word.charAt(0).toUpperCase() + word.slice(1)
+                      )
+                      .join(" ")}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         </div>
       </nav>
@@ -285,18 +309,21 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
       <section id="overview" className="py-20 bg-dark">
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row-reverse gap-12">
-            <div className="lg:w-1/2 overview-content">
+            <div
+              className="lg:w-1/2 overview-content"
+              style={{ aspectRatio: "2 / 1" }}
+            >
               <Image
                 src={overview.image || "/api/placeholder/800/600"}
                 alt="Overview"
-                width={800}
-                height={600}
-                className="shadow-xl"
+                layout="fill"
+                objectFit="cover "
+                className="shadow-xl grayscale object-top"
               />
             </div>
             <div className="lg:w-1/2 overview-content">
-              <h2 
-                ref={el => sectionTitles.current[0] = el} 
+              <h2
+                ref={(el) => (sectionTitles.current[0] = el)}
                 className="text-4xl font-bold mb-6 text-white"
               >
                 {overview.title}
@@ -313,8 +340,8 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
       <section id="case-studies" className="py-20 bg-dark">
         <div className="container mx-auto px-6">
           <Eyebrow text="SUCCESS STORIES" />
-          <h2 
-            ref={el => sectionTitles.current[1] = el}
+          <h2
+            ref={(el) => (sectionTitles.current[1] = el)}
             className="text-4xl font-bold mb-12 text-white"
           >
             Featured Case Studies
@@ -338,7 +365,9 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
                   <h3 className="text-xl font-bold mb-3 text-white">
                     {study.title}
                   </h3>
-                  <p className="text-gray-300 mb-4 flex-1">{study.description}</p>
+                  <p className="text-gray-300 mb-4 flex-1">
+                    {study.description}
+                  </p>
                   <a href={study.link}>
                     <Button
                       variant="default"
@@ -358,8 +387,8 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
       <section id="services" className="py-20 bg-dark">
         <div className="container mx-auto px-6">
           <Eyebrow text="WE SERVE" />
-          <h2 
-            ref={el => sectionTitles.current[2] = el}
+          <h2
+            ref={(el) => (sectionTitles.current[2] = el)}
             className="text-4xl font-bold mb-12 text-white"
           >
             Our Services
@@ -384,8 +413,8 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
       <section className="py-20 bg-dark-dark stats-section">
         <div className="container mx-auto px-6">
           <Eyebrow text="WE CREATED GROWTH" />
-          <h2 
-            ref={el => sectionTitles.current[3] = el}
+          <h2
+            ref={(el) => (sectionTitles.current[3] = el)}
             className="text-4xl font-bold mb-12 text-white"
           >
             Our Impact
@@ -410,8 +439,8 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
       <section id="resources" className="py-20 bg-dark">
         <div className="container mx-auto px-6">
           <Eyebrow text="KNOWLEDGE" />
-          <h2 
-            ref={el => sectionTitles.current[4] = el}
+          <h2
+            ref={(el) => (sectionTitles.current[4] = el)}
             className="text-4xl font-bold mb-12 text-white"
           >
             Resource Library
@@ -444,7 +473,9 @@ const IndustryPage: React.FC<IndustryPageProps> = ({
                     variant="default"
                     className="mt-auto bg-primary text-white hover:white/50 hover:bg-royal_blue_traditional-700"
                   >
-                    {resource.type === "VIDEO" ? "Watch the video" : "Read more"}
+                    {resource.type === "VIDEO"
+                      ? "Watch the video"
+                      : "Read more"}
                     <ChevronRight className="ml-2 w-4 h-4" />
                   </Button>
                 </div>

@@ -10,7 +10,7 @@ import "@/app/styles/globals.css";
 export const metadata = {
   title: "Debite | You Digital Transformation Partner",
   description:
-    "Debite is your digital transformation partner with vast experienc",
+    "Debite is your digital transformation partner with years of expertise",
 };
 
 export default function RootLayout({

@@ -96,8 +96,8 @@ const ServicePage: React.FC<ServicePageProps> = ({
       const descSplit = createSplitText(heroDescRef.current);
 
       // Split the text
-      const { words: titlewords } = titleSplit.split({ types: ['words'] });
-      const { words: descWords } = descSplit.split({ types: ['words'] });
+      const { words: titlewords } = titleSplit.split({ types: ["words"] });
+      const { words: descWords } = descSplit.split({ types: ["words"] });
 
       // Initial state
       gsap.set([titlewords, descWords], { opacity: 0, y: 50 });
@@ -111,17 +111,21 @@ const ServicePage: React.FC<ServicePageProps> = ({
         y: 0,
         duration: 0.8,
         stagger: 0.02,
-        ease: "power3.out"
+        ease: "power3.out",
       });
 
       // Animate description words
-      tl.to(descWords, {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        stagger: 0.03,
-        ease: "power2.out"
-      }, "-=0.4");
+      tl.to(
+        descWords,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.03,
+          ease: "power2.out",
+        },
+        "-=0.4"
+      );
 
       // Cleanup function
       return () => {
@@ -152,12 +156,36 @@ const ServicePage: React.FC<ServicePageProps> = ({
 
     // Section animations with text splitting
     const sections = [
-      { ref: overviewRef, selector: ".overview-content", title: "overview-title" },
-      { ref: capabilitiesRef, selector: ".capability-card", title: "capabilities-title" },
-      { ref: caseStudiesRef, selector: ".case-study-card", title: "case-studies-title" },
-      { ref: technologiesRef, selector: ".technology-card", title: "technologies-title" },
-      { ref: methodologyRef, selector: ".methodology-step", title: "methodology-title" },
-      { ref: resourcesRef, selector: ".resource-card", title: "resources-title" }
+      {
+        ref: overviewRef,
+        selector: ".overview-content",
+        title: "overview-title",
+      },
+      {
+        ref: capabilitiesRef,
+        selector: ".capability-card",
+        title: "capabilities-title",
+      },
+      {
+        ref: caseStudiesRef,
+        selector: ".case-study-card",
+        title: "case-studies-title",
+      },
+      {
+        ref: technologiesRef,
+        selector: ".technology-card",
+        title: "technologies-title",
+      },
+      {
+        ref: methodologyRef,
+        selector: ".methodology-step",
+        title: "methodology-title",
+      },
+      {
+        ref: resourcesRef,
+        selector: ".resource-card",
+        title: "resources-title",
+      },
     ];
 
     // Cleanup array for split text instances
@@ -168,13 +196,15 @@ const ServicePage: React.FC<ServicePageProps> = ({
         const elements = ref.current.querySelectorAll(selector);
         if (elements.length) {
           // Split text for headings in each section
-          const sectionHeading = ref.current.querySelector(`h2[data-title="${title}"]`);
+          const sectionHeading = ref.current.querySelector(
+            `h2[data-title="${title}"]`
+          );
           if (sectionHeading) {
             const headingSplit = createSplitText(sectionHeading as HTMLElement);
             splitInstances.push(headingSplit);
-            
-            const { words } = headingSplit.split({ types: ['words'] });
-            
+
+            const { words } = headingSplit.split({ types: ["words"] });
+
             gsap.from(words, {
               opacity: 0,
               y: 30,
@@ -198,7 +228,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
 
     // Cleanup function
     return () => {
-      splitInstances.forEach(instance => instance.revert());
+      splitInstances.forEach((instance) => instance.revert());
     };
   }, []);
 
@@ -219,7 +249,10 @@ const ServicePage: React.FC<ServicePageProps> = ({
               <nav className="mb-8">
                 <ol className="flex items-center space-x-2 text-sm text-gold-300">
                   <li>
-                    <Link href="/" className="hover:text-gold-200 transition-colors">
+                    <Link
+                      href="/"
+                      className="hover:text-gold-200 transition-colors"
+                    >
                       Home
                     </Link>
                   </li>
@@ -227,14 +260,21 @@ const ServicePage: React.FC<ServicePageProps> = ({
                     <ChevronRight className="w-4 h-4" />
                   </li>
                   <li>
-                    <Link href="/services" className="hover:text-gold-200 transition-colors">
+                    <Link
+                      href="/services"
+                      className="hover:text-gold-200 transition-colors"
+                    >
                       Services
                     </Link>
                   </li>
                 </ol>
               </nav>
-              <h1 ref={heroTitleRef} className="text-5xl font-bold mb-4">{title}</h1>
-              <p ref={heroDescRef} className="text-xl text-gray-200">{description}</p>
+              <h1 ref={heroTitleRef} className="text-5xl font-bold mb-4">
+                {title}
+              </h1>
+              <p ref={heroDescRef} className="text-xl text-gray-200">
+                {description}
+              </p>
             </div>
           </div>
         </div>
@@ -244,13 +284,23 @@ const ServicePage: React.FC<ServicePageProps> = ({
       <nav className="sticky top-16 z-40 bg-dark-dark shadow-lg">
         <div className="container mx-auto px-6">
           <ul className="flex space-x-8 overflow-x-auto">
-            {["overview", "capabilities", "case-studies", "technologies", "methodology", "resources"].map((item) => (
+            {[
+              "overview",
+              "capabilities",
+              "case-studies",
+              "technologies",
+              "methodology",
+              "resources",
+            ].map((item) => (
               <li key={item}>
                 <a
                   href={`#${item}`}
                   className="py-4 block text-primary hover:text-accent transition-colors"
                 >
-                  {item.split("-").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")}
+                  {item
+                    .split("-")
+                    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(" ")}
                 </a>
               </li>
             ))}
@@ -264,15 +314,18 @@ const ServicePage: React.FC<ServicePageProps> = ({
           <div className="flex flex-col lg:flex-row-reverse gap-12">
             <div className="lg:w-1/2 overview-content">
               <Image
-                src={overview.image || "/api/placeholder/800"}
+                src={overview.image || "/api/placeholder/800/600"}
                 alt="Overview"
-                width={800}
-                height={600}
-                className="grayscale shadow-xl"
+                layout="fill"
+                objectFit="cover "
+                className="shadow-xl grayscale object-top"
               />
             </div>
             <div className="lg:w-1/2 overview-content">
-              <h2 data-title="overview-title" className="text-4xl font-bold mb-6 text-white">
+              <h2
+                data-title="overview-title"
+                className="text-4xl font-bold mb-6 text-white"
+              >
                 {overview.title}
               </h2>
               <div className="prose prose-invert max-w-none">
@@ -284,10 +337,17 @@ const ServicePage: React.FC<ServicePageProps> = ({
       </section>
 
       {/* Capabilities Section */}
-      <section id="capabilities" className="py-20 bg-dark-dark" ref={capabilitiesRef}>
+      <section
+        id="capabilities"
+        className="py-20 bg-dark-dark"
+        ref={capabilitiesRef}
+      >
         <div className="container mx-auto px-6">
           <Eyebrow text="WHAT WE OFFER" />
-          <h2 data-title="capabilities-title" className="text-4xl font-bold mb-12 text-white">
+          <h2
+            data-title="capabilities-title"
+            className="text-4xl font-bold mb-12 text-white"
+          >
             Core Capabilities
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -297,9 +357,9 @@ const ServicePage: React.FC<ServicePageProps> = ({
                 className="capability-card p-8 bg-dark border border-dark-light shadow-xl"
               >
                 {capability.icon && (
-                 <div className="text-primary mb-4">
-                  <capability.icon size={50} strokeWidth={1} />
-                </div>
+                  <div className="text-primary mb-4">
+                    <capability.icon size={50} strokeWidth={1} />
+                  </div>
                 )}
                 <h3 className="text-xl font-bold mb-4 text-white">
                   {capability.title}
@@ -315,7 +375,10 @@ const ServicePage: React.FC<ServicePageProps> = ({
       <section id="case-studies" className="py-20 bg-dark" ref={caseStudiesRef}>
         <div className="container mx-auto px-6">
           <Eyebrow text="SUCCESS STORIES" />
-          <h2 data-title="case-studies-title" className="text-4xl font-bold mb-12 text-white">
+          <h2
+            data-title="case-studies-title"
+            className="text-4xl font-bold mb-12 text-white"
+          >
             Featured Case Studies
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -337,13 +400,14 @@ const ServicePage: React.FC<ServicePageProps> = ({
                   <h3 className="text-xl font-bold mb-3 text-white">
                     {study.title}
                   </h3>
-                  <p className="text-gray-300 mb-4 flex-1">{study.description}</p>
+                  <p className="text-gray-300 mb-4 flex-1">
+                    {study.description}
+                  </p>
                   <Button
                     variant="default"
                     className="mt-auto bg-primary text-white hover:text-white/50 hover:bg-primary/50"
                   >
-                    <a href={study.link}>
-                    Read the case study  </a>
+                    <a href={study.link}>Read the case study </a>
                   </Button>
                 </div>
               </div>
@@ -353,10 +417,17 @@ const ServicePage: React.FC<ServicePageProps> = ({
       </section>
 
       {/* Technologies Section */}
-      <section id="technologies" className="py-20 bg-dark-dark" ref={technologiesRef}>
+      <section
+        id="technologies"
+        className="py-20 bg-dark-dark"
+        ref={technologiesRef}
+      >
         <div className="container mx-auto px-6">
           <Eyebrow text="OUR TOOLS" />
-          <h2 data-title="technologies-title" className="text-4xl font-bold mb-12 text-white">
+          <h2
+            data-title="technologies-title"
+            className="text-4xl font-bold mb-12 text-white"
+          >
             Technologies & Platforms
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -365,14 +436,16 @@ const ServicePage: React.FC<ServicePageProps> = ({
                 key={index}
                 className="technology-card p-6 bg-dark border border-dark-light shadow-xl flex flex-col items-center text-center"
               >
-               {/* <Image
+                {/* <Image
                   src={tech.logo || "/api/placeholder/100/100"}
                   alt={tech.name}
                   width={80}
                   height={80}
                   className="mb-4"
                 /> */}
-                <h3 className="text-lg font-bold mb-2 text-white">{tech.name}</h3>
+                <h3 className="text-lg font-bold mb-2 text-white">
+                  {tech.name}
+                </h3>
                 <p className="text-sm text-gray-300">{tech.description}</p>
               </div>
             ))}
@@ -384,7 +457,10 @@ const ServicePage: React.FC<ServicePageProps> = ({
       <section id="methodology" className="py-20 bg-dark" ref={methodologyRef}>
         <div className="container mx-auto px-6">
           <Eyebrow text="HOW WE WORK" />
-          <h2 data-title="methodology-title" className="text-4xl font-bold mb-12 text-white">
+          <h2
+            data-title="methodology-title"
+            className="text-4xl font-bold mb-12 text-white"
+          >
             {methodology.title}
           </h2>
           <p className="text-xl text-gray-300 mb-12 max-w-3xl">
@@ -397,7 +473,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
                 className="methodology-step p-6 bg-dark border border-dark-light shadow-xl"
               >
                 <div className="inline-block text-6xl font-light bg-gradient-to-br from-primary to-accent text-transparent bg-clip-text mb-4">
-                  {(index + 1).toString().padStart(2, '0')}
+                  {(index + 1).toString().padStart(2, "0")}
                 </div>
                 <p className="text-gray-200">{step}</p>
               </div>
@@ -407,12 +483,9 @@ const ServicePage: React.FC<ServicePageProps> = ({
       </section>
 
       {/* Resources Section */}
-      <section
-        id="resources"
-        className="py-20 bg-dark"
-      >
+      <section id="resources" className="py-20 bg-dark">
         <div className="container mx-auto px-6">
-        <Eyebrow text="KNOWLEDGE"></Eyebrow>
+          <Eyebrow text="KNOWLEDGE"></Eyebrow>
           <h2 className="text-4xl font-bold mb-12 text-white">
             Resource Library
           </h2>
@@ -432,23 +505,24 @@ const ServicePage: React.FC<ServicePageProps> = ({
                 </div>
                 <div className="p-6 flex flex-col h-60 justify-between inline-flex">
                   <Eyebrow
-                   text={resource.type}
-                   variant="background"
-                   color="text-white"
-                   bgColor="bg-primary"/>
+                    text={resource.type}
+                    variant="background"
+                    color="text-white"
+                    bgColor="bg-primary"
+                  />
                   <h3 className="text-xl mt-4 font-bold mb-3 text-white">
                     {resource.title}
                   </h3>
                   <a href={resource.link}>
-                  <Button
-                    variant="default"
-                    className="mt-auto bg-primary text-white hover:white/50 hover:bg-royal_blue_traditional-700"
-                  >
-                    {resource.type === "VIDEO"
-                      ? "Watch the video"
-                      : "Read more"}
-                    <ChevronRight className="ml-2 w-4 h-4" />
-                  </Button>
+                    <Button
+                      variant="default"
+                      className="mt-auto bg-primary text-white hover:white/50 hover:bg-royal_blue_traditional-700"
+                    >
+                      {resource.type === "VIDEO"
+                        ? "Watch the video"
+                        : "Read more"}
+                      <ChevronRight className="ml-2 w-4 h-4" />
+                    </Button>
                   </a>
                 </div>
               </div>
@@ -461,12 +535,14 @@ const ServicePage: React.FC<ServicePageProps> = ({
       <section className="py-20 bg-dark">
         <div className="container mx-auto px-6">
           <Eyebrow text="EXPLORE MORE" />
-          <h2 className="text-4xl font-bold mb-12 text-white">Related Services</h2>
+          <h2 className="text-4xl font-bold mb-12 text-white">
+            Related Services
+          </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {relatedServices.map((service, index) => (
               <Link
                 key={index}
-                href={`/services/${service.toLowerCase().replace(/\s+/g, '-')}`}
+                href={`/services/${service.toLowerCase().replace(/\s+/g, "-")}`}
                 className="p-6 bg-dark border border-dark-light shadow-xl hover:border-gold-500 transition-colors group"
               >
                 <h3 className="text-xl font-bold text-white group-hover:text-gold-300 transition-colors">
