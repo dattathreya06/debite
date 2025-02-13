@@ -1,23 +1,23 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  output: "export",
   images: {
     unoptimized: true,
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'images.pexels.com',
+        protocol: "https",
+        hostname: "images.pexels.com",
       },
       {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      }
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
     ],
   },
-  typescript:{
-    ignoreBuildErrors: true
+  typescript: {
+    ignoreBuildErrors: true,
   },
-  trailingSlash: true
-}
+  trailingSlash: true,
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

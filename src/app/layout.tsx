@@ -1,28 +1,29 @@
 // src/app/layout.
 
-import { fontSans, fontMono } from '@/lib/fonts'
-import { cn } from '@/lib/utils'
-import { SiteHeader } from '@/components/layout/site-header'
-import Footer from '@/components/layout/footer'
-import { ThemeProvider } from '@/components/theme-provider'
-import '@/app/styles/globals.css'
+import { fontSans, fontMono } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
+import { SiteHeader } from "@/components/layout/site-header";
+import Footer from "@/components/layout/footer";
+import { ThemeProvider } from "@/components/theme-provider";
+import "@/app/styles/globals.css";
 
 export const metadata = {
-  title: 'Debite',
-  description: 'Next generation financial platform',  
-}
+  title: "Debite | You Digital Transformation Partner",
+  description:
+    "Debite is your digital transformation partner with vast experienc",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased',
+          "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
           fontMono.variable
         )}
@@ -41,5 +42,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
