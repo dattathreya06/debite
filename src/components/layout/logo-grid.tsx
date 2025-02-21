@@ -1,11 +1,10 @@
-"use client";
-
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ExternalLink } from "lucide-react";
 import Eyebrow from "../ui/eyebrow";
-import { Eye } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +14,8 @@ interface Logo {
   alt?: string;
   width?: number;
   height?: number;
+  href: string;
+  isExternal?: boolean;
 }
 
 interface LogoGridProps {
@@ -60,15 +61,37 @@ const LogoGrid = ({
         ease: "power3.out",
       });
 
-      // Optional hover animations
+      // Hover animations for logo items
       const logoItems = document.querySelectorAll(".logo-item");
       logoItems.forEach((item) => {
         const tl = gsap.timeline({ paused: true });
+        const icon = item.querySelector(".external-icon");
+        const overlay = item.querySelector(".overlay");
+
         tl.to(item, {
-          scale: 1.05,
+          scale: 1.02,
           duration: 0.3,
           ease: "power2.out",
-        });
+        })
+          .to(
+            overlay,
+            {
+              opacity: 1,
+              duration: 0.2,
+              ease: "power2.out",
+            },
+            0
+          )
+          .to(
+            icon,
+            {
+              opacity: 1,
+              y: 0,
+              duration: 0.2,
+              ease: "power2.out",
+            },
+            0
+          );
 
         item.addEventListener("mouseenter", () => tl.play());
         item.addEventListener("mouseleave", () => tl.reverse());
@@ -85,12 +108,49 @@ const LogoGrid = ({
     6: "md:grid-cols-6",
   };
 
+  const renderLogoLink = (logo: Logo) => {
+    const content = (
+      <div className="relative w-full h-full flex items-center justify-center">
+        <div className="overlay absolute inset-0 bg-dark-dark opacity-0 transition-opacity" />
+        <div className="relative z-10 w-full h-full flex items-center justify-center">
+          <Image
+            src={logo.imageUrl}
+            alt={logo.alt || logo.name}
+            width={logo.width || 140}
+            height={logo.height || 100}
+            className="object-contain max-w-[80%] max-h-[80%]"
+          />
+        </div>
+        {logo.isExternal && (
+          <div className="external-icon absolute top-4 right-4 opacity-0 translate-y-2">
+            <ExternalLink className="w-5 h-5 text-gold-300" />
+          </div>
+        )}
+      </div>
+    );
+
+    return logo.isExternal ? (
+      <a
+        href={logo.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block w-full h-full"
+      >
+        {content}
+      </a>
+    ) : (
+      <Link href={logo.href} className="block w-full h-full">
+        {content}
+      </Link>
+    );
+  };
+
   return (
     <section className="w-full py-24 bg-dark">
       <div ref={containerRef} className="container mx-auto px-6 py-12 bg-dark">
         {(title || description) && (
           <div className="mb-12">
-            <Eyebrow text="PRODUCTS" />
+            <Eyebrow text="PARTNERS" />
             {title && (
               <h2 className="text-3xl font-bold mb-4 text-white">{title}</h2>
             )}
@@ -102,24 +162,18 @@ const LogoGrid = ({
 
         <div
           ref={gridRef}
-          className={`grid grid-cols-1 ${gridColumns[columns]} gap-8 items-center justify-items-center`}
+          className={`grid grid-cols-1 ${gridColumns[columns]} gap-8`}
         >
           {logos.map((logo, index) => (
             <div
               key={index}
-              className={`logo-item w-full aspect-[4/2] relative p-6 bg-dark-dark border border-dark-light shadow-lg flex items-center justify-center transition-shadow hover:shadow-xl ${
+              className={`logo-item h-32 bg-dark-dark border border-dark-light shadow-lg transition-shadow hover:shadow-xl cursor-pointer ${
                 grayscale
                   ? "grayscale hover:grayscale-0 transition-all duration-300"
                   : ""
               }`}
             >
-              <Image
-                src={logo.imageUrl}
-                alt={logo.alt || logo.name}
-                width={logo.width || 140}
-                height={logo.height || 100}
-                className=""
-              />
+              {renderLogoLink(logo)}
             </div>
           ))}
         </div>

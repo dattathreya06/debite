@@ -1,15 +1,24 @@
-'use client'
+"use client";
 
-import React, { useEffect, useRef } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Leaf, Globe2, Heart, Recycle, Wind, TreePine, Shield, Users } from 'lucide-react';
-import Button from '@/components/ui/button';
-import FooterCTA from '@/components/layout/cta';
-import Eyebrow from '@/components/ui/eyebrow';
-import { createSplitText } from '@/app/anim/text-anim';
+import React, { useEffect, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  Leaf,
+  Globe2,
+  Heart,
+  Recycle,
+  Wind,
+  TreePine,
+  Shield,
+  Users,
+} from "lucide-react";
+import Button from "@/components/ui/button";
+import FooterCTA from "@/components/layout/cta";
+import Eyebrow from "@/components/ui/eyebrow";
+import { createSplitText } from "@/app/anim/text-anim";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,69 +49,79 @@ const SustainabilityPage = () => {
 
   const commitments: Commitment[] = [
     {
-      title: 'Carbon Neutrality',
-      description: 'Committed to achieving net-zero emissions across our global operations by 2030',
-      icon: <Leaf size={50} strokeWidth={1} />
+      title: "Carbon Neutrality",
+      description:
+        "Committed to achieving net-zero emissions across our global operations by 2030",
+      icon: <Leaf size={50} strokeWidth={1} />,
     },
     {
-      title: 'Sustainable Innovation',
-      description: 'Developing green technologies and solutions for a sustainable future',
-      icon: <Globe2 size={50} strokeWidth={1} />
+      title: "Sustainable Innovation",
+      description:
+        "Developing green technologies and solutions for a sustainable future",
+      icon: <Globe2 size={50} strokeWidth={1} />,
     },
     {
-      title: 'Social Impact',
-      description: 'Creating positive change in communities through technology and education',
-      icon: <Heart size={50} strokeWidth={1} />
+      title: "Social Impact",
+      description:
+        "Creating positive change in communities through technology and education",
+      icon: <Heart size={50} strokeWidth={1} />,
     },
     {
-      title: 'Circular Economy',
-      description: 'Implementing recycling and waste reduction programs across our operations',
-      icon: <Recycle size={50} strokeWidth={1}/>
-    }
+      title: "Circular Economy",
+      description:
+        "Implementing recycling and waste reduction programs across our operations",
+      icon: <Recycle size={50} strokeWidth={1} />,
+    },
   ];
 
   const initiatives: Initiative[] = [
     {
-      title: 'Renewable Energy Transition',
-      description: 'Converting our data centers and offices to 100% renewable energy sources.',
-      metrics: '75% of facilities powered by renewable energy',
-      image: 'https://images.pexels.com/photos/3976320/pexels-photo-3976320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+      title: "Renewable Energy Transition",
+      description:
+        "Converting our data centers and offices to 100% renewable energy sources.",
+      metrics: "75% of facilities powered by renewable energy",
+      image:
+        "https://images.pexels.com/photos/3976320/pexels-photo-3976320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     },
     {
-      title: 'Green Technology Solutions',
-      description: 'Developing eco-friendly IT solutions and sustainable digital infrastructure.',
-      metrics: '30% reduction in client carbon footprint',
-      image: 'https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+      title: "Green Technology Solutions",
+      description:
+        "Developing eco-friendly IT solutions and sustainable digital infrastructure.",
+      metrics: "30% reduction in client carbon footprint",
+      image:
+        "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     },
     {
-      title: 'Community Empowerment',
-      description: 'Supporting local communities through technology education and digital inclusion.',
-      metrics: '100,000+ people reached through initiatives',
-      image: 'https://images.pexels.com/photos/325521/pexels-photo-325521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
-    }
+      title: "Community Empowerment",
+      description:
+        "Supporting local communities through technology education and digital inclusion.",
+      metrics: "100,000+ people reached through initiatives",
+      image:
+        "https://images.pexels.com/photos/325521/pexels-photo-325521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    },
   ];
 
   const impactStats = [
     {
-      value: '45%',
-      label: 'Reduction in carbon emissions since 2020',
-      icon: <Wind className="w-14 h-14" strokeWidth={1} />
+      value: "45%",
+      label: "Reduction in carbon emissions since 2020",
+      icon: <Wind className="w-14 h-14" strokeWidth={1} />,
     },
     {
-      value: '100+',
-      label: 'Sustainability projects worldwide',
-      icon: <TreePine className="w-14 h-14" strokeWidth={1} />
+      value: "100+",
+      label: "Sustainability projects worldwide",
+      icon: <TreePine className="w-14 h-14" strokeWidth={1} />,
     },
     {
-      value: '1M+',
-      label: 'Lives positively impacted',
-      icon: <Users className="w-14 h-14" strokeWidth={1} />
+      value: "1M+",
+      label: "Lives positively impacted",
+      icon: <Users className="w-14 h-14" strokeWidth={1} />,
     },
     {
-      value: '200+',
-      label: 'Green technology solutions deployed',
-      icon: <Shield className="w-14 h-14" strokeWidth={1} />
-    }
+      value: "200+",
+      label: "Green technology solutions deployed",
+      icon: <Shield className="w-14 h-14" strokeWidth={1} />,
+    },
   ];
 
   useEffect(() => {
@@ -111,20 +130,20 @@ const SustainabilityPage = () => {
       const titleSplit = createSplitText(heroTitleRef.current);
       const descSplit = createSplitText(heroDescRef.current);
 
-      const { words: titlewords } = titleSplit.split({ types: ['words'] });
-      const { words: descWords } = descSplit.split({ types: ['words'] });
+      const { words: titlewords } = titleSplit.split({ types: ["words"] });
+      const { words: descWords } = descSplit.split({ types: ["words"] });
 
       // Initial state
-      gsap.set(titlewords, { 
-        opacity: 0, 
+      gsap.set(titlewords, {
+        opacity: 0,
         y: 100,
-        rotateX: -90
+        rotateX: -90,
       });
-      
-      gsap.set(descWords, { 
-        opacity: 0, 
+
+      gsap.set(descWords, {
+        opacity: 0,
         y: 50,
-        rotateX: -45
+        rotateX: -45,
       });
 
       // Hero animation timeline
@@ -136,16 +155,19 @@ const SustainabilityPage = () => {
         rotateX: 0,
         duration: 1,
         stagger: 0.02,
-        ease: "power4.out"
-      })
-      .to(descWords, {
-        opacity: 1,
-        y: 0,
-        rotateX: 0,
-        duration: 0.8,
-        stagger: 0.03,
-        ease: "power3.out"
-      }, "-=0.5");
+        ease: "power4.out",
+      }).to(
+        descWords,
+        {
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          duration: 0.8,
+          stagger: 0.03,
+          ease: "power3.out",
+        },
+        "-=0.5"
+      );
 
       // Cleanup
       return () => {
@@ -161,27 +183,27 @@ const SustainabilityPage = () => {
     const headings = [
       { ref: commitmentsHeadingRef, trigger: commitmentsRef },
       { ref: initiativesHeadingRef, trigger: initiativesRef },
-      { ref: impactHeadingRef, trigger: impactRef }
+      { ref: impactHeadingRef, trigger: impactRef },
     ];
 
     headings.forEach(({ ref, trigger }) => {
       if (ref.current && trigger.current) {
         const split = createSplitText(ref.current);
-        const { words } = split.split({ types: ['words'] });
+        const { words } = split.split({ types: ["words"] });
 
         gsap.from(words, {
           scrollTrigger: {
             trigger: trigger.current,
             start: "top 80%",
             end: "top 20%",
-            toggleActions: "play none none reverse"
+            toggleActions: "play none none reverse",
           },
           opacity: 0,
           y: 20,
           rotateX: -90,
           duration: 0.8,
           stagger: 0.02,
-          ease: "power3.out"
+          ease: "power3.out",
         });
 
         // Cleanup
@@ -198,22 +220,22 @@ const SustainabilityPage = () => {
           trigger: elements[0],
           start: "top 80%",
           end: "bottom 20%",
-          toggleActions: "play none none reverse"
+          toggleActions: "play none none reverse",
         },
         opacity: 0,
         y: 30,
         scale: 0.95,
         duration: 0.8,
         stagger,
-        ease: "power3.out"
+        ease: "power3.out",
       });
     };
 
     // Animate cards and sections
     const sections = [
-      { ref: commitmentsRef, selector: '.commitment-card', stagger: 0.1 },
-      { ref: initiativesRef, selector: '.initiative-card', stagger: 0.2 },
-      { ref: impactRef, selector: '.impact-card', stagger: 0.1 }
+      { ref: commitmentsRef, selector: ".commitment-card", stagger: 0.1 },
+      { ref: initiativesRef, selector: ".initiative-card", stagger: 0.2 },
+      { ref: impactRef, selector: ".impact-card", stagger: 0.1 },
     ];
 
     sections.forEach(({ ref, selector, stagger }) => {
@@ -244,17 +266,10 @@ const SustainabilityPage = () => {
                 Building a Sustainable Future
               </h1>
               <p ref={heroDescRef} className="text-xl text-gray-200 mb-8">
-                We're committed to creating positive environmental and social impact through technology 
-                and innovation, working towards a more sustainable future for all.
+                We're committed to creating positive environmental and social
+                impact through technology and innovation, working towards a more
+                sustainable future for all.
               </p>
-              <div className="flex gap-4">
-                <Button size="lg">
-                  View Our Initiatives
-                </Button>
-                <Button variant="outline" size="lg">
-                  Download ESG Report
-                </Button>
-              </div>
             </div>
           </div>
         </div>
@@ -273,9 +288,7 @@ const SustainabilityPage = () => {
                 key={index}
                 className="commitment-card p-8 bg-dark-dark border border-dark-light transform transition-transform hover:scale-105"
               >
-                <div className="text-primary mb-4">
-                  {commitment.icon}
-                </div>
+                <div className="text-primary mb-4">{commitment.icon}</div>
                 <h3 className="text-xl font-bold mb-4">{commitment.title}</h3>
                 <p className="text-gray-300">{commitment.description}</p>
               </div>
@@ -307,10 +320,14 @@ const SustainabilityPage = () => {
                   />
                 </div>
                 <div className="lg:w-1/2">
-                  <h3 className="text-3xl font-bold mb-4">{initiative.title}</h3>
+                  <h3 className="text-3xl font-bold mb-4">
+                    {initiative.title}
+                  </h3>
                   <p className="text-gray-300 mb-6">{initiative.description}</p>
                   <div className="p-4 bg-dark border border-dark-light rounded-lg">
-                    <p className="text-2xl font-bold text-gold-300">{initiative.metrics}</p>
+                    <p className="text-2xl font-bold text-gold-300">
+                      {initiative.metrics}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -335,7 +352,9 @@ const SustainabilityPage = () => {
                 <div className="text-primary flex justify-center mb-4">
                   {stat.icon}
                 </div>
-                <p className="text-4xl font-bold text-gold-300 mb-4">{stat.value}</p>
+                <p className="text-4xl font-bold text-gold-300 mb-4">
+                  {stat.value}
+                </p>
                 <p className="text-gray-300">{stat.label}</p>
               </div>
             ))}

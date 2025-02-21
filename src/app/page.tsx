@@ -13,22 +13,34 @@ const logos = [
   {
     name: "Worldtek",
     imageUrl: "/Worldtek.svg",
-    alt: "Worldtek"
+    alt: "Worldtek",
+    href: "https://worldtek.in/",
+    width: 140,
+    height: 100,
   },
   {
     name: "QRPE",
     imageUrl: "/QRPE.svg",
-    alt: "QRPE"
+    alt: "QRPE",
+    href: "https://qrpe.in/",
+    width: 140,
+    height: 100,
   },
   {
     name: "MSGBE",
     imageUrl: "/Msgbe.svg",
-    alt: "Msgbe"
+    alt: "Msgbe",
+    href: "http://msgbe.in/",
+    width: 140,
+    height: 100,
   },
   {
     name: "Selfscan",
     imageUrl: "/Selfscan.svg",
-    alt: "Selfscan"
+    alt: "Selfscan",
+    href: "https://selfscan.in/",
+    width: 140,
+    height: 100,
   },
 ];
 
@@ -38,14 +50,13 @@ const HomePage = () => {
       <HeroSlider />
       <MissionStatement />
       <LogoGrid
-  logos={logos}
-  title="Our Brands"
-  columns={4}
-  grayscale={true}
-  animate={true}
-/>
-      <HorizontalScrollSection
+        logos={logos}
+        title="Our Brands"
+        columns={4}
+        grayscale={true}
+        animate={true}
       />
+      <HorizontalScrollSection />
       <ResourcesSection />
 
       <FooterCTA

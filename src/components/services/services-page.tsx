@@ -531,7 +531,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
         </div>
       </section>
 
-      {/* Related Services Section */}
+      {/* Related Services Section *
       <section className="py-20 bg-dark">
         <div className="container mx-auto px-6">
           <Eyebrow text="EXPLORE MORE" />
@@ -554,6 +554,7 @@ const ServicePage: React.FC<ServicePageProps> = ({
           </div>
         </div>
       </section>
+      */}
 
       {/* CTA Section */}
       <FooterCTA

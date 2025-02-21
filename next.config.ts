@@ -17,7 +17,8 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  trailingSlash: true,
+  basePath: "",
+  assetPrefix: "",
 };
 
 module.exports = nextConfig;
