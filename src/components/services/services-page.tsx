@@ -403,12 +403,14 @@ const ServicePage: React.FC<ServicePageProps> = ({
                   <p className="text-gray-300 mb-4 flex-1">
                     {study.description}
                   </p>
+                  <a href={study.link}>
                   <Button
                     variant="default"
                     className="mt-auto bg-primary text-white hover:text-white/50 hover:bg-primary/50"
                   >
-                    <a href={study.link}>Read the case study </a>
+                    Read the case study 
                   </Button>
+                  </a>
                 </div>
               </div>
             ))}

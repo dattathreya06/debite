@@ -22,7 +22,7 @@ export default function ContactPage() {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      details: ["info@debite.com"],
+      details: ["info@debite.in"],
     },
     {
       icon: <Phone className="w-6 h-6" />,
@@ -173,14 +173,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <CTA
-        title="Ready to Transform Your Business?"
-        description="Connect with our experts to discuss how NTT DATA can help accelerate your digital journey."
-        buttonText="Schedule a Consultation"
-        buttonHref="/schedule"
-      />
     </div>
   );
 }
