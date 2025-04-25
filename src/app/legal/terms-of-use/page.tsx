@@ -125,10 +125,11 @@ const TermsPage = () => {
             <address className="not-italic mt-4">
               Debite Solutions Pvt Ltd
               <br />
-              RAM SVR, Plot No 4/2, Sector 1<br />
-              Madhapur, HUDA Techno Enclave
+              Plot.no.29 NPL,
               <br />
-              HITEC City, Hyderabad, Telangana 500081
+              Sri Sai Nagar colony, Meerpet
+              <br />
+              Hyderabad, Rangareddy, Telangana 500097
             </address>
           </div>
         </div>

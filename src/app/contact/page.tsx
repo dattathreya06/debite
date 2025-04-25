@@ -33,7 +33,7 @@ export default function ContactPage() {
       icon: <MapPin className="w-6 h-6" />,
       title: "Our Office",
       details: [
-        "RAM SVR, Plot No 4/2, Sector 1, Madhapur, HUDA Techno Enclave, HITEC City, Hyderabad, Telangana 500081",
+        "Plot.no.29 NPL, Sri Sai Nagar colony, Meerpet, Hyderabad, Rangareddy, Telangana 500097",
       ],
     },
     {

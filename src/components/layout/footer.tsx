@@ -198,11 +198,15 @@ const Footer: React.FC = () => {
 
             <div className="contact-info space-y-4">
               <ContactItem icon={<MapPin size={18} />}>
-                RAM SVR, Plot No 4/2, Sector 1
-                <br />
-                Madhapur, HUDA Techno Enclave
-                <br />
-                HITEC City, Hyderabad, Telangana 500081
+                <address className="not-italic mt-4">
+                  Debite Solutions Pvt Ltd
+                  <br />
+                  Plot.no.29 NPL,
+                  <br />
+                  Sri Sai Nagar colony, Meerpet
+                  <br />
+                  Hyderabad, Rangareddy, Telangana 500097
+                </address>
               </ContactItem>
               <ContactItem icon={<Phone size={18} />}>
                 +91 9281144143 | +91 9166616143
