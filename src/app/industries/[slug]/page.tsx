@@ -1,10 +1,10 @@
 // src/app/industries/[slug]/page.tsx
-import { notFound } from 'next/navigation';
-import AutomotivePage from '@/components/industries/automotive';
-import BankingPage from '@/components/industries/banking';
-import InsurancePage from '@/components/industries/insurance';
-import ManufacturingPage from '@/components/industries/manufacturing';
-import GovernmentPage from '@/components/industries/government';
+import { notFound } from "next/navigation";
+import AutomotivePage from "@/components/industries/automotive";
+import BankingPage from "@/components/industries/banking";
+import InsurancePage from "@/components/industries/insurance";
+import ManufacturingPage from "@/components/industries/manufacturing";
+import GovernmentPage from "@/components/industries/government";
 
 const INDUSTRY_COMPONENTS = {
   automotive: AutomotivePage,
@@ -24,22 +24,14 @@ export function generateStaticParams() {
 }
 
 // Page component
-export default function IndustryPage({ 
-  params 
-}: { 
-  params: { slug: string } 
-}) {
-  // ❌ Removed `await` since params is not async
-  const { slug } = params;  
+export default function IndustryPage({ params }: { params: { slug: string } }) {
+  const { slug } = params; // ✅ no await needed
 
-  // Type check the slug
   if (!isValidIndustry(slug)) {
     notFound();
   }
-  
-  // Get the component for this industry
-  const IndustryComponent = INDUSTRY_COMPONENTS[slug];
 
+  const IndustryComponent = INDUSTRY_COMPONENTS[slug as IndustrySlug];
   return <IndustryComponent />;
 }
 

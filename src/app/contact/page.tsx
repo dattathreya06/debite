@@ -33,7 +33,7 @@ export default function ContactPage() {
       icon: <MapPin className="w-6 h-6" />,
       title: "Our Office",
       details: [
-        "Plot.no.29 NPL, Sri Sai Nagar colony, Meerpet, Hyderabad, Rangareddy, Telangana 500097",
+        "Flat no:401,Plot no HIG 115, INTURI CHAMBERS, 6th Phase,KPHB Colony,Kukatpally,Hyderabad, Rangareddy, Telangana 500097",
       ],
     },
     {

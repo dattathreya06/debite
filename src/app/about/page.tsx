@@ -164,16 +164,16 @@ const AboutPage = () => {
       role: "Director",
       image: "/team/vamsi.jpeg",
     },
-    {
-      name: "K Sarala",
-      role: "Director",
-      image: "/team/ksarala.jpeg",
-    },
-    {
-      name: "Vicky",
-      role: "Senior Analyst",
-      image: "/team/vicky.jpeg",
-    },
+    // {
+    //   name: "K Sarala",
+    //   role: "Director",
+    //   image: "/team/ksarala.jpeg",
+    // },
+    // {
+    //   name: "Vicky",
+    //   role: "Senior Analyst",
+    //   image: "/team/vicky.jpeg",
+    // },
   ];
 
   const timeline: Timeline[] = [

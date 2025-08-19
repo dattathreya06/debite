@@ -125,11 +125,11 @@ const TermsPage = () => {
             <address className="not-italic mt-4">
               Debite Solutions Pvt Ltd
               <br />
-              Plot.no.29 NPL,
+              Flat no:401,Plot no HIG 115,
               <br />
-              Sri Sai Nagar colony, Meerpet
+              INTURI CHAMBERS, 6th Phase,KPHB Colony,
               <br />
-              Hyderabad, Rangareddy, Telangana 500097
+              Kukatpally,Hyderabad,Telangana 500085
             </address>
           </div>
         </div>
