@@ -188,7 +188,7 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-2 space-y-6">
             <div className="footer-logo">
               <Image
-                src="/debite_logo.svg"
+                src="/debite_logo_b.svg"
                 alt="Debite Logo"
                 width={128}
                 height={32}

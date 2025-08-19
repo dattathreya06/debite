@@ -11,7 +11,7 @@ export function SiteHeader() {
       <div className="container mx-auto flex h-16 items-center px-4">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <Image
-            src="/debite_logo.svg"
+            src="/debite_logo_b.svg"
             alt="Company Logo"
             width={160}
             height={60}
